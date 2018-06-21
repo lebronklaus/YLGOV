@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="xuqiu" extends="struts-default,json-default" namespace="/">
+		<action name="login" class="cn.nwsuaf.gov.action.loginAction" method="login">
+			<result name="login">/faxuqiu/login.jsp</result>
+			<result name="success">/faxuqiu/main.jsp</result>
+		</action>
+		<action name="userRegist" class="cn.nwsuaf.gov.action.loginAction" method="regist">
+			<result name="success">/faxuqiu/login.jsp</result>
+		</action>
+		<action name="faxuqiu" class="cn.nwsuaf.gov.action.loginAction" method="faxuqiu">
+			<result name="login">/faxuqiu/login.jsp</result>
+			<result name="success">/faxuqiu/main.jsp</result>
+		</action>
+		<action name="quit" class="cn.nwsuaf.gov.action.loginAction" method="quit">
+			<result name="success">/faxuqiu/main.jsp</result>
+		</action>
+		<action name="jsxq" class="cn.nwsuaf.gov.action.JiShuXQ" >
+			<result name="success">/faxuqiu/success.jsp</result>
+		</action>
+		<action name="pxxq" class="cn.nwsuaf.gov.action.PeiXunXQ" >
+			<result name="success">/faxuqiu/success.jsp</result>
+		</action>
+		
+		<action name="rcxq" class="cn.nwsuaf.gov.action.RenCaiXQ" >
+			<result name="success">/faxuqiu/success.jsp</result>
+		</action>
+		
+		<action name="xinxibj" class="cn.nwsuaf.gov.action.XinxiBianji" >
+			<result name="success">/faxuqiu/success.jsp</result>
+		</action>
+		<!-- 以下三个是前台培训展示by czt -->
+			<action name="peixunsearch" class="cn.nwsuaf.gov.action.SearchXQ" method="find">
+			<result name="success">/faxuqiu/before/peixunlist.jsp</result>
+		</action>
+			
+			<action name="rencaisearch" class="cn.nwsuaf.gov.action.SearchXQ" method="find1" >
+			<result name="success">/faxuqiu/before/rencailist.jsp</result>
+		</action>
+		
+		
+			<action name="jishusearch" class="cn.nwsuaf.gov.action.SearchXQ" method="find2" >
+			<result name="success">/faxuqiu/before/jishulist.jsp</result>
+		</action>
+		<!-- +++++++++++++++++++++++++++++++++以下是后台审核部分  by czt ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		<action name="peixun" class="cn.nwsuaf.gov.action.PeiXunAction" method="getAllPei" >
+			<result name="success">/faxuqiu/shenhe/peixunshenhe.jsp</result>
+		</action>
+		<action name="peixsearch" class="cn.nwsuaf.gov.action.PeiXunAction" method="getsearchPeiXun" >
+			<result type="json"></result>
+		</action>
+		<action name="delpeixun" class="cn.nwsuaf.gov.action.PeiXunAction" method="deletPei" >
+			<result name="success">/faxuqiu/shenhe/peixunshenhe.jsp</result>
+		</action>
+		<action name="shenhe" class="cn.nwsuaf.gov.action.PeiXunAction" method="shenHe" >
+			<result name="success">/faxuqiu/shenhe/peixunshenhe.jsp</result>
+		</action>
+		<!-- 以上三个为培训审核 -->
+		<action name="rencai" class="cn.nwsuaf.gov.action.RenCaiAction" method="getAllRen" >
+			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
+		</action>
+		<action name="rcsearch" class="cn.nwsuaf.gov.action.RenCaiAction" method="getsearchRenCai" >
+			<result type="json"></result>
+		</action>
+		<action name="delrencai" class="cn.nwsuaf.gov.action.RenCaiAction" method="deletRen" >
+			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
+		</action>
+		<action name="rcshenhe" class="cn.nwsuaf.gov.action.RenCaiAction" method="shenHe" >
+			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
+		</action>
+		<!-- 以上三个为人才审核 -->
+		<action name="jishu" class="cn.nwsuaf.gov.action.JiShuAction" method="getAllJi" >
+			<result name="success">/faxuqiu/shenhe/jishushenhe.jsp</result>
+		</action>
+		<action name="jssearch" class="cn.nwsuaf.gov.action.JiShuAction" method="getsearchJiShu" >
+			<result type="json"></result>
+		</action>
+		<action name="deljishu" class="cn.nwsuaf.gov.action.JiShuAction" method="deletJi" >
+			<result name="success">/faxuqiu/shenhe/jishushenhe.jsp</result>
+		</action>
+		<action name="jsshenhe" class="cn.nwsuaf.gov.action.JiShuAction" method="shenHe" >
+			<result name="success">/faxuqiu/shenhe/jishushenhe.jsp</result>
+		</action>
+		<!-- 以上三个为技术审核 -->
+		<action name="yuanqi" class="cn.nwsuaf.gov.action.YuanQiAction" method="getAllYuqi" >
+			<result name="success">/faxuqiu/shenhe/yuanqishenhe.jsp</result>
+		</action>
+		<action name="yqsearch" class="cn.nwsuaf.gov.action.YuanQiAction" method="getsearchYuanQi" >
+			<result type="json"></result>
+		</action>
+		<action name="delyuanqi" class="cn.nwsuaf.gov.action.YuanQiAction" method="deletYu" >
+			<result name="success">/faxuqiu/shenhe/yuanqishenhe.jsp</result>
+		</action>
+		<action name="yqshenhe" class="cn.nwsuaf.gov.action.YuanQiAction" method="shenHe" >
+			<result name="success">/faxuqiu/shenhe/yuanqishenhe.jsp</result>
+		</action>
+		<!-- 以上三个为园企审核 ++++++++++++++++++++++++++++++++++++by czt+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		
+		
+		<!-- 以下是增加需求页面+++++++++++++++++++++++++++++++++++++++++++++by czt +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		
+		<action name="jishuxuqiuadd" class="cn.nwsuaf.gov.action.JiShuAddAction" method="addJiShu" >
+			<result name="success">/faxuqiu/jishuxuqiu.jsp</result>
+		</action>
+		
+		<action name="peixunxuqiuadd" class="cn.nwsuaf.gov.action.PeiXunAddAction" method="addPeiXun" >
+			<result name="success">/faxuqiu/peixunxuqiu.jsp</result>
+		</action>
+		
+		<action name="rencaixuqiuadd" class="cn.nwsuaf.gov.action.RenCaiAddAction" method="addRenCai" >
+			<result name="success">/faxuqiu/rencaixuqiu.jsp</result>
+		</action>
+		
+		<action name="yuanqixuqiuadd" class="cn.nwsuaf.gov.action.YuanQiAddAction" method="addYuanQi" >
+			<result name="success">/faxuqiu/yuanqi/yuanquadd.jsp</result>
+		</action>
+			<action name="upload1" class="cn.nwsuaf.gov.teacherManage.UploadAction" method="upload"  >
+			<result name="success">/faxuqiu/yuanqi/yqimage1.jsp</result>
+			<param name="imageDir">/upload/media/yuanqiimage</param>
+		</action>
+		<action name="upload2" class="cn.nwsuaf.gov.teacherManage.UploadAction" method="upload"  >
+			<result name="success">/faxuqiu/yuanqi/yqimage2.jsp</result>
+			<param name="imageDir">/upload/media/yuanqiimage</param>
+		</action>
+		<!-- 以上是增加需求页面+++++++++++++++++++++++++++++++++++++++++++++by czt +++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+		
+		
+		<action name="rencaishenhe" class="cn.nwsuaf.gov.action.SearchXQ" method="find1" >
+			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
+		</action>
+		
+		<action name="jishushenhe" class="cn.nwsuaf.gov.action.SearchXQ" method="find2" >
+			<result name="success">/faxuqiu/shenhe/jishushenhe.jsp</result>
+		</action>
+		<!-- 上面是审核部分 -->
+		<action name="shenehemore" class="cn.nwsuaf.gov.action.SearchXQ" method="findById" >
+			<result name="success">/faxuqiu/shenhe/shenhepxx.jsp</result>
+		</action>
+		<action name="xuqiuzhengji" class="cn.nwsuaf.gov.action.SearchXQ" method="find">
+			<result name="success">/faxuqiu/before/xuqiuzhj.jsp</result>
+		</action>
+		<!--培训前台查看-->
+		<action name="showpeixun" class="cn.nwsuaf.gov.action.SearchXQ" method="findById" >
+			<result name="success">/faxuqiu/before/detailpx.jsp</result>
+		</action>
+		<!-- 技术前台查看-->
+		<action name="showjishu" class="cn.nwsuaf.gov.action.SearchXQ" method="findByIdJs" >
+			<result name="success">/faxuqiu/before/detailjs.jsp</result>
+		</action>
+		<!--人才前台查看-->
+		<action name="showrencai" class="cn.nwsuaf.gov.action.SearchXQ" method="findByIdRc" >
+			<result name="success">/faxuqiu/before/detailrc.jsp</result>
+		</action>
+		<!-- 人才审核 -->
+		<action name="sheneherc" class="cn.nwsuaf.gov.action.SearchXQ" method="findByIdRc" >
+			<result name="success">/faxuqiu/shenhe/shenherc.jsp</result>
+		</action>
+		
+		<!-- 技术审核 -->
+		<action name="shenehejs" class="cn.nwsuaf.gov.action.SearchXQ" method="findByIdJs" >
+			<result name="success">/faxuqiu/shenhe/shenhejs.jsp</result>
+		</action>
+
+     <action name="sheneheyes" class="cn.nwsuaf.gov.action.SearchXQ" method="shenyes" > 
+	 </action> 
+	  <action name="shenehercyes" class="cn.nwsuaf.gov.action.SearchXQ" method="shenrcyes" > 
+	 </action> 
+	 <action name="shenehejsyes" class="cn.nwsuaf.gov.action.SearchXQ" method="shenjsyes" > 
+	 </action> 
+	 <!-- 园企信息前台显示 -->
+	 	<!-- qiye -->
+		<action name="qiyelist" method="findQy" class="cn.nwsuaf.gov.action.YuanQi">
+			<result name="success">/faxuqiu/yuanqi/qiyelist.jsp</result>
+		</action>
+		
+		<action name="qiyespe" method="findById"  class="cn.nwsuaf.gov.action.YuanQi"  >
+			<result name="success">/faxuqiu/yuanqi/spefic.jsp</result>
+		</action>
+		
+		<!-- yuanqu -->
+		<action name="yuanqulist" method="findYq" class="cn.nwsuaf.gov.action.YuanQi">
+			<result name="success">/faxuqiu/yuanqi/yuanqulist.jsp</result>
+		</action>
+		
+		<action name="yuanquspe" method="findById" class="cn.nwsuaf.gov.action.YuanQi"  >
+			<result name="success">/faxuqiu/yuanqi/spefic.jsp</result>
+		</action>
+		<!-- 主页列表 -->
+		<action name="yuanqibe" class="cn.nwsuaf.gov.action.YuanQi"  >
+			<result name="success">/faxuqiu/yuanqi/yuanqibe.jsp</result>
+		</action>
+	 <!-- 园企信息前台显示 -->
+	 
+	 <!-- 园企信息后台显示 -->
+	 	<!-- qiye -->
+		<action name="backlist" class="cn.nwsuaf.gov.action.YuanQi">
+			<result name="success">/faxuqiu/yuanqi/backlist.jsp</result>
+		</action>
+		<action name="backls" class="cn.nwsuaf.gov.action.YuanQi" method="findBack">
+			<result name="success">/faxuqiu/yuanqi/backlist.jsp</result>
+		</action>
+		
+		<action name="backspe" class="cn.nwsuaf.gov.action.YuanQi"  >
+			<result name="success">/faxuqiu/yuanqi/backsp.jsp</result>
+		</action>
+		
+		<action name="shenehe" class="cn.nwsuaf.gov.action.YuanQi" method="ShenHe" > 
+	 </action>
+	 <!-- 园企信息后台显示 -->
+	 <!--园企信息发布  -->
+	 <action name="yuanqiadd" class="cn.nwsuaf.gov.action.YuanqiAdd"  >
+			<result name="success">/faxuqiu/success.jsp</result>
+			<param name="imageDir">/upload/media/yuanqiimage</param>
+	</action>
+	<!--园企信息发布  -->
+	</package>
+	
+
+</struts>

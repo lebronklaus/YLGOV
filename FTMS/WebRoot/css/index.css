@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+}
+#load{
+	height: 50px;
+	width: 400;
+	padding-top:40px
+}
+.ulload{
+	height:50px;
+	width:400px;
+	border:none;	
+}
+.ulload li{
+	height: 50px;
+	width: 200px;
+	float: left;
+	list-style-type:none;
+	border:none;
+}
+.a0{
+	display:block;
+	height: 50px;
+	width: 200px;
+	background:#FFF;
+	opacity: 0.9;
+    filter:alpha(opacity=90);
+	text-decoration:none;
+}
+.a1{
+	display:block;
+	height: 50px;
+	width: 200px;
+	background:#E3E3E3;
+	opacity: 0.9;
+    filter:alpha(opacity=90);
+	text-decoration:none;
+}
+.ulload li a span{
+	font-size: 20px;
+	position:relative;top:8px;
+}
+
+.tabdiv{
+	width: 400;
+	padding-top:50px;
+	padding-bottom:30px;
+	background:#FFF;
+	opacity: 0.9;
+    filter:alpha(opacity=90);
+}
+#register{
+	text-decoration:none;
+}
+.hiddendiv{
+    display: none;
+}

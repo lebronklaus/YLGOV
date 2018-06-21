@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="yanggov"
+  id="myeclipse.1445082766784"
+  context-root="/yanggov"
+  j2ee-spec="6.0"
+  archive="yanggov.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

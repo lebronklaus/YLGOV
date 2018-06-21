@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.nwsuaf.gov.model">
+	<class name="Train_Base" table="Train_Base">
+		<id name="base_id">
+	<generator class="native"/>
+	
+</id>
+		<property name="base_name" column="base_name" />
+		<property name="base_profile" column="base_profile" />
+		<property name="base_contact" column="base_contact" />
+		<property name="base_time" column="base_time" />
+		<property name="base_path1" column="base_path1" />
+		<property name="base_path2" column="base_path2" />
+		
+	</class>
+</hibernate-mapping>

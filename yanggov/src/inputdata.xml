@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!--	<package name="a" extends="struts-default" namespace="/">-->
+<!--		<action name="listMoreTZnews" class="com.lee.action.Search" method="findList">-->
+<!--			<result name="success">/system/layout/before/gonggao.jsp</result>-->
+<!--		</action>-->
+<!--	</package>-->
+	<package name="project" extends="default" namespace="/system/layout">
+		<action name="morenews" method="find" class="com.lee.action.Search">
+			<result name="success">
+			/system/layout/before/morelist1.jsp
+			</result>
+		</action>
+		
+				<action name="morenewswk" method="find" class="com.lee.action.Search">
+			<result name="success">
+			/system/layout/before/morelist1.jsp
+			</result>
+		</action>
+		
+		<action name="listMoreTZnews" method="findList" class="com.lee.action.Search">
+	    <result name="success">
+	    /system/layout/before/gonggao.jsp
+	    </result>	
+		</action>
+		
+		<action name="listMorePXnews" method="findListpeixun" class="com.lee.action.Search">
+		<result name="success">
+		 /system/layout/before/peixun/peixun.jsp
+		</result>
+		</action>
+		
+		<action name="listMoreZCnews" method="findListzhengce" class="com.lee.action.Search">
+		<result name="success">
+		/system/layout/before/xzhengce/zhengce.jsp
+		</result>
+		</action>
+		<action name="listMoreKXnews" method="findListkuaixun" class="com.lee.action.Search">
+		<result name="success">
+		/system/layout/before/kuaixun/kuaixun.jsp
+		</result>
+		</action>
+		
+		<action name="addMoreNewss" method="moreFind1" class="com.lee.action.Search">
+		<result name="success">
+		/system/layout/before/detailContent1.jsp
+		</result>
+		</action>
+<!--	修改过的	 -->
+		 <action name="addMoreNewssdt" method="moreFind2" class="com.lee.action.Search">
+		<result name="success">
+		/system/layout/before/peixun/detailContentDt1.jsp
+		</result>
+		</action>
+		
+				 <action name="addMoreNewsszc" method="moreFind3" class="com.lee.action.Search">
+		<result name="success">
+		/system/layout/before/xzhengce/detailContentZC1.jsp
+		</result>
+		</action>
+<!--	修改过的	-->
+		<action name="addMoreNewsskx" method="moreFind4" class="com.lee.action.Search">
+		<result name="success">
+		/system/layout/before/kuaixun/detailContentKX1.jsp
+		</result>
+		</action>
+<!--		修改过的-->
+			<action name="morenewsdt" method="finddt" class="com.lee.action.Search">
+			<result name="success">
+			/system/layout/before/peixun/moreListDT1.jsp
+ 
+			</result>
+			</action>
+<!--	///system/layout/before/peixun/moreListDTtwo.jsp		//hdjf -->
+				<action name="morenewsdtwk" method="finddt" class="com.lee.action.Search">
+			<result name="success">
+			/system/layout/before/peixun/moreListDT1.jsp
+			</result>
+			</action>
+			
+		<action name="morenewszcwk" method="findzc" class="com.lee.action.Search">
+			<result name="success">
+			/system/layout/before/xzhengce/moreListZC1.jsp
+			</result>
+			</action>
+			<action name="morenewszc" method="findzc" class="com.lee.action.Search">
+			<result name="success">
+					/system/layout/before/xzhengce/moreListZC1.jsp
+			</result>
+			</action>
+<!--		修改过的	-->
+				<action name="morenewskx" method="findkx" class="com.lee.action.Search">
+			<result name="success">
+					/system/layout/before/kuaixun/moreListKX1.jsp
+			</result>
+			</action>
+ 
+			 <action name="morenewskxwk" method="findkx" class="com.lee.action.Search">
+			<result name="success">
+					/system/layout/before/kuaixun/moreListKX1.jsp
+			</result>
+			</action>
+			
+			<action name="zszcnews" method="findzcByMark" class="com.lee.action.Search">
+			<result name="success" >/system/layout/before/xzhengce/detailZS1.jsp</result>
+			</action>
+			<action name="ylzcnews" method="findzcByMark" class="com.lee.action.Search">
+			<result name="success">/system/layout/before/xzhengce/detailYL1.jsp</result>
+			</action>
+			<action name="fzszcnews" method="findzcByMark" class="com.lee.action.Search">
+			<result name="success">/system/layout/before/xzhengce/firstshowZS.jsp</result>
+			</action>
+			
+			<action name="fylzcnews" method="findzcByMark" class="com.lee.action.Search">
+			<result name="success">/system/layout/before/xzhengce/firstshowYL.jsp</result>
+			</action>
+			
+
+	</package>
+   
+	<package name="jsonprojrct" extends="json-default,struts-default" namespace="/system/layout">
+		<action name="addMoreNews" method="moreFind" class="com.lee.action.Search">
+                <result type="json" name="result">
+                <param name="root">post</param>
+                </result>
+		</action>
+	</package>
+
+</struts>

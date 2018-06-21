@@ -1,0 +1,104 @@
+#now_position{
+	background:url(../../images/kjzy_img/kjzyThreePage3/nav_1.png);
+	min-height:39px;
+	min-width:755px;
+}
+#now_list{
+	padding-top:12px;
+	padding-left:130px;
+}
+#now_list li{
+	float:left;
+	font-size:13px;
+	padding-left:7px;
+}
+#now_list a{
+	margin:-9px;
+}
+#now_list a:hover{
+	text-decoration:underline;
+	color:#F00;
+}
+#left_top{
+	float:left;
+	
+}
+#title{
+	margin-top:12px;
+	margin-left:12px;
+	font-size:16px;
+	font-weight:bold;
+	line-height:26px;
+	font-family:"Microsoft YaHei";
+}
+#writer{
+	font-size:12px;
+	margin-left:12px;
+	line-height:26px;
+	color:#999;
+}
+#writer span{
+	margin-left:70px;
+}
+.left_article_line_left{
+	height:2px;
+	width:200px;
+	background:#f77000;
+	float:left;
+	margin-top:10px;
+}
+.left_article_line_right{
+	margin-top:10px;
+	height:2px;
+	width:543px;
+	background:#36C;
+	float:left;
+}
+.audio{
+	 margin-top:30px;
+}
+
+#other{
+	float:left;
+}
+#other_top{
+	width:200px;
+	height:20px;
+	margin-top:20px;
+	font-size:16px;
+	font-weight:bold;
+	font-family:"Microsoft YaHei";
+	letter-spacing:5px;
+	color:#0078b6;
+}
+#other_list{
+	float:left;
+}
+#other_list a:hover{
+	text-decoration:underline;
+	color:#F00;
+}
+	
+.other_title{
+	font-size:14px;
+	line-height:26px;
+	margin-top:20px;
+	
+}
+.other_title span{
+	margin-right:10px;
+}
+.other_writer{
+	color:#999;
+	line-height:20px;
+	font-size:13px;
+}
+.other_info{
+	color:#666;
+	font-size:12ps;
+	line-height:20px;
+}
+.other_info span{
+	font-weight:bold;
+}
+	

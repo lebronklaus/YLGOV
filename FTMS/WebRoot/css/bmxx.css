@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+
+td{
+	font-family:"微软雅黑";
+	font-size:16px;
+	
+}
+.addone {
+	width:700px;
+	margin:20px 0px 0px 20px;
+}

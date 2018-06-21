@@ -1,0 +1,66 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="yanggov:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/yanggov_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="yanggov" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="junit4" module-name="yanggov" />
+          <element id="library" level="module" name="c3p0-0.9.1.jar" module-name="yanggov" />
+          <element id="library" level="module" name="cglib-3.2.1.jar" module-name="yanggov" />
+          <element id="library" level="module" name="commons-beanutils-1.8.0.jar" module-name="yanggov" />
+          <element id="library" level="module" name="json-lib-2.3-jdk15.jar" module-name="yanggov" />
+          <element id="library" level="module" name="commons-lang-2.4.jar" module-name="yanggov" />
+          <element id="library" level="module" name="json_simple-1.1.jar" module-name="yanggov" />
+          <element id="library" level="module" name="freemarker-2.3.22.jar" module-name="yanggov" />
+          <element id="library" level="module" name="ognl-3.0.19.jar" module-name="yanggov" />
+          <element id="library" level="module" name="struts2-core-2.3.32.jar" module-name="yanggov" />
+          <element id="library" level="module" name="struts2-json-plugin-2.3.32.jar" module-name="yanggov" />
+          <element id="library" level="module" name="struts2-junit-plugin-2.3.32.jar" module-name="yanggov" />
+          <element id="library" level="module" name="commons-collections-3.2.2.jar" module-name="yanggov" />
+          <element id="library" level="module" name="commons-fileupload-1.3.2.jar" module-name="yanggov" />
+          <element id="library" level="module" name="commons-logging-1.1.3.jar" module-name="yanggov" />
+          <element id="library" level="module" name="xwork-core-2.3.32.jar" module-name="yanggov" />
+        </element>
+      </element>
+      <element id="library" level="module" name="antlr-2.7.6.jar" module-name="yanggov" />
+      <element id="library" level="module" name="asm-3.3.jar" module-name="yanggov" />
+      <element id="library" level="module" name="asm-commons-3.3.jar" module-name="yanggov" />
+      <element id="library" level="module" name="asm-tree-3.3.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/c3p0-0.9.1.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/cglib-3.2.1.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/commons-beanutils-1.8.0.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/commons-collections-3.2.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/commons-fileupload-1.3.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="commons-io-2.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/commons-lang-2.4.jar" module-name="yanggov" />
+      <element id="library" level="module" name="commons-lang3-3.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/commons-logging-1.1.3.jar" module-name="yanggov" />
+      <element id="library" level="module" name="concurrent-1.3.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="dom4j-1.6.1.jar" module-name="yanggov" />
+      <element id="library" level="module" name="ejb3-persistence.jar" module-name="yanggov" />
+      <element id="library" level="module" name="ezmorph-1.0.6.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/freemarker-2.3.22.jar" module-name="yanggov" />
+      <element id="library" level="module" name="hibernate3.jar" module-name="yanggov" />
+      <element id="library" level="module" name="hibernate-jpa-2.0-api-1.0.1.Final.jar" module-name="yanggov" />
+      <element id="library" level="module" name="javassist-3.11.0.GA.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/json_simple-1.1.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/json-lib-2.3-jdk15.jar" module-name="yanggov" />
+      <element id="library" level="module" name="jta.jar" module-name="yanggov" />
+      <element id="library" level="module" name="log4j.jar" module-name="yanggov" />
+      <element id="library" level="module" name="log4j-api-2.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="log4j-core-2.2.jar" module-name="yanggov" />
+      <element id="library" level="module" name="mysql-connector-java-5.0.5-bin.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/ognl-3.0.19.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/servlet-api.jar" module-name="yanggov" />
+      <element id="library" level="module" name="slf4j-api-1.6.1.jar" module-name="yanggov" />
+      <element id="library" level="module" name="slf4j-log4j12-1.6.1.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/struts2-core-2.3.32.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/struts2-json-plugin-2.3.32.jar" module-name="yanggov" />
+      <element id="library" level="module" name="D:/yangling/yanggov/WebRoot/WEB-INF/lib/struts2-junit-plugin-2.3.32.jar" module-name="yanggov" />
+      <element id="javaee-facet-resources" facet="yanggov/web/Web" />
+    </root>
+  </artifact>
+</component>

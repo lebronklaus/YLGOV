@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="cn.nwsuaf.gov.bean.RenCaiXuQiu" table="at_rencaixuqiu">
+<id name="id">
+	<generator class="assigned"/>
+</id>
+<property name="gangwei"/>
+<property name="renshu"/>
+<property name="daogangtime"/>
+<property name="discrip"/>
+<property name="sex"/>
+<property name="agerank"/>
+<property name="xueli"/>
+<property name="major"/>
+<property name="experience"/>
+<property name="shuoming"/>
+<property name="salary"/>
+<property name="shenhe"/>
+<property name="mark"/>
+<property name="inputdate"/>
+</class>
+</hibernate-mapping>

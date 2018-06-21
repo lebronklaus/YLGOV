@@ -1,0 +1,111 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="FTMS:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/FTMS_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="FTMS" />
+        </element>
+      </element>
+      <element id="library" level="module" name="antlr-2.7.7.jar" module-name="FTMS" />
+      <element id="library" level="module" name="aopalliance-1.0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="asm-3.3.jar" module-name="FTMS" />
+      <element id="library" level="module" name="aspectjweaver-1.6.9.jar" module-name="FTMS" />
+      <element id="library" level="module" name="c3p0-0.9.1.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="c3p0-0.9.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="cglib-nodep-2.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="classworlds-1.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-beanutils-1.7.0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-beanutils-1.8.0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-chain-1.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-collections-3.2.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-collections-3.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-dbcp-1.4.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-digester-2.0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-fileupload-1.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-fileupload-1.3.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-httpclient-3.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-io-2.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-lang-2.5.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-lang3-3.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-logging-1.1.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-logging-1.1.3.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-logging-api-1.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-pool-1.5.3.jar" module-name="FTMS" />
+      <element id="library" level="module" name="commons-validator-1.3.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="dom4j-1.6.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="ehcache-core-2.4.3.jar" module-name="FTMS" />
+      <element id="library" level="module" name="ezmorph-1.0.6.jar" module-name="FTMS" />
+      <element id="library" level="module" name="freemarker-2.3.22.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-c3p0-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-commons-annotations-4.0.1.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-core-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-ehcache-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-entitymanager-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-envers-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-infinispan-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-jpa-2.0-api-1.0.1.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-proxool-4.1.4.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="hibernate-validator-4.2.0.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="infinispan-core-5.1.4.FINAL.jar" module-name="FTMS" />
+      <element id="library" level="module" name="javassist-3.11.0.GA.jar" module-name="FTMS" />
+      <element id="library" level="module" name="javassist-3.15.0-GA.jar" module-name="FTMS" />
+      <element id="library" level="module" name="javax.servlet.jsp.jstl.jar" module-name="FTMS" />
+      <element id="library" level="module" name="javax.servlet-3.0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="jboss-logging-3.1.0.GA.jar" module-name="FTMS" />
+      <element id="library" level="module" name="jboss-marshalling-1.3.11.GA.jar" module-name="FTMS" />
+      <element id="library" level="module" name="jboss-marshalling-river-1.3.11.GA.jar" module-name="FTMS" />
+      <element id="library" level="module" name="jboss-transaction-api_1.1_spec-1.0.0.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="jgroups-3.0.9.Final.jar" module-name="FTMS" />
+      <element id="library" level="module" name="json-lib-2.3-jdk15.jar" module-name="FTMS" />
+      <element id="library" level="module" name="jstl-impl.jar" module-name="FTMS" />
+      <element id="library" level="module" name="junit.jar" module-name="FTMS" />
+      <element id="library" level="module" name="log4j-1.2.16.jar" module-name="FTMS" />
+      <element id="library" level="module" name="mysql-connector-java-5.1.31-bin.jar" module-name="FTMS" />
+      <element id="library" level="module" name="ognl-3.0.19.jar" module-name="FTMS" />
+      <element id="library" level="module" name="ooxml-schemas-1.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.aop-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.asm-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.aspects-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.beans-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.context.support-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.context-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.core-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.expression-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.instrument.tomcat-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.instrument-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.jdbc-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.jms-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.orm-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.oxm-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.test-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.transaction-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.web.portlet-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.web.servlet-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.web.struts-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="org.springframework.web-3.1.1.RELEASE.jar" module-name="FTMS" />
+      <element id="library" level="module" name="oro-2.0.8.jar" module-name="FTMS" />
+      <element id="library" level="module" name="poi-3.6-20091214.jar" module-name="FTMS" />
+      <element id="library" level="module" name="poi-contrib-3.5-FINAL-20090928.jar" module-name="FTMS" />
+      <element id="library" level="module" name="poi-ooxml-3.5-beta6-20090622.jar" module-name="FTMS" />
+      <element id="library" level="module" name="poi-scratchpad-3.8-beta1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="proxool-0.8.3.jar" module-name="FTMS" />
+      <element id="library" level="module" name="rhq-pluginAnnotations-3.0.4.jar" module-name="FTMS" />
+      <element id="library" level="module" name="slf4j-api-1.6.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="sslext-1.2-0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="standard-1.1.2.jar" module-name="FTMS" />
+      <element id="library" level="module" name="stax2-api-3.1.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="struts2-convention-plugin-2.3.24.jar" module-name="FTMS" />
+      <element id="library" level="module" name="struts2-core-2.3.32.jar" module-name="FTMS" />
+      <element id="library" level="module" name="struts2-embeddedjsp-plugin-2.3.24.jar" module-name="FTMS" />
+      <element id="library" level="module" name="struts2-json-plugin-2.3.32.jar" module-name="FTMS" />
+      <element id="library" level="module" name="struts2-junit-plugin-2.3.32.jar" module-name="FTMS" />
+      <element id="library" level="module" name="struts2-spring-plugin-2.3.32.jar" module-name="FTMS" />
+      <element id="library" level="module" name="testng-5.10-jdk15.jar" module-name="FTMS" />
+      <element id="library" level="module" name="woodstox-core-asl-4.1.1.jar" module-name="FTMS" />
+      <element id="library" level="module" name="xmlbeans-2.6.0.jar" module-name="FTMS" />
+      <element id="library" level="module" name="xwork-core-2.3.32.jar" module-name="FTMS" />
+      <element id="javaee-facet-resources" facet="FTMS/web/Web" />
+    </root>
+  </artifact>
+</component>

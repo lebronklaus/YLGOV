@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<package name="inputnews" extends="default" namespace="/system/back">
+	<action name="peixunfind" method="findByPage" class="com.lee.action.PXnews">
+	<result name="success">
+	/system/layout/back/bpeixun/pxdelete.jsp
+	</result>
+	</action>
+	
+	<action name="peixunfb" method="save" class="com.lee.action.PXnews">
+	<result name="success">
+	/system/layout/back/bpeixun/success.jsp
+	</result>
+	</action>
+	
+	<action name="peixunde" method="delete" class="com.lee.action.PXnews">
+	<result name="success">
+	/system/layout/back/bpeixun/pxdelete.jsp
+	</result>
+	</action>
+	
+	<action name="zhengcefb" method="save" class="com.lee.action.ZCnews">
+	<result name="success">
+	/system/layout/back/bzhengce/success.jsp
+	</result>
+	</action>
+	<action name="zhengcefind" method="findByPage" class="com.lee.action.ZCnews">
+	<result name="success">
+	/system/layout/back/bzhengce/zcdelete.jsp
+	</result>
+	</action>
+	<action name="zhengcede" method="delete" class="com.lee.action.ZCnews">
+	<result name="success">
+	/system/layout/back/bzhengce/zcdelete.jsp
+	</result>
+	</action>
+	
+	<action name="kuaixunfb" method="save" class="com.lee.action.KXnews">
+	<result name="success">
+		/system/layout/back/bkuaixun/success.jsp
+	</result>
+	</action>
+	<action name="kuaixunfind" method="findByPage" class="com.lee.action.KXnews">
+	<result name="success">
+	/system/layout/back/bkuaixun/kxdelete.jsp
+	</result>
+	</action>
+	<action name="kuaixunde" method="delete" class="com.lee.action.KXnews">
+	<result name="success">
+	/system/layout/back/bkuaixun/kxdelete.jsp
+	</result>
+	</action>
+	</package>
+	</struts>

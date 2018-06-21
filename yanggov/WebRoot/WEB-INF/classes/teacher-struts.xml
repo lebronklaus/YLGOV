@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources">constant</constant>
+	<!-- 培训师资管理 -->
+	<package name="teacher-action" extends="json-default" namespace="/teacher">
+		<!-- 站内搜索  -->
+		
+		<action name="gotosearch" method="gotoSearch" class="cn.nwsuaf.gov.teacherManage.SearchUtil">
+			<result name="success">/searchpeixun.jsp</result>
+		</action>
+		<action name="search"  method="find" class="cn.nwsuaf.gov.teacherManage.SearchUtil">
+			<result name="success">/searchlist.jsp</result>
+		</action>
+		<!-- 以上两个站内搜索 -->
+		<action name="peixun"  method="goToPeiXun"  class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/peixun.jsp</result>
+		</action>
+		<action name="yuanqi" method="goToYuanQi"  class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/faxuqiu/yuanqi/yuanqi.jsp</result>
+		</action>
+		<action name="xuqiu" method="goToXuQiu"  class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/faxuqiu/before/xuqiuzhengji.jsp</result>
+		</action>
+		<!-- 以上三个用来主页到二级页面跳转 -->
+		<action name="tealist" method="find" class="cn.nwsuaf.gov.teacherManage.GetListAction">
+			<result name="success">/shizi/inforList.jsp</result>
+		</action>
+		
+		<action name="teaspe" method="findById" class="cn.nwsuaf.gov.teacherManage.GetListAction"  >
+			<result name="success">/shizi/specific.jsp</result>
+		</action>
+		
+		<!-- Back -->
+		<action name="teaback" class="cn.nwsuaf.gov.teacherManage.GetListAction"  >
+			<result name="success">/system/layout/back/tealist.jsp</result>
+		</action>
+		<action name="teaadd" class="cn.nwsuaf.gov.teacherManage.TeaTestAdd"  >
+			<result name="success">/system/layout/back/success.jsp</result>
+			<param name="imageDir">/upload/media/image</param>
+			
+		</action>
+		<action name="teaspebac" class="cn.nwsuaf.gov.teacherManage.GetListAction"  >
+	
+			<result name="success">/system/layout/back/teaspe.jsp</result>
+		</action>
+		<!-- 修改文档 -->
+		<action name="teaedibac" class="cn.nwsuaf.gov.teacherManage.GetListAction"  >
+			<result name="success">/system/layout/back/teaedit.jsp</result>
+		</action>
+		<!-- 实现后台分页 添加到 宋泽路里-->
+		<action name="teab" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction"  method="getAllTrainTeacher">
+			<result type="json"></result>
+		</action>
+		<action name="teasearch" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction"  method="getSearchTrainTeacher">
+			<result type="json"></result>
+		</action>
+		<action name="teadel" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction"  method="deletTrainTeacher">
+			<result name="success">/system/layout/back/tealist.jsp</result>
+		</action>
+		
+		<action name="deleimage" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction"  method="delePostImage">
+			<result name="success">/system/layout/back/image.jsp</result>
+		</action>
+		<action name="upload" class="cn.nwsuaf.gov.teacherManage.UploadAction" method="upload"  >
+			<result name="success">/system/layout/back/image.jsp</result>
+			<param name="imageDir">/upload/media/image</param>
+		</action>
+		<!-- 广告上传 -->
+		<action name="ggupload" class="cn.nwsuaf.gov.teacherManage.GuangGaoUploadAction" method="upload"  >
+			<result name="success">/system/layout/back/ggimage.jsp</result>
+			<param name="imageDir">/images</param>
+		</action>
+		<action name="teaaddback" class="cn.nwsuaf.gov.teacherManage.TeaAddAction"  method="addTeacher">
+			<result name="success">/system/layout/back/teaadd.jsp</result>
+		</action>
+		
+		<action name="xxwh" class="cn.nwsuaf.gov.teacherManage.EditTeaInfo"  method="xxwh">
+			<result name="success">/system/layout/back/teaedit.jsp</result>
+		</action>
+		
+		<action name="edittea" class="cn.nwsuaf.gov.teacherManage.EditTeaInfo"  method="editTeacher">
+			<result name="success">/system/layout/back/tealist.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 培训基地管理 -->
+	<package name="base-action" extends="json-default" namespace="/base">
+		<action name="baselist" method="find" class="cn.nwsuaf.gov.teacherManage.BaseUtils">
+			<result name="success">/shizi/baselist.jsp</result>
+		</action>
+		
+		<action name="basespe" method="findById" class="cn.nwsuaf.gov.teacherManage.BaseUtils"  >
+			<result name="success">/shizi/basespecific.jsp</result>
+		</action>
+		<!-- Back -->
+		<action name="baseback" class="cn.nwsuaf.gov.teacherManage.BaseUtils"  >
+			<result name="success">/system/layout/back/baselist.jsp</result>
+		</action>
+		<!-- 基地照片上传 -->
+		<action name="baseadd" class="cn.nwsuaf.gov.teacherManage.BaseAdd"  >
+			<result name="success">/system/layout/back/success.jsp</result>
+			<param name="imageDir">/upload/media/baseimage</param>
+		</action>
+		<action name="basespebac" class="cn.nwsuaf.gov.teacherManage.BaseUtils"  >
+			<result name="success">/system/layout/back/basespe.jsp</result>
+		</action>
+		<action name="baseedibac" class="cn.nwsuaf.gov.teacherManage.BaseUtils"  >
+			<result name="success">/system/layout/back/baseedit.jsp</result>
+		</action>
+		<!-- 实现后台分页 添加到 宋泽路里-->
+		<action name="baseb" class="cn.nwsuaf.gov.teacherManage.TrainBaseAction"  method="getAllTrainBase">
+			<result type="json"></result>
+		</action>
+		
+		<action name="basesearch" class="cn.nwsuaf.gov.teacherManage.TrainBaseAction"  method="getsearchTrainBase">
+			<result type="json"></result>
+		</action>
+		<action name="basedel" class="cn.nwsuaf.gov.teacherManage.TrainBaseAction"  method="deletTrainBase">
+			<result name="success">/system/layout/back/baselist.jsp</result>
+		</action>
+		<!--delete same picture  -->
+		<action name="deleimage1" class="cn.nwsuaf.gov.teacherManage.TrainBaseAction"  method="delePostImage1">
+			<result name="success">/system/layout/back/baseimage1.jsp</result>
+		</action>
+		<action name="deleimage2" class="cn.nwsuaf.gov.teacherManage.TrainBaseAction"  method="delePostImage2">
+			<result name="success">/system/layout/back/baseimage2.jsp</result>
+		</action>
+		<action name="upload1" class="cn.nwsuaf.gov.teacherManage.UploadAction" method="upload"  >
+			<result name="success">/system/layout/back/baseimage1.jsp</result>
+			<param name="imageDir">/upload/media/baseimage</param>
+		</action>
+		<action name="upload2" class="cn.nwsuaf.gov.teacherManage.UploadAction" method="upload"  >
+			<result name="success">/system/layout/back/baseimage2.jsp</result>
+			<param name="imageDir">/upload/media/baseimage</param>
+		</action>
+		<action name="baseaddback" class="cn.nwsuaf.gov.teacherManage.BaseAddAction"  method="addBase">
+			<result name="success">/system/layout/back/baseadd.jsp</result>
+		</action>
+		<action name="xxwh" class="cn.nwsuaf.gov.teacherManage.EditBaseInfo"  method="xxwh">
+			<result name="success">/system/layout/back/baseedit.jsp</result>
+		</action>
+		
+		<action name="editbase" class="cn.nwsuaf.gov.teacherManage.EditBaseInfo"  method="editBase">
+			<result name="success">/system/layout/back/baselist.jsp</result>
+		</action>
+	</package>
+	
+	
+	<!--培训资源管理  -->
+	<package name="res-action" extends="json-default" namespace="/res">
+		<action name="reslist" method="find" class="cn.nwsuaf.gov.teacherManage.RecourseUtils">
+			<result name="success">/shizi/trainres.jsp</result>
+		</action>
+		
+		<action name="ressp2" method="findSp" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/shizi/resvedlist.jsp</result>
+		</action>
+		<action name="resgb2" method="findGb" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/shizi/resvedlist.jsp</result>
+		</action>
+		<action name="reswg2" method="findWg" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/shizi/resvedlist.jsp</result>
+		</action>
+		<!-- 上面三个是专家视频库，广播演讲稿，专家文稿库的二级页面 -->
+		<action name="resved" method="findById" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/shizi/zjsp.jsp</result>
+		</action>
+		<action name="resbro" method="findById" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/shizi/zjgb.jsp</result>
+		</action>
+		<action name="reswg" method="findById" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/shizi/zjwg.jsp</result>
+		</action>
+		<action name="zjzp" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/zjpeixun.jsp</result>
+		</action>
+		
+		<!-- Back -->
+		<action name="resback" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/system/layout/back/reslist.jsp</result>
+		</action>
+		<action name="resadd" class="cn.nwsuaf.gov.teacherManage.ResAdd"  >
+			<result name="success">/system/layout/back/success.jsp</result>
+			<param name="spDir">/upload/media/sp</param>
+			<param name="gbDir">/upload/media/gb</param>
+			<param name="wgDir">/upload/media/wg</param>
+		</action>
+		<action name="resspebac" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/system/layout/back/resspe.jsp</result>
+		</action>
+		<action name="resedibac" class="cn.nwsuaf.gov.teacherManage.RecourseUtils"  >
+			<result name="success">/system/layout/back/resedit.jsp</result>
+		</action>
+		
+		<!-- 实现后台分页 添加到 宋泽路里-->
+		<action name="resbacklist" class="cn.nwsuaf.gov.teacherManage.TrainResAction"  method="getAllTrainRes">
+			<result type="json"></result>
+		</action>
+		<action name="ressearch" class="cn.nwsuaf.gov.teacherManage.TrainResAction"  method="getsearchTrainRes">
+			<result type="json"></result>
+		</action>
+		<action name="resdel" class="cn.nwsuaf.gov.teacherManage.TrainResAction"  method="deletTrainRes">
+			<result name="success">/system/layout/back/reslist.jsp</result>
+		</action>
+		
+		<action name="resaddback" class="cn.nwsuaf.gov.teacherManage.ResAddAction"  method="addRes">
+			<result name="success">/system/layout/back/resadd.jsp</result>
+		</action>
+		
+		<action name="upload" class="cn.nwsuaf.gov.teacherManage.ResUploadAction"  method="upload">
+			<result name="success">/system/layout/back/resimage.jsp</result>
+			<param name="spDir">/upload/media/sp</param>
+			<param name="gbDir">/upload/media/gb</param>
+			<param name="wgDir">/upload/media/wg</param>
+		</action>
+		
+		<action name="xxwh" class="cn.nwsuaf.gov.teacherManage.EditResInfo"  method="xxwh">
+			<result name="success">/system/layout/back/resedit.jsp</result>
+		</action>
+		
+		<action name="editres" class="cn.nwsuaf.gov.teacherManage.EditResInfo"  method="editRes">
+			<result name="success">/system/layout/back/reslist.jsp</result>
+		</action>
+		
+		<!--delete same picture  -->
+		<action name="deleres" class="cn.nwsuaf.gov.teacherManage.TrainResAction"  method="delePostRes">
+			<result name="success">/system/layout/back/resimage.jsp</result>
+		</action>
+	</package>
+	
+</struts>    

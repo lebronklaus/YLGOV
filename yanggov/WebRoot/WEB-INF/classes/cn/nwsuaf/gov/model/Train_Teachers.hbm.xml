@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="cn.nwsuaf.gov.model">
+	<class name="Train_Teachers" table="train_teacher">
+		<id name="teacher_id">
+	<generator class="native"/>
+	
+</id>
+		<property name="teacher_name" column="teacher_name" />
+		<property name="teacher_sex" column="teacher_sex" />
+		<property name="teacher_workplace" column="teacher_workplace" />
+		<property name="teacher_inwork" column="teacher_inwork" />
+		<property name="teacher_university" column="teacher_university" />
+		<property name="teacher_major" column="teacher_major" />
+		<property name="teacher_professional" column="teacher_professional" />
+		<property name="teacher_address" column="teacher_address" />
+		<property name="teacher_email" column="teacher_email" />
+		<property name="teacher_profile" column="teacher_profile" />
+		<property name="teacher_phonenum" column="teacher_phonenum" />
+		<property name="teacher_path" column="teacher_path" />
+		
+	</class>
+</hibernate-mapping>

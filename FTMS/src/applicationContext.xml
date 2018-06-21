@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/context/spring-context.xsd"
+	xmlns:tx="http://www.springframework.org/schema/tx">
+
+
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/zynm?useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=round">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="123456"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+				<prop key="hibernate.format_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/ftms/entity/JPositionProvice.hbm.xml</value>
+				<value>com/ftms/entity/JPositionCity.hbm.xml</value>
+				<value>com/ftms/entity/JPositionCounty.hbm.xml</value>
+				<value>com/ftms/entity/JPositionTown.hbm.xml</value>
+				<value>com/ftms/entity/User.hbm.xml</value>
+				<value>com/ftms/entity/Admin.hbm.xml</value>
+				<value>com/ftms/entity/Achievement.hbm.xml</value>
+				<value>com/ftms/entity/Certificate.hbm.xml</value>
+				<value>com/ftms/entity/Results.hbm.xml</value>
+				<value>com/ftms/entity/Prof1.hbm.xml</value>
+				<value>com/ftms/entity/Prof2.hbm.xml</value>
+				<value>com/ftms/entity/Exam.hbm.xml</value>
+				<value>com/ftms/entity/Tiku.hbm.xml</value>
+				<value>com/ftms/entity/Shiti.hbm.xml</value>
+				<value>com/ftms/entity/Shenyan.hbm.xml</value>
+				<value>com/ftms/entity/Superadmin.hbm.xml</value>
+				<value>com/ftms/entity/Address.hbm.xml</value>
+				<value>com/ftms/entity/YuanQiUser.hbm.xml</value>
+				</list>
+		</property>
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- Action -->
+	<bean id="PanJuanAction" class="com.ftms.action.PanJuanAction">
+		<property name="panJuanService" ref="PanJuanService"></property>
+	</bean>
+	<bean id="PropertiesAction" class="com.ftms.action.PropertiesAction"></bean>
+	<bean id="ZuJuanAction" class="com.ftms.action.ZuJuanAction">
+		<property name="zujuanService" ref="ZuJuanService"></property>
+		<property name="shitiDAO" ref="ShitiDAO"></property>
+	</bean>
+	<bean id="TikuCURDAction" class="com.ftms.action.TikuCURDAction">
+		<property name="tikuService" ref="TikuService"></property>
+	</bean>
+	<bean id="UserloginAction" class="com.ftms.action.UserloginAction">
+		<property name="userService" ref="UserService"/>
+		<property name="yuanqiuserService" ref="YuanQiUserService"/>
+	</bean>
+	<bean id="AdminloginAction" class="com.ftms.action.AdminloginAction">
+		<property name="adminService" ref="AdminService"/>
+		<property name="superadminService" ref="SuperadminService"/>
+	</bean>
+	<bean id="UserFaceAction" class="com.ftms.action.UserFaceAction">
+		<property name="userService" ref="UserService"/>
+		<property name="examService" ref="ExamService"/>
+		<property name="resultsService" ref="ResultsService"/>
+		<property name="shenyanService" ref="ShenyanService"/>
+		<property name="locationService" ref="LocationService"/>
+	</bean>
+	<bean id="RegisterAction" class="com.ftms.action.RegisterAction">
+		<property name="userService" ref="UserService"/>
+		<property name="locationService" ref="LocationService"/>
+		<property name="profService" ref="ProfService"/>
+	</bean>
+	<bean id="YuanQiRegisterAction" class="com.ftms.action.YuanQiRegisterAction">
+		<property name="userService" ref="UserService"/>
+		<property name="yuanqiservice" ref="YuanQiUserService"/>
+	</bean>
+	<bean id="UserInfoAction" class="com.ftms.action.UserInfoAction">
+		<property name="userService" ref="UserService"/>
+		<property name="locationService" ref="LocationService"/>
+		<property name="profService" ref="ProfService"/>
+	</bean>
+	<bean id="UploadAction" class="com.ftms.action.UploadAction">
+	</bean>
+	<bean id="BmxxAction" class="com.ftms.action.BmxxAction">
+		<property name="userService" ref="UserService"/>
+		<property name="examService" ref="ExamService"/>
+	</bean>
+	<bean id="JgcxAction" class="com.ftms.action.JgcxAction">
+		<property name="examService" ref="ExamService"/>
+		<property name="resultsService" ref="ResultsService"/>
+		<property name="shenyanService" ref="ShenyanService"/>
+		<property name="locationService" ref="LocationService"/>
+	</bean>
+	<bean id="KsshAction" class="com.ftms.action.KsshAction">
+		<property name="examService" ref="ExamService"/>
+	</bean>
+	<bean id="RysyAction" class="com.ftms.action.RysyAction">
+		<property name="shenyanService" ref="ShenyanService"/>
+	</bean>
+	<bean id="KspsAction" class="com.ftms.action.KspsAction">
+		<property name="resultsService" ref="ResultsService"/>
+	</bean>
+	<bean id="QgsjAction" class="com.ftms.action.QgsjAction">
+		<property name="dataAnalysisService" ref="DataAnalysisService"/>
+		<property name="resultsService" ref="ResultsService"/>
+		<property name="exportService" ref="ExportService"/>
+	</bean>
+	<bean id="SfsjAction" class="com.ftms.action.SfsjAction">
+		<property name="dataAnalysisService" ref="DataAnalysisService"/>
+		<property name="resultsService" ref="ResultsService"/>
+		<property name="exportService" ref="ExportService"/>
+	</bean>
+	<bean id="CssjAction" class="com.ftms.action.CssjAction">
+		<property name="dataAnalysisService" ref="DataAnalysisService"/>
+		<property name="resultsService" ref="ResultsService"/>
+		<property name="exportService" ref="ExportService"/>
+	</bean>
+	<bean id="XjsjAction" class="com.ftms.action.XjsjAction">
+		<property name="dataAnalysisService" ref="DataAnalysisService"/>
+		<property name="resultsService" ref="ResultsService"/>
+		<property name="exportService" ref="ExportService"/>
+	</bean>
+	<bean id="LoadSelectAction" class="com.ftms.action.LoadSelectAction">
+		<property name="locationService" ref="LocationService"/>
+		<property name="profService" ref="ProfService"/>
+		<property name="userService" ref="UserService"/>
+	</bean>
+	<bean id="AchievementAction" class="com.ftms.action.AchievementAction">
+		<property name="achievementService" ref="AchievementService"/>
+	</bean>
+	<bean id="CertificateAction" class="com.ftms.action.CertificateAction">
+		<property name="certificateService" ref="CertificateService"/>
+	</bean>
+	<bean id="UserManageAction" class="com.ftms.action.UserManageAction">
+		<property name="userService" ref="UserService"/>
+	</bean>
+	<bean id="SuperadminAction" class="com.ftms.action.SuperadminAction">
+		<property name="adminService" ref="AdminService"/>
+		<property name="superadminService" ref="SuperadminService"/>
+	</bean>
+	<!-- Service -->
+	<bean id="AdminService" class="com.ftms.serviceImpl.AdminServiceImpl">
+		<property name="adminDAO" ref="AdminDAO" />
+	</bean>
+	<bean id="UserService" class="com.ftms.serviceImpl.UserServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="yuanqiuserService" ref="YuanQiUserService" />
+	</bean>
+	<bean id="ExamService" class="com.ftms.serviceImpl.ExamServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="examDAO" ref="ExamDAO" />
+	</bean>
+	<bean id="ResultsService" class="com.ftms.serviceImpl.ResultsServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="resultsDAO" ref="ResultsDAO" />
+		<property name="checkDAO" ref="ShenyanDAO" />
+	</bean>
+	<bean id="ShenyanService" class="com.ftms.serviceImpl.ShenyanServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="shenyanDAO" ref="ShenyanDAO" />
+		<property name="resultsdao" ref="ResultsDAO" />
+	</bean>
+	<bean id="CertificateService" class="com.ftms.serviceImpl.CertificateServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="certificateDAO" ref="CertificateDAO" />
+	</bean>
+	<bean id="AchievementService" class="com.ftms.serviceImpl.AchievementServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="achievementDAO" ref="AchievementDAO" />
+	</bean>
+	<bean id="DataAnalysisService" class="com.ftms.serviceImpl.DataAnalysisServiceImpl">
+		<property name="resultsDAO" ref="ResultsDAO" />
+	</bean>
+	<bean id="LocationService" class="com.ftms.serviceImpl.LocationServiceImpl">
+		<property name="jPositionProviceDAO" ref="JPositionProviceDAO" />
+		<property name="jPositionCityDAO" ref="JPositionCityDAO" />
+		<property name="jPositionCountyDAO" ref="JPositionCountyDAO" />
+		<property name="jPositionTownDAO" ref="JPositionTownDAO" />
+		<property name="addressDAO" ref="AddressDAO"/>
+	</bean>
+		<bean id="ProfService" class="com.ftms.serviceImpl.ProfServicImpl">
+		<property name="prof1DAO" ref="Prof1DAO" />
+		<property name="prof2DAO" ref="Prof2DAO" />
+	</bean>
+	<bean id="PanJuanService" class="com.ftms.serviceImpl.PanJuanServiceImpl">
+		<property name="shitiDAO" ref="ShitiDAO"></property>
+	</bean>
+	<bean id="ZuJuanService" class="com.ftms.serviceImpl.ZuJuanServiceImpl">
+		<property name="tikuDAO" ref="TikuDAO"></property>
+	</bean>
+	<bean id="TikuService" class="com.ftms.serviceImpl.TikuServiceImpl">
+		<property name="tikuDAO" ref="TikuDAO"></property>
+	</bean>
+	<bean id="SuperadminService" class="com.ftms.serviceImpl.SuperadminServiceImpl">
+		<property name="adminDAO" ref="AdminDAO"/>
+		<property name="superadminDAO" ref="SuperadminDAO"/>
+	</bean>
+	<bean id="ExportService" class="com.ftms.serviceImpl.ExportServiceImpl">
+	</bean>
+	<bean id="YuanQiUserService" class="com.ftms.serviceImpl.YuanQiUserServiceImpl">
+		<property name="yuanqiuserdao" ref="YuanQiUserDAO"/>
+	</bean>
+	
+	<!-- DAO -->
+	<bean id="JPositionProviceDAO" class="com.ftms.dao.JPositionProviceDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="JPositionCityDAO" class="com.ftms.dao.JPositionCityDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="JPositionCountyDAO" class="com.ftms.dao.JPositionCountyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="JPositionTownDAO" class="com.ftms.dao.JPositionTownDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.ftms.dao.UserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AdminDAO" class="com.ftms.dao.AdminDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AchievementDAO" class="com.ftms.dao.AchievementDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CertificateDAO" class="com.ftms.dao.CertificateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="Prof1DAO" class="com.ftms.dao.Prof1DAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ExamDAO" class="com.ftms.dao.ExamDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="Prof2DAO" class="com.ftms.dao.Prof2DAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<bean id="TikuDAO" class="com.ftms.dao.TikuDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ShitiDAO" class="com.ftms.dao.ShitiDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ResultsDAO" class="com.ftms.dao.ResultsDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"></ref>
+		</property>
+	</bean>
+	<bean id="ShenyanDAO" class="com.ftms.dao.ShenyanDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SuperadminDAO" class="com.ftms.dao.SuperadminDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AddressDAO" class="com.ftms.dao.AddressDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="YuanQiUserDAO" class="com.ftms.dao.YuanQiUserDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AllInsertAction" class="com.ftms.action.AllInsertAction">
+		<property name="allInsertService" ref="AllInsertService" />
+		<property name="locationService" ref="LocationService" />
+		<property name="profService" ref="ProfService" />
+	</bean>
+	<bean id="AllInsertService" class="com.ftms.serviceImpl.AllInsertServiceImpl">
+		<property name="userDAO" ref="UserDAO" />
+		<property name="resultsDAO" ref="ResultsDAO" />
+		<property name="certificateDAO" ref="CertificateDAO" />
+		<property name="examDAO" ref="ExamDAO" />
+		<property name="achievementDAO" ref="AchievementDAO" />
+		<property name="shenyanDAO" ref="ShenyanDAO" />
+		<property name="addressDAO" ref="AddressDAO" />
+	</bean>
+		<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- 手机端bean -->
+	<!-- 模拟考试 -->
+	<bean id="mobZuJuanAction" class="com.nwsuaf.mob.action.MobZuJuanAction">
+		<property name="zujuanService" ref="ZuJuanService"/>
+	</bean>
+	<!-- 用户登录 -->
+	<bean id="mobUserAction" class="com.nwsuaf.mob.action.MobUserAction">
+		<property name="userService" ref="UserService"></property>
+	</bean>
+	<!-- 结果查询 -->
+	<bean id="mobDeclareService" class="com.nwsuaf.mob.service.MobDeclareService">
+		<property name="resultsDAO" ref="ResultsDAO"></property>
+	</bean>
+	<bean id="mobDeclareAction" class="com.nwsuaf.mob.action.MobDeclareAction">
+		<property name="mobDeclareService" ref="mobDeclareService"></property>
+	</bean>
+	<!-- 报名信息下 -->
+	<bean id="mobAchAndCerAction" class="com.nwsuaf.mob.action.MobAchAndCerAction">
+		<property name="achievementService" ref="AchievementService"/>
+		<property name="certificateService" ref="CertificateService"/>
+	</bean>
+	<!-- 报名 信息上-->
+	<bean id="mobSignupDao" class="com.nwsuaf.mob.dao.MobSignupDao">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="mobSignupService" class="com.nwsuaf.mob.service.MobSignupService">
+		<property name="mobSignupDao" ref="mobSignupDao"/>
+	</bean>
+	<bean id="mobSignupAction" class="com.nwsuaf.mob.action.MobSignupAction">
+		<property name="mobSignupService" ref="mobSignupService"/>
+	</bean>
+	<bean id="downloadAction" class="com.nwsuaf.mob.download.DownLoadAction">
+	</bean>
+</beans>

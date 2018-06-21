@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="cn.nwsuaf.gov.bean.PeiXunXuQiu" table="at_peixunxuqiu">
+<id name="id">
+	<generator class="native"/>
+</id>
+<property name="companyname"/>
+<property name="lianxiren"/>
+<property name="tel"/>
+<property name="chuanzhen"/>
+<property name="email"/>
+<property name="content"/>
+<property name="time"/>
+<property name="peixunadd"/>
+<property name="guimo"/>
+<property name="peiheshixiang"/>
+<property name="shenhe"/>
+<property name="mark"/>
+<property name="inputdate"/>
+</class>
+</hibernate-mapping>

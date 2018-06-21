@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" 
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+
+	<constant name="struts.multipart.maxSize" value="10485760" />
+	<package name="user" namespace="/pages" extends="struts-default,json-default">
+		<action name="loginUser" class="UserloginAction" method="loginUser">
+			<result type="json" name="loginUser">
+				<param name="root">loginJSON</param>
+			</result>
+		</action>
+		<action name="passwordReset" class="UserloginAction" method="passwordReset">
+			<result name="success">login.jsp</result>
+		</action>
+		<action name="userlogin" class="UserloginAction" method="login">
+			<result name="login" type="redirectAction">userhome</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="userhome" class="UserloginAction" method="userhome">
+			<result name="login">userhome.jsp</result>
+		</action>
+		<action name="face" class="UserFaceAction" method="userFace">
+			<result name="userFace">userface.jsp</result>
+		</action>
+		<action name="faceload" class="UserFaceAction" method="faceload">
+			<result type="json" name="faceload">
+				<param name="root">faceJSON</param>
+			</result>
+		</action>
+		<action name="useraddress" class="UserFaceAction" method="useraddressload">
+			<result type="json" name="useraddressload">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="registerUser" class="RegisterAction" method="uploadUser">
+			<result name="uploadUser">userhome.jsp</result>
+		</action>
+		<action name="registerjudge" class="RegisterAction" method="judgeUser">
+			<result type="json" name="judgeUser">
+				<param name="root">userJSON</param>
+			</result>
+		</action>
+		<!-- by czt -->
+		<action name="registerYuanQiUser" class="YuanQiRegisterAction"
+			method="uploadYuanQi">
+			<result name="success">userhome.jsp</result>
+		</action>
+		<action name="registerYuanQijudge" class="YuanQiRegisterAction"
+			method="judgeYuanQiUser">
+			<result type="json" name="success">
+				<param name="root">yuanqijson</param>
+			</result>
+		</action>
+		<!-- by czt -->
+		<action name="registerAddress" class="RegisterAction" method="uploadAddress">
+			<result name="uploadAddress">userhome.jsp</result>
+		</action>
+		<action name="bmxx" class="BmxxAction" method="bmxx">
+			<result name="bmxx">bmxx.jsp</result>
+		</action>
+		<action name="achievement" class="AchievementAction" method="achievement">
+			<result type="json" name="achievement">
+				<param name="root">achievementJson</param>
+			</result>
+		</action>
+		<action name="certificate" class="CertificateAction" method="certificate">
+			<result type="json" name="certificate">
+				<param name="root">certificateJson</param>
+			</result>
+		</action>
+		<action name="*Achievement" class="AchievementAction" method="{1}Achievement">
+			<result name="Achievement">bmxx.jsp</result>
+		</action>
+		<action name="*Certificate" class="CertificateAction" method="{1}Certificate">
+			<result name="Certificate">bmxx.jsp</result>
+		</action>
+		<action name="saveExam" class="BmxxAction" method="saveExam">
+			<result name="saveExam ">bmxx.jsp</result>
+		</action>
+		<action name="bmxxjudge" class="BmxxAction" method="bmxxjudge">
+			<result type="json" name="bmxxjudge">
+				<param name="root">bmxxJSON</param>
+			</result>
+		</action>
+		<action name="bmaddress" class="UserFaceAction" method="addressload">
+			<result name="addressload">bmxx.jsp</result>
+		</action>
+		<action name="userprovince" class="LoadSelectAction" method="userprovince">
+			<result type="json" name="userprovince">
+				<param name="root">provinceJSON</param>
+			</result>
+		</action>
+		<action name="usercity" class="LoadSelectAction" method="usercity">
+			<result type="json" name="usercity">
+				<param name="root">cityJSON</param>
+			</result>
+		</action>
+		<action name="usercounty" class="LoadSelectAction" method="usercounty">
+			<result type="json" name="usercounty">
+				<param name="root">countyJSON</param>
+			</result>
+		</action>
+		<action name="usertown" class="LoadSelectAction" method="usertown">
+			<result type="json" name="usertown">
+				<param name="root">townJSON</param>
+			</result>
+		</action>
+		<action name="userprof1" class="LoadSelectAction" method="userprof1">
+			<result type="json" name="userprof1">
+				<param name="root">prof1JSON</param>
+			</result>
+		</action>
+		<action name="userprof2" class="LoadSelectAction" method="userprof2">
+			<result type="json" name="userprof2">
+				<param name="root">prof2JSON</param>
+			</result>
+		</action>
+		<action name="addressload" class="LoadSelectAction" method="useraddressload">
+			<result type="json" name="useraddressload">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="uploadAddress" class="LoadSelectAction" method="uploadAddress">
+			<result name="uploadAddress">xxwh.jsp</result>
+		</action>
+		<action name="xxwh*" class="LoadSelectAction" method="xxwh{1}">
+			<result type="json" name="userLocation">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="register*" class="LoadSelectAction" method="{1}search">
+			<result type="json" name="search">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="re_prof1" class="LoadSelectAction" method="prof1search">
+			<result type="json" name="search">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="re_prof2" class="LoadSelectAction" method="prof2search">
+			<result type="json" name="search">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="loaduser" class="UserInfoAction" method="xxwh">
+			<result name="xxwh">xxwh.jsp</result>
+		</action>
+		<action name="uploadUser" class="UserInfoAction" method="uploadUser">
+			<result name="uploadUser">xxwh.jsp</result>
+		</action>
+		<action name="imgUser" class="UserInfoAction" method="imgUser">
+			<result type="json" name="imgUser">
+				<param name="root">imgJSON</param>
+			</result>
+		</action>
+		<action name="jgcx" class="JgcxAction" method="jgcx">
+			<result name="jgcx">jgcx.jsp</result>
+		</action>
+		<action name="jgAddress" class="JgcxAction" method="addressload">
+			<result type="json" name="addressload">
+				<param name="root">jgcxJSON</param>
+			</result>
+		</action>
+		<action name="jgcxload_one" class="JgcxAction" method="jgcxload_one">
+			<result type="json" name="jgcxload">
+				<param name="root">jgcxJSON</param>
+			</result>
+		</action>
+		<action name="jgcxload_two" class="JgcxAction" method="jgcxload_two">
+			<result type="json" name="jgcxload">
+				<param name="root">jgcxJSON</param>
+			</result>
+		</action>
+		<action name="jgcx_sy" class="JgcxAction" method="shenyan">
+			<result type="json" name="shenyan">
+				<param name="root">jgcxJSON</param>
+			</result>
+		</action>
+		<action name="report" class="JgcxAction" method="report">
+			<result name="report">report.jsp</result>
+		</action>
+	</package>
+	<package name="student" namespace="/pages" extends="struts-default,json-default">
+		<action name="doUpload" class="UploadAction" method="upload">
+			<result name="input">upload.jsp</result>
+			<result name="success">image.jsp</result>
+
+		</action>
+		<action name="deleteimg" class="UploadAction" method="deleteimg">
+			<result type="json" name="deleteimg">
+				<param name="root">imgJSON</param>
+			</result>
+		</action>
+	</package>
+	<package name="admin" namespace="/pages" extends="struts-default,json-default">
+		<action name="loginAdmin" class="AdminloginAction" method="loginAdmin">
+			<result type="json" name="loginAdmin">
+				<param name="root">adminJSON</param>
+			</result>
+		</action>
+		<action name="adminlogin" class="AdminloginAction" method="login">
+			<result name="superlogin" type="redirectAction">superhome</result>
+			<result name="adminlogin" type="redirectAction">adminhome</result>
+			<result name="error">login.jsp</result>
+		</action>
+		<action name="superhome" class="AdminloginAction" method="adminhome">
+			<result name="login">superhome.jsp</result>
+		</action>
+		<action name="adminhome" class="AdminloginAction" method="adminhome">
+			<result name="login">adminhome.jsp</result>
+		</action>
+		<action name="resetpassword" class="SuperadminAction" method="resetpassword">
+			<result name="resetpassword">resetpassword.jsp</result>
+		</action>
+		<action name="superReset" class="SuperadminAction" method="superReset">
+			<result name="superReset">resetpassword.jsp</result>
+		</action>
+		<action name="adminReset" class="SuperadminAction" method="adminReset">
+			<result name="adminReset">resetpassword.jsp</result>
+		</action>
+		<action name="adminface" class="QgsjAction" method="Info">
+			<result name="Info">adminface.jsp</result>
+		</action>
+
+		<action name="kssh" class="KsshAction" method="kssh">
+			<result name="kssh">kssh.jsp</result>
+		</action>
+		<action name="ksshload" class="KsshAction" method="ksshload">
+			<result type="json" name="ksshload">
+				<param name="root">examJson</param>
+			</result>
+		</action>
+		<action name="*sh" class="KsshAction" method="examcheck">
+			<result name="examcheck">kssh.jsp</result>
+		</action>
+		<action name="userManage" class="UserManageAction" method="userManagement">
+			<result name="userManagement">userManagement.jsp</result>
+		</action>
+		<action name="userManageload" class="UserManageAction" method="userload">
+			<result type="json" name="userload">
+				<param name="root">userJson</param>
+			</result>
+		</action>
+		<action name="deleteUser" class="UserManageAction" method="deleteUser">
+			<result name="delete">userManagement.jsp</result>
+		</action>
+		<action name="rysy" class="RysyAction" method="rysy">
+			<result name="rysy">rysy.jsp</result>
+		</action>
+		<action name="rysyload" class="RysyAction" method="rysyload">
+			<result type="json" name="rysyload">
+				<param name="root">rysyJson</param>
+			</result>
+		</action>
+		<action name="*sy" class="RysyAction" method="rysycheck">
+			<result name="rysycheck">rysy.jsp</result>
+		</action>
+		<action name="kspsAdd" class="KspsAction" method="kspsAdd">
+			<result name="kspsAdd">ksps.jsp</result>
+		</action>
+		<action name="kspsload" class="KspsAction" method="kspsload">
+			<result type="json" name="kspsload">
+				<param name="root">kspsJson</param>
+			</result>
+		</action>
+		<action name="qgsj" class="QgsjAction" method="qgsj">
+			<result name="qgsj">qgsj.jsp</result>
+		</action>
+		<action name="qgsearchAll" class="QgsjAction" method="searchAll">
+			<result type="json" name="search">
+				<param name="root">QgsjJson</param>
+			</result>
+		</action>
+		<action name="qgexport" class="QgsjAction" method="exportExcel">
+		</action>
+		<action name="*qgsjJson" class="QgsjAction" method="{1}qgsjJson">
+			<result type="json" name="QgsjJson">
+				<param name="root">QgsjJson</param>
+			</result>
+		</action>
+		<action name="*sjsearch" class="LoadSelectAction" method="{1}sjsearch">
+			<result type="json" name="sjsearch">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="*show" class="LoadSelectAction" method="{1}show">
+			<result type="json" name="show">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="prof1search" class="LoadSelectAction" method="prof1search">
+			<result type="json" name="search">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="prof2search" class="LoadSelectAction" method="prof2search">
+			<result type="json" name="search">
+				<param name="root">loadJosn</param>
+			</result>
+		</action>
+		<action name="sfsj" class="SfsjAction" method="sfsj">
+			<result name="sfsj">sfsj.jsp</result>
+		</action>
+		<action name="sfInfo" class="SfsjAction" method="getInfo">
+			<result type="json" name="Info">
+				<param name="root">SfsjJson</param>
+			</result>
+		</action>
+		<action name="sfsearchAll" class="SfsjAction" method="searchAll">
+			<result type="json" name="searchAll">
+				<param name="root">SfsjJson</param>
+			</result>
+		</action>
+		<action name="*sfsjJson" class="SfsjAction" method="{1}sfsjJson">
+			<result type="json" name="sfsjJson">
+				<param name="root">SfsjJson</param>
+			</result>
+		</action>
+		<action name="sfexport" class="SfsjAction" method="exportExcel">
+		</action>
+		<action name="csInfo" class="CssjAction" method="getInfo">
+			<result type="json" name="Info">
+				<param name="root">CssjJson</param>
+			</result>
+		</action>
+		<action name="cssj" class="CssjAction" method="cssj">
+			<result name="cssj">cssj.jsp</result>
+		</action>
+		<action name="cssearchAll" class="CssjAction" method="searchAll">
+			<result type="json" name="searchAll">
+				<param name="root">CssjJson</param>
+			</result>
+		</action>
+		<action name="*cssjJson" class="CssjAction" method="{1}cssjJson">
+			<result type="json" name="cssjJson">
+				<param name="root">CssjJson</param>
+			</result>
+		</action>
+		<action name="csexport" class="CssjAction" method="exportExcel">
+		</action>
+		<action name="xjInfo" class="XjsjAction" method="getInfo">
+			<result type="json" name="Info">
+				<param name="root">XjsjJson</param>
+			</result>
+		</action>
+		<action name="xjsj" class="XjsjAction" method="xjsj">
+			<result name="cssj">xjsj.jsp</result>
+		</action>
+		<action name="xjsearchAll" class="XjsjAction" method="searchAll">
+			<result type="json" name="searchAll">
+				<param name="root">XjsjJson</param>
+			</result>
+		</action>
+		<action name="*xjsjJson" class="XjsjAction" method="{1}xjsjJson">
+			<result type="json" name="xjsjJson">
+				<param name="root">XjsjJson</param>
+			</result>
+		</action>
+		<action name="xjexport" class="XjsjAction" method="exportExcel">
+		</action>
+		<action name="adminAdd" class="SuperadminAction" method="adminAdd">
+			<result name="adminAdd">adminManagement.jsp</result>
+		</action>
+		<action name="addressManageload" class="LoadSelectAction"
+			method="addressload">
+			<result name="addressload">adminManagement.jsp</result>
+		</action>
+		<action name="uploadManageAddress" class="LoadSelectAction"
+			method="uploadAddress">
+			<result name="uploadAddress">adminManagement.jsp</result>
+		</action>
+		<action name="adminload" class="SuperadminAction" method="adminload">
+			<result type="json" name="adminload">
+				<param name="root">adminJSON</param>
+			</result>
+		</action>
+		<action name="deleteAdmin" class="SuperadminAction" method="adminDelete">
+			<result name="adminDelete">adminManagement.jsp</result>
+		</action>
+		<action name="uploadUserManage" class="UserInfoAction" method="uploadUserManage">
+			<result name="uploadUser">userManagement.jsp</result>
+		</action>
+	</package>
+	<package name="onlinetest" namespace="/pages/onlinetest"
+		extends="struts-default,json-default">
+		<action name="index" class="PropertiesAction" method="index">
+			<result name="index">index.jsp</result>
+		</action>
+		<action name="tiku" class="PropertiesAction" method="tiku">
+			<result name="tiku">tiku.jsp</result>
+		</action>
+		<action name="saveprops" class="PropertiesAction" method="saveprops">
+			<result name="saveprops">tiku.jsp</result>
+		</action>
+		<action name="zujuan" class="ZuJuanAction" method="zuJuan">
+			<result name="zujuan">question.jsp</result>
+		</action>
+		<action name="search" class="TikuCURDAction" method="searchQuestion">
+			<result name="search" type="json">
+				<param name="root">searchResultJson</param>
+			</result>
+		</action>
+		<action name="*question" class="TikuCURDAction" method="{1}Question">
+			<result name="{1}">tiku.jsp</result>
+		</action>
+		<action name="panti" class="PanJuanAction" method="panti">
+			<result name="panti">question.jsp</result>
+		</action>
+		<action name="panjuan" class="PanJuanAction" method="panjuan">
+			<result name="panjuan">answer.jsp</result>
+		</action>
+		<action name="unload" class="PanJuanAction" method="unload">
+			<result name="unload">question.jsp</result>
+		</action>
+		<action name="miss" class="PanJuanAction" method="miss">
+			<result name="miss" type="json">
+				<param name="root">miss</param>
+			</result>
+		</action>
+	</package>
+	<package name="allinsert" namespace="/pages"
+		extends="struts-default,json-default">
+		<action name="allinsert_user" class="AllInsertAction" method="uploadUser">
+			<result name="uploadUser">allinsert.jsp</result>
+		</action>
+		<action name="allinsert_userexist" class="AllInsertAction"
+			method="judgeUser">
+			<result type="json" name="judgeUser">
+				<param name="root">userJSON</param>
+			</result>
+		</action>
+		<action name="allinsert_addr" class="AllInsertAction" method="uploadAddress">
+			<result name="uploadAddress">allinsert.jsp</result>
+		</action>
+		<action name="allinsert_exam" class="AllInsertAction" method="saveExam">
+			<result name="saveExam">allinsert.jsp</result>
+		</action>
+		<action name="allinsert_result" class="AllInsertAction" method="allinsert_result">
+			<result name="allinsert_result">allinsert.jsp</result>
+		</action>
+		<action name="uploadUser_cer" class="AllInsertAction" method="uploadUser_cer">
+			<result name="uploadUser_cer">allinsert.jsp</result>
+		</action>
+		<action name="allinsert_ach" class="AllInsertAction" method="allinsert_ach">
+			<result name="allinsert_ach">allinsert.jsp</result>
+		</action>
+		<action name="allinsert_sy" class="AllInsertAction" method="allinsert_sy">
+			<result name="allinsert_sy">allinsert.jsp</result>
+		</action>
+	</package>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+	<!-- 手机端action -->
+	<package name="mobile" namespace="/mobile" extends="struts-default,json-default">
+		<!-- 模拟考试之获取试卷 -->
+		<action name="mobZuJuan" class="mobZuJuanAction" method="getPaper">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<!-- 模拟考试之获取题目数量、分数以及时间 -->
+		<action name="getCountAndScore" class="mobZuJuanAction" method="getCountAndScore">
+			<result name="success" type="json">
+				<param name="root">qcs</param>
+			</result>
+		</action>
+		<!-- 用户登录 -->
+		<action name="userlogin" class="mobUserAction" method="login">
+			<result name="login" type="json">
+				<param name="root">successinfo</param>
+			</result>
+			<result name="error" type="json">
+				<param name="root">errorinfo</param>
+			</result>
+		</action>
+		<!-- 用户信息 -->
+		<action name="userinfo" class="mobUserAction" method="getUserInfo">
+			<result name="success" type="json">
+				<param name="root">userinfo</param>
+			</result>
+		</action>
+		<!-- 结果查询 -->
+		<action name="declare" class="mobDeclareAction" method="getUserResult">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<!-- 报名信息下 -->
+		<action name="achandcer" class="mobAchAndCerAction" method="getAchAndCer">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<!-- 报名信息上 -->
+		<action name="signup" class="mobSignupAction" method="getSignupInfo">
+			<result name="success" type="json">
+				<param name="root">list</param>
+			</result>
+		</action>
+		<action name="download" class="downloadAction">
+			<result type="stream">
+				<param name="contentType">contentType</param>
+				<param name="contentDisposition">attachment;filename=${filename}</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+	</package>
+	<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+</struts>    

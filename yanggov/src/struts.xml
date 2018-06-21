@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.multipart.saveDir" value="d:\"></constant>
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.multipart.maxSize" value="200000000000" />
+	<!-- <constant name="struts.enable.DynamicMethodInvocation" value="true">constant</constant> -->
+	<!-- 上面注释掉的的是否可以使用动态调用方法的配置。  -->
+	<constant name="struts.devMode" value="false" />
+
+	<package name="default" namespace="/" extends="struts-default,json-default">
+
+
+		<action name="loginAction" class="com.lee.action.LoginAction"
+			method="Login">
+			<result name="success">/system/layout/main.jsp</result>
+			<result name="error">/backstage/login.jsp</result>
+		</action>
+		<action name="regist" method="registfind" class="com.lee.action.LoginAction">
+			<result name="success">/backstage/success.jsp</result>
+			<result name="error">/backstage/regist.jsp</result>
+		</action>
+		<!-- 文件上传 -->
+		<action name="Tnews" class="com.lee.action.TZnews">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		
+			<action name="Tnewsgb" class="com.lee.action.TZnews1" method="save">
+			 
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+<!-- 		再次文件的上传 --> 
+				<action name="Tnewsfile" class="com.lee.action.TZnews1" method="upload">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="dongtaifile" class="com.lee.action.PXnews1" method="uploadfile">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		
+			<action name="zhnegcefile" class="com.lee.action.ZCnews1" method="uploadfile">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="kuaixunfile" class="com.lee.action.KXnews1" method="uploadfile">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		 <action name="Tnewsfile1" class="com.lee.action.TZnews1" method="uploadzt">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+			 <action name="dongtaifile1" class="com.lee.action.PXnews1" method="uploaddt">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+			 <action name="zhengcefile1" class="com.lee.action.ZCnews1" method="uploadzc">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="kuaixunfile1" class="com.lee.action.KXnews1" method="uploadkx">
+			<param name="savePath">/uploadfile</param>
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="Tnews1" class="com.lee.action.TZnews" method="find">
+			<result name="success">/system/layout/tzdelete.jsp</result>
+		</action>
+		<!--  合并小鲁子 morenewsgd-->
+		 
+ 
+		<action name="Tnews11" class="com.lee.action.TZnews1" method="getAllTrainTeacher">
+			<result type="json"></result>
+		</action>
+		<action name="Tnews1search" class="com.lee.action.TZnews1" method="getfind">
+			<result type="json" name="result">
+					<param name="root">achievementJson</param>
+					</result>
+		</action>
+		<action name="pxsearchwk" class="com.lee.action.PXnews1" method="getfind">
+			<result type="json" name="result">
+					<param name="root">achievementJson</param>
+					</result>
+		</action>
+			<action name="zcsearch" class="com.lee.action.ZCnews1" method="getfind">
+			<result type="json" name="result">
+					<param name="root">achievementJson</param>
+					</result>
+		</action>
+			<action name="kxsearch" class="com.lee.action.KXnews1" method="getfind">
+			<result type="json" name="result">
+					<param name="root">achievementJson</param>
+					</result>
+		</action>
+<!-- 		插入图片 -->
+		<action name="ImgUpload" class="com.lee.action.ImgUploadAction" method="imgUpload">
+		</action>
+		<action name="peixunfind" class="com.lee.action.PXnews1"
+			method="getAllTrainTeacher">
+			<result type="json"></result>
+		</action>
+		<action name="zhengcefind" class="com.lee.action.ZCnews1"
+			method="getAllTrainTeacher">
+			<result type="json"></result>
+		</action>
+		<action name="kuaixunfind" class="com.lee.action.KXnews1"
+			method="getAllTrainTeacher">
+			<result type="json"></result>
+		</action>
+		 <action name="tzrevise" class="com.lee.action.TZnews1" method="tzrevise">
+			<result name="success">/system/layout/tzrevise.jsp</result>
+		</action>
+		<action name="tzedit" class="com.lee.action.TZnews1"
+		method="editTZ">
+		<result name="success">/system/layout/tzdelete1.jsp</result>
+		</action>
+		 <action name="tzdel" class="com.lee.action.TZnews1"
+		method="deletezc">
+		<result name="success">/system/layout/tzdelete1.jsp</result>
+		</action>
+		
+			 <action name="pxdel" class="com.lee.action.PXnews1"
+		method="deletepx">
+		<result name="success">/system/layout/back/bpeixun/pxdelete1.jsp</result>
+		</action>
+			 <action name="zcdel" class="com.lee.action.ZCnews1"
+		method="deletezc">
+		<result name="success">/system/layout/back/bzhengce/zcdelete1.jsp</result>
+		</action>
+			 <action name="kxdel" class="com.lee.action.KXnews1"
+		method="deletekx">
+		<result name="success">/system/layout/back/bkuaixun/kxdelete1.jsp</result>
+		</action>
+		 <action name="pxrevise" class="com.lee.action.PXnews1" method="pxrevise">
+			<result name="success">/system/layout/back/bpeixun/pxrevise.jsp</result>
+		</action>
+		
+		 <action name="zcrevise" class="com.lee.action.ZCnews1" method="zcrevise">
+			<result name="success">/system/layout/back/bzhengce/zcrevise.jsp</result>
+		</action>
+		 <action name="kxrevise" class="com.lee.action.KXnews1" method="kxrevise">
+			<result name="success">/system/layout/back/bkuaixun/kxrevise.jsp</result>
+		</action>
+		<action name="Tnews2" class="com.lee.action.TZnews" method="delete">
+			<result name="success">/system/layout/tzdelete.jsp</result>
+		</action>
+			<action name="pxedit" class="com.lee.action.PXnews1"
+		method="editPX">
+		<result name="success">/system/layout/back/bpeixun/pxdelete1.jsp</result>
+		</action>
+		
+		<action name="dongtaigb" class="com.lee.action.PXnews1"
+		method="save">
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		
+			<action name="zhengcegb" class="com.lee.action.ZCnews1"
+		method="save">
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+			<action name="kuaixungb" class="com.lee.action.KXnews1"
+		method="save">
+			<result name="success">/system/layout/success.jsp</result>
+
+			<result name="error">/error.jsp</result>
+		</action>
+		<action name="zcedit" class="com.lee.action.ZCnews1"
+		method="editZC">
+		<result name="success">/system/layout/back/bzhengce/zcdelete1.jsp</result>
+		</action>
+		
+		
+		
+	<action name="kxedit" class="com.lee.action.KXnews1"
+		method="editKX">
+		<result name="success">/system/layout/back/bkuaixun/kxdelete1.jsp</result>
+		</action>
+		<action name="getAllList" class="com.lee.action.Search" method="execute">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<!-- 文件上传 -->
+		<!-- <action name="upload" class="com.lee.action.TZnews" > -->
+		<!-- <param name="savePath">/upload</param> -->
+		<!-- <result>/system/layout/success.jsp</result> -->
+		<!-- </action> -->
+
+		<!--下载文件的配置文件 -->
+		<action name="down" method="downfile" class="com.lee.action.Search">
+
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream;charset=ISO8859-1</param>
+				<!-- <param name="contentType">application/zip</param> -->
+				<param name="inputName">inputStream</param>
+				<param name="contentDisposition">attachment;filename="${downloadFileName}"</param>
+				<param name="bufferSize">4096</param>
+			</result>
+		</action>
+	</package>
+
+
+	<include file="teacher-struts.xml"></include>
+	<include file="xuqiu.xml"></include>
+	<include file="inputdata.xml" />
+	<include file="houtaidata.xml" />
+</struts>
