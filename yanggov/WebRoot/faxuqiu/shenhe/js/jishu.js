@@ -6,7 +6,7 @@ $.extend($.messager.defaults,{
 		function formatOper(val, row, index) {
 			return '<a href="javascript:void(0)" onclick="showUser(' + index
 					+ ')">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="shenhe(' + index
-					+ ')">审核</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="dele()">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+					+ ')">发布</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="dele()">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 		}
 		
 		//查看教师信息
@@ -34,12 +34,12 @@ $.extend($.messager.defaults,{
 		function shenhe(index){
 			var rows = $('#dg').datagrid('getSelections');
 			if (rows.length > 0) {
-				$.messager.confirm('审核', '选中的技术是否审核?', function(r) {
+				$.messager.confirm('发布', '选中的技术是否发布?', function(r) {
 					if (r) {
 						for (var i = 0; i < rows.length; i++) {
 							var row = rows[i];
 							if(row.shenhe=='1'){
-								alert("已经审核，请不要重复审核！");
+								alert("已经发布，请不要重复发布！");
 								break;
 							}else{
 								$.ajax({

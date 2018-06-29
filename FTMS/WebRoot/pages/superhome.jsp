@@ -233,6 +233,32 @@ function reload(){
 }
 
 /**
+**by xiuhao.yan on 06/06/2018
+**/
+function corpList(){
+    $('#show').attr("src","../../yanggov/faxuqiu/shenhe/yuanqishenhe.jsp");
+}
+function addCorp(){
+	$('#show').attr("src","../../yanggov/faxuqiu/yuanqi/yuanqiadd.jsp");
+	resizeres();
+}
+function demandList(){
+    $('#show').attr("src","../../yanggov/faxuqiu/shenhe/peixunshenhe.jsp");
+}
+function addTrainDemand(){
+    $('#show').attr("src","../../yanggov/faxuqiu/peixunxuqiu.jsp");
+    resizeres();
+}
+function addMasterDemand(){
+    $('#show').attr("src","../../yanggov/faxuqiu/rencaixuqiu.jsp");
+    resizeres();
+}
+function addTechDemand(){
+    $('#show').attr("src","../../yanggov/faxuqiu/jishuxuqiu.jsp");
+    resizeres();
+}
+
+/**
 **by czt for advice_add
 **/
 
@@ -320,6 +346,8 @@ function guanggao(){
                         <div style="margin:10px 0;"></div>
                     	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addTea()">发布师资信息</a>
                     </div>
+                    <!-- annotated by xiuhao.yan -->
+                    <!-- 
                     <div title="基地管理" style="padding:10px;">
                         <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="baseList()">基地列表</a>
                         <div style="margin:10px 0;"></div>
@@ -339,6 +367,32 @@ function guanggao(){
                     	<div style="margin:10px 0;"></div>
                     	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="yuanqi()">园企审核</a>
                     </div>
+                     -->
+                     <div title="基地管理" style="padding:10px;">
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="baseList()">培训分中心列表</a>
+                        <div style="margin:10px 0;"></div>
+                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addBase()">发布培训分中心信息</a>
+                    </div>
+                    <div title="资源管理" style="padding:10px;">
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="resList()">资源列表</a>
+                        <div style="margin:10px 0;"></div>
+                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addRes()">发布培训资源</a>
+					</div>
+					<!-- by xiuhao.yan on 06/06/2018-->
+					<div title="园企管理" style="padding:10px;">
+						<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="corpList()">园企列表</a>
+						<div style="margin:10px 0;"></div>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addCorp()">发布园企信息</a>
+					</div>
+					<div title="需求管理" style="padding:10px;">
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="demandList()">需求列表</a>
+                        <div style="margin:10px 0;"></div>
+                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addTrainDemand()">发布培训需求</a>
+                        <div style="margin:10px 0;"></div>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addMasterDemand()">发布人才需求</a>
+                        <div style="margin:10px 0;"></div>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addTechDemand()">发布技术需求</a>
+					</div>
                     <div title="广告管理" style="padding:10px;">
                         <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="guanggao()">广告投放</a>
                     </div>

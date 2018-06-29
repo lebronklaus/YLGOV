@@ -77,7 +77,7 @@ public class SuperadminServiceImpl implements SuperadminService {
 			ad.setAdminname(adminname);
 
 		}
-			adminDAO.merge(ad);
+		adminDAO.merge(ad);
 		return false;
 	}
 

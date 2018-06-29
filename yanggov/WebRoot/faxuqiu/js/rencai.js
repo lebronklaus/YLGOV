@@ -12,7 +12,7 @@ function uploadUser() {
 					daogangtime : $('#daogangtime').textbox('getValue'),
 					salary : $('#salary').textbox('getValue'),
 					discrip : $('#inputNote1').val(),
-					sex : $('#sex').combobox('getValue'),
+					sex : $('#region').textbox('getValue'),
 					agerank : $('#agerank').textbox('getValue'),
 					xueli : $('#xueli').textbox('getValue'),
 					major : $('#major').textbox('getValue'),

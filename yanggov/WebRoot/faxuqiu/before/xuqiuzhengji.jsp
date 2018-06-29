@@ -26,37 +26,50 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$(this).height( height < 921 ? 921 : height );
 	}); 
 	changebg(peixun); 
+/* 	$("#peixunlist").show();
+	$("#rencailist").hide();
+	$("#jishulist").hide(); */
 }); 
 function changebg(var1){
 	if(var1==peixun){
 		$("#peixun").css("background","#f0f0f0");
 		$("#rencai").css("background","#fff");
 		$("#jishu").css("background","#fff");
+
 	}else if(var1 == rencai  ){
 		$("#peixun").css("background","#fff");
 		$("#rencai").css("background","#f0f0f0");
 		$("#jishu").css("background","#fff");
+		
 	}else if(var1== jishu){
 		$("#peixun").css("background","#fff");
 		$("#rencai").css("background","#fff");
 		$("#jishu").css("background","#f0f0f0");
+
 		}
 }
-function res(){
+function train(){
 	changebg(peixun);
 	$('#rightFrm').attr("src","peixunsearch.action");
 	$('#xuqiu').html("培训需求");
+	$('#listframe').attr("src","goPeiXun.action");
+
 	
 }
-function base(){
+function master(){
 	changebg(rencai);
 	$('#rightFrm').attr("src","rencaisearch.action");
 	$('#xuqiu').html("人才需求");
+	$('#listframe').attr("src","goRenCai.action");
+
+	
 }
-function tea(){
+function tech(){
 	changebg(jishu);
 	$('#rightFrm').attr("src","jishusearch.action");
 	$('#xuqiu').html("技术需求");
+	$('#listframe').attr("src","goJiShu.action");
+
 }
 </script>
 <script type="text/javascript">
@@ -138,43 +151,23 @@ function tea(){
 			<div class="xq_div_div2">
 				<ul>
 					<li id="peixun"class="qie">
-						<a id="res" href="javascript:void(0)" onclick="res()">培训需求</a>					
+						<a id="res" href="javascript:void(0)" onclick="train()">培训需求</a>					
 					</li>
 					<li id="rencai"class="li">
-						<a id="base" href="javascript:void(0)" onclick="base()">人才需求</a>					
+						<a id="base" href="javascript:void(0)" onclick="master()">人才需求</a>					
 					</li>
 					<li id="jishu">
-						<a id="tea" href="javascript:void(0)" onclick="tea()">技术需求</a>					
+						<a id="tea" href="javascript:void(0)" onclick="tech()">技术需求</a>					
 					</li>
 				</ul>
 			</div>
 			<div style="clear:both;"></div>
 		</div>
 		
+		 
+		 <iframe id ="listframe" src="goPeiXun.action" name="listFrame"  frameborder="0" scrolling="no" width="100%" height="352px"></iframe>
+		 		 
 		
-		<div class="xq_left_div2">
-			<div class="xq_div_div1">
-				<h1>需求公告</h1>
-			</div>			
-			<div class="xq_div1_div2">
-				<ul class="infoList">
-					<s:iterator value="%{#application.peixun}">
-							<li style="overflow:hidden;" >
-								<div class="img">
-									<img src="images/dian.jpg" />
-								</div>
-								<div class="wen">
-									<a
-											href="system/layout/addMoreNewss.action?id=<s:property value='id'></s:property>"><s:property
-												value="title"></s:property>
-										</a>
-								</div>
-							</li>
-					</s:iterator>
-				</ul>
-			</div>
-			<div style="clear:both;"></div>
-		</div>
 		<div class="xq_left_div3">
 			<ul>
 				<li>

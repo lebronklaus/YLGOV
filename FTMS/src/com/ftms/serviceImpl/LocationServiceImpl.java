@@ -31,6 +31,7 @@ public class LocationServiceImpl implements LocationService {
 		this.addressDAO = addressDAO;
 	}
 
+	/*
 	public JPositionProviceDAO getjPositionProviceDAO() {
 		return jPositionProviceDAO;
 	}
@@ -62,6 +63,8 @@ public class LocationServiceImpl implements LocationService {
 	public void setjPositionTownDAO(JPositionTownDAO jPositionTownDAO) {
 		this.jPositionTownDAO = jPositionTownDAO;
 	}
+	*/
+	
 
 	@Override
 	public JSONArray getProvince() {
@@ -76,6 +79,38 @@ public class LocationServiceImpl implements LocationService {
 			json.add(jo);
 		}
 		return json;
+	}
+
+	public JPositionProviceDAO getJPositionProviceDAO() {
+		return jPositionProviceDAO;
+	}
+
+	public void setJPositionProviceDAO(JPositionProviceDAO jPositionProviceDAO) {
+		this.jPositionProviceDAO = jPositionProviceDAO;
+	}
+
+	public JPositionCityDAO getJPositionCityDAO() {
+		return jPositionCityDAO;
+	}
+
+	public void setJPositionCityDAO(JPositionCityDAO jPositionCityDAO) {
+		this.jPositionCityDAO = jPositionCityDAO;
+	}
+
+	public JPositionCountyDAO getJPositionCountyDAO() {
+		return jPositionCountyDAO;
+	}
+
+	public void setJPositionCountyDAO(JPositionCountyDAO jPositionCountyDAO) {
+		this.jPositionCountyDAO = jPositionCountyDAO;
+	}
+
+	public JPositionTownDAO getJPositionTownDAO() {
+		return jPositionTownDAO;
+	}
+
+	public void setJPositionTownDAO(JPositionTownDAO jPositionTownDAO) {
+		this.jPositionTownDAO = jPositionTownDAO;
 	}
 
 	@Override

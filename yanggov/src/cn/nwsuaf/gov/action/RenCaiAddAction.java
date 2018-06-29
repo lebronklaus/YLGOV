@@ -9,7 +9,7 @@ public class RenCaiAddAction {
 	private String daogangtime ;
 	private String salary ;
 	private String discrip ;
-	private String sex ;
+	private String sex ;//field 'sex' isn't  suitable, region inside by xiuhao.yan
 	private String agerank ;
 	private String xueli ;
 	private String major;
@@ -30,7 +30,7 @@ public class RenCaiAddAction {
 		rc.setMajor(major);
 		rc.setExperience(experience);
 		rc.setShuoming(shuoming);
-		rc.setShenhe("0");
+		rc.setShenhe("1");
 		rc.setMark(Integer.parseInt(mark));
 		RenCaidao rcd = new RenCaidao();
 		rcd.add(rc);

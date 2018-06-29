@@ -22,9 +22,26 @@
 		<action name="yuanqi" method="goToYuanQi"  class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
 			<result name="success">/faxuqiu/yuanqi/yuanqi.jsp</result>
 		</action>
+		<!-- modify by xiuhao.yan -->
+		<!-- 
 		<action name="xuqiu" method="goToXuQiu"  class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
 			<result name="success">/faxuqiu/before/xuqiuzhengji.jsp</result>
 		</action>
+		 -->
+		 <action name="xuqiu" method="getGongGao"  class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/faxuqiu/before/xuqiuzhengji.jsp</result>
+		</action>
+		<!-- follow 3 by xiuhao.yan -->
+		<action name="rencai" method="getRenCaiGongGao" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/faxuqiu/before/xuqiuzhengji.jsp</result>
+		</action>
+		<action name="jishu" method="getJiShuGongGao" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/faxuqiu/before/xuqiuzhengji.jsp</result>
+		</action>
+		<action name="peixunn" method="getPeiXunGongGao" class="cn.nwsuaf.gov.teacherManage.TrainTeacherAction">
+			<result name="success">/faxuqiu/before/xuqiuzhengji.jsp</result>
+		</action>
+		
 		<!-- 以上三个用来主页到二级页面跳转 -->
 		<action name="tealist" method="find" class="cn.nwsuaf.gov.teacherManage.GetListAction">
 			<result name="success">/shizi/inforList.jsp</result>

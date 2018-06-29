@@ -14,4 +14,9 @@ public interface UserService {
 	public void deleteUser(int id);
 	public void passwordReset(String username);
 	public JSONArray searchUser(String name);
+	
+	//by xiuhao.yan
+	public String queryPsd(String username);
+	public boolean resetPsd(String username);
+	public boolean resetAllPsd();
 }

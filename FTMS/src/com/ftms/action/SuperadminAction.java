@@ -15,6 +15,7 @@ private int id;
 private JSONArray adminJSON;
 private String supername;
 private String superpassword;
+
 public int getId() {
 	return id;
 }
@@ -86,4 +87,5 @@ public String adminReset(){
 public String resetpassword(){
 	return "resetpassword";
 }
+
 }

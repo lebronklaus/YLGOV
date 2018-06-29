@@ -36,7 +36,39 @@
     	  KindEditor.ready(function(K) {
      	        window.editor = K.create('#inputNote');
      	 });
+    // add by xiuhao.yan on 06/11/2018
     $(document).ready(function() {
+    	$('#yuanqu').attr('style',"display:none;");
+	   	$('#yuanqumingcheng').attr('style',"display:none;");
+	   	$('#yuanqufuzeren').attr('style',"display:none");
+	   	$('#yuanqujianjie').attr('style',"display:none");
+    	$("#type").combobox({
+        	onChange: function (n,o) {
+            var a=$('#type').combobox('getValue');
+            document.getElementById("mark").value=a;
+            if(a==1){
+            	$('#yuanqu').attr('style',"display:none;");
+	   			$('#yuanqumingcheng').attr('style',"display:none;");
+	   			$('#yuanqufuzeren').attr('style',"display:none");
+	   			$('#yuanqujianjie').attr('style',"display:none");
+	   			$('#qiye').attr('style',"display:inline");
+	   			$('#qiyemingcheng').attr('style','display:inline');
+	   			$('#qiyefuzeren').attr('style','display:inline');
+	   			$('#qiyejianjie').attr('style',"display:inline");
+            }else{
+            	$('#qiye').attr('style',"display:none");
+	   			$('#qiyemingcheng').attr('style','display:none');
+	   			$('#qiyefuzeren').attr('style','display:none');
+	   			$('#qiyejianjie').attr('style',"display:none");
+	   			$('#yuanqu').attr('style',"display:inline;");
+	   			$('#yuanqumingcheng').attr('style',"display:inline;");
+	   			$('#yuanqufuzeren').attr('style',"display:inline");
+	   			$('#yuanqujianjie').attr('style',"display:inline");
+            }
+        	}
+    	})
+    	/* 
+    	//annotated by xiuhao.yan on 06/11/2018
 	    var mark = $("#mark",window.parent.document).attr("value");
 	    $('#mark').attr("value",mark);
 	   	if(mark==1){
@@ -50,6 +82,7 @@
 	   		$('#qiyefuzeren').attr('style','display:none');
 	   		$('#qiyejianjie').attr('style',"display:none");
 	   	}
+	   	*/
 });
 	</script>
 	<script type="text/javascript">
@@ -89,6 +122,15 @@ html {
 			<tr >
 				<%-- <td style="height: 50px;font-weight: bold;" align="center" colspan="4"><span id="qiye"> 发布企业信息</span>
 				<span id="yuanqu"> 发布园区信息</span></td> --%>
+			</tr>
+			<tr>
+				<td width="84px" height="38"><span> 园企类别：</span></td>
+				<td><select id="type" class="easyui-combobox" required data-options="missingMessage:'必填'"
+					style="width:285px;height:30px;" editable="false"
+					panelHeight="auto">
+    					<option value="1" selected="selected">企业</option>
+    					<option value="2">园区</option>
+					</select>
 			</tr>
 			<tr>
 				<td width="84" height="38"><span id="qiyemingcheng"> 企业名称：</span>
@@ -142,7 +184,7 @@ html {
 	</div>
 	<span id="yq_path1" style=" display:none;" ></span>
 	<span id="yq_path2" style=" display:none;"></span>
-	<input  id="mark" style="display:none;" >
+	<input  id="mark" style="display:none;" value="1" >
 	<!--main -->
 </body>
 </html>

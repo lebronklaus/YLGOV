@@ -79,6 +79,10 @@ function jieguo(url){
 $('#show').attr("src","onlinetest/"+url+".action");
 }
 /*  by czt*/
+/***
+ * annotated by xiuhao.yan on 08/06/2018
+ */
+/*
 function peixun(){
 $('#show').attr("src","../../yanggov/faxuqiu/peixunxuqiu.jsp");
 resizepx();
@@ -91,6 +95,7 @@ function rencai(){
 $('#show').attr("src","../../yanggov/faxuqiu/rencaixuqiu.jsp");
 resizepx();
 }
+*/
 function yuanqi(){
 
 }

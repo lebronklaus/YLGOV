@@ -6,16 +6,18 @@ import com.ftms.dao.AdminDAO;
 import com.ftms.entity.Admin;
 import com.ftms.service.AdminService;
 
-public class AdminServiceImpl implements AdminService {
-	private AdminDAO adminDAO;
 
+public class AdminServiceImpl implements AdminService {
+
+	private AdminDAO adminDAO;
 	public AdminDAO getAdminDAO() {
 		return adminDAO;
 	}
-
 	public void setAdminDAO(AdminDAO adminDAO) {
 		this.adminDAO = adminDAO;
 	}
+//
+
 
 	@Override
 	public boolean adminExist(String adminname) {
@@ -48,5 +50,6 @@ public class AdminServiceImpl implements AdminService {
 		admin.setAdminpassword(adminpassword);
 		adminDAO.merge(admin);
 	}
+
 
 }

@@ -50,6 +50,8 @@
 		/system/layout/before/detailContent1.jsp
 		</result>
 		</action>
+				
+		
 <!--	修改过的	 -->
 		 <action name="addMoreNewssdt" method="moreFind2" class="com.lee.action.Search">
 		<result name="success">

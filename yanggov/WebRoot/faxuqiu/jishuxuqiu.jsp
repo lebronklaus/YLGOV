@@ -41,6 +41,8 @@
 				$("#mark").attr("value",a);
 		});
 	</script>
+	<!-- annotated by xiuhao.yan  -->
+	<!-- 
 	<script type="text/javascript">
 		$(document).ready(function(){
 				var a = $("#mark",window.parent.document).val();
@@ -60,6 +62,36 @@
 				}
 		});
 	</script>
+	 -->
+	<script>
+	// add by xiuao.yan on 06/10/2018
+		 $(document).ready(function(){
+		 	$("#type").combobox({
+        	onChange: function (n,o) {
+            var a=$('#type').combobox('getValue');
+            document.getElementById("mark").value=a;
+           if(a==0 ){
+					$("#tr1").hide();
+					$("#tr2").hide();
+					$("#tr3").hide();
+					$("#tr4").hide();
+					$("#tr6").hide();
+					$("#tr7").hide();
+				}else{
+					$("#tr1").show();
+					$("#tr2").show();
+					$("#tr3").show();
+					$("#tr4").show();
+					$("#tr5").show();
+					$("#tr6").show();
+				}
+        	}
+    	})
+	})
+		 
+	</script>
+	
+	
 <style>
 body {
 	padding: 0;
@@ -90,6 +122,16 @@ html {
 			<%-- <tr >
 				<td style="height: 50px;font-weight: bold;" align="center" colspan="4"><span > 发布技术需求</span></td>
 			</tr> --%>
+			<tr>
+				<td width="84px" height="38"><span> 需求对象：</span></td>
+				<td><select id="type" class="easyui-combobox" required data-options="missingMessage:'必填'"
+					style="width:285px;height:30px;" editable="false"
+					panelHeight="auto">
+    					<option value="0">农民</option>
+    					<option value="1" selected="selected">企业</option>
+    					<option value="2">园区</option>
+					</select>
+			</tr>
 			<tr>
 				<td width="84px" height="38"><span>需求名称：</span></td>
 				<td width="287"><input name="tt.teacher_name" id="mingcheng" class="easyui-textbox"
@@ -148,33 +190,37 @@ html {
 					data-options="missingMessage:'必填'"></td>
 			</tr>
 			
-			<tr>
-				<td width="84px" height="38" id="tr4"><span> 联系人员：</span></td>
+			<tr id="tr4">
+				<td width="84px" height="38" ><span> 联系人员：</span></td>
 				<td id="tr5"><input  name="tt.teacher_address" id="lianxiren" class="easyui-textbox"
 					style="width:285px;height:30px;" required
 					data-options="missingMessage:'必填'"></td>
-						
+					
+				<td width="84px" height="38"><span> 联系地址：</span></td>
+				<td><input  name="tt.teacher_address" id="lianxiadd" class="easyui-textbox"
+					style="width:285px;height:30px;" required
+					data-options="missingMessage:'必填'"></td>
+			</tr>
+			
+			<tr id="tr5">
 				<td width="84px" height="38"><span> 联系电话：</span></td>
 				<td ><input  name="tt.teacher_email" id="tel" class="easyui-textbox"
 					style="width:285px;height:30px;" required
 					data-options="missingMessage:'必填'"></td>
 					
-				<td  id="tr8" width="84px" height="38"><span> 电子邮件：</span></td>
-				<td id="tr9" ><input  name="tt.teacher_address" id="email" class="easyui-textbox"
+				<td width="84px" height="38"><span> 电子邮件：</span></td>
+				<td><input  name="tt.teacher_address" id="email" class="easyui-textbox"
 					style="width:285px;height:30px;" required
 					data-options="missingMessage:'必填'"></td>
 			</tr>
-			<tr id="tr6">
-				<td width="84px" height="38"><span> 联系地址：</span></td>
-				<td><input  name="tt.teacher_address" id="lianxiadd" class="easyui-textbox"
-					style="width:285px;height:30px;" required
-					data-options="missingMessage:'必填'"></td>
-						
+			
+			<tr id="tr6">		
 				<td width="84px" height="38"><span> 邮政编码：</span></td>
 				<td><input  name="tt.teacher_email" id="youbian" class="easyui-textbox"
 					style="width:285px;height:30px;" required
 					data-options="missingMessage:'必填'"></td>
 			</tr>
+			<!-- 
 			<tr id="tr7" >
 				<td width="84px" height="38"><span> 电子邮件：</span></td>
 				<td><input  name="tt.teacher_address" id="email" class="easyui-textbox"
@@ -183,6 +229,7 @@ html {
 				
 				
 			</tr>
+			 -->
 			<tr> <td><div style="height:3px;"></div></td></tr>
 			<tr>
 				<td width="84px" valign="top" height="38"><span> 需求说明：</span></td>
@@ -195,7 +242,7 @@ html {
 					onclick="uploadUser()"><span style="font-size:16px">保存</span></a>
 			</div>
 			</fieldset>
-		<input  id="mark" style=" display:none;" value="<s:property value='#session.mark'/>">
+		<input  id="mark" style=" display:none;" value="1">
 	</div>
 	<!--main -->
 	

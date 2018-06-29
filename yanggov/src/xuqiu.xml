@@ -42,9 +42,21 @@
 		</action>
 		
 		
-			<action name="jishusearch" class="cn.nwsuaf.gov.action.SearchXQ" method="find2" >
+		<action name="jishusearch" class="cn.nwsuaf.gov.action.SearchXQ" method="find2" >
 			<result name="success">/faxuqiu/before/jishulist.jsp</result>
 		</action>
+		
+<!--follow 3 by xiuhao .yan -->
+		<action name="goPeiXun" class="cn.nwsuaf.gov.action.SearchXQ" method="getPeiXun" >
+			<result name="success">/faxuqiu/before/peixuntongzhi.jsp</result>
+		</action>
+		<action name="goRenCai" class="cn.nwsuaf.gov.action.SearchXQ" method="getRenCai" >
+			<result name="success">/faxuqiu/before/rencaitongzhi.jsp</result>
+		</action>
+		<action name="goJiShu" class="cn.nwsuaf.gov.action.SearchXQ" method="getJiShu" >
+			<result name="success">/faxuqiu/before/jishutongzhi.jsp</result>
+		</action>
+		
 		<!-- +++++++++++++++++++++++++++++++++以下是后台审核部分  by czt ++++++++++++++++++++++++++++++++++++++++++++++++ -->
 		<action name="peixun" class="cn.nwsuaf.gov.action.PeiXunAction" method="getAllPei" >
 			<result name="success">/faxuqiu/shenhe/peixunshenhe.jsp</result>

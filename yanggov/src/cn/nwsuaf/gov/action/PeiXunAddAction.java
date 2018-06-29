@@ -28,7 +28,7 @@ public class PeiXunAddAction {
 		px.setEmail(email);
 		px.setMark(Integer.parseInt(mark));
 		px.setContent(inputNote);
-		px.setShenhe("0");
+		px.setShenhe("1");
 		px.setTime(time);
 		PeiXundao pxd = new PeiXundao();
 		pxd.add(px);

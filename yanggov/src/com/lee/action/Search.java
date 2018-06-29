@@ -31,9 +31,9 @@ import com.opensymphony.xwork2.ActionSupport;
 public class Search extends ActionSupport implements ServletRequestAware,
 		ServletContextAware {
 
-	private int pageNow = 1;// Ĭ�ϴӵ�һҳ��ʼ
-	private int pageSize = 20;// ÿҳ��ʾ10����Ϣ
-	private int pageCount;// ��ҳ��
+	private int pageNow = 1;// 默锟较从碉拷一页锟斤拷始
+	private int pageSize = 20;// 每页锟斤拷示10锟斤拷锟斤拷息
+	private int pageCount;// 锟斤拷页锟斤拷
 	private List<Tnews> post;
 	private HttpServletRequest request;
 	private ServletContext application;
@@ -46,10 +46,10 @@ public class Search extends ActionSupport implements ServletRequestAware,
 	private List<KuaiXun> post6;
 	private List<KuaiXun> post7;
 	// private String filename;//
-	private String inputPath;// ������ļ���
+	private String inputPath;// 锟斤拷锟斤拷锟斤拷募锟斤拷锟�
 	private InputStream inputStream;
 
-	// /园企信息前台显示===================================
+	// /鍥紒淇℃伅鍓嶅彴鏄剧ず===================================
 		private List<Xinxi> tealist;
 
 		public List<Xinxi> getTealist() {
@@ -62,7 +62,7 @@ public class Search extends ActionSupport implements ServletRequestAware,
 
 		/**
 		 * @author Zhitao.Chen
-		 * 主页列表显示 园企信息
+		 * 涓婚〉鍒楄〃鏄剧ず 鍥紒淇℃伅
 		 * @return
 		 */
 		public String findbe() {
@@ -110,9 +110,9 @@ public class Search extends ActionSupport implements ServletRequestAware,
 				+ new String(inputPath.getBytes());
 		
 		return ServletActionContext.getServletContext().getResourceAsStream(
-				path); // ʵ���ļ���������
+				path); // 实锟斤拷锟侥硷拷锟斤拷锟斤拷锟斤拷锟斤拷
 		// return new ByteArrayInputStream(("/uploadzc/"+inputPath).getBytes());
-		// //���֮���Է����������Ϊ������ڽ��б����ʱ�򣬽��ļ��Ķ���ƽ��ж�����ת�룬���ļ������ݳ��ִ���
+		// //锟斤拷锟街拷锟斤拷苑锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷为锟斤拷锟斤拷锟斤拷诮锟斤拷斜锟斤拷锟斤拷时锟津，斤拷锟侥硷拷锟侥讹拷锟斤拷平锟斤拷卸锟斤拷锟斤拷锟阶拷耄拷锟斤拷募锟斤拷锟斤拷锟斤拷莩锟斤拷执锟斤拷锟�
 	}
 
 	public String getInputPath() {
@@ -331,7 +331,7 @@ System.out.println("sd");
 		List<KuaiXun> kuaixun;
 		try {
 			cv = news.findAll();
-			for (int i = 0; i < 6; i++)// bug����Ū������
+			for (int i = 0; i < 6; i++)// bug锟斤拷锟斤拷弄锟斤拷锟斤拷锟斤拷
 			{				 
 				getList().add(cv.get(i));
 			}
@@ -345,7 +345,7 @@ System.out.println("sd");
 		}
 		try {
 			peixun = news1.findAll();
-			for (int i = 0; i < 13; i++)// bug����Ū������
+			for (int i = 0; i < 13; i++)// bug锟斤拷锟斤拷弄锟斤拷锟斤拷锟斤拷
 			{
 
 				 
@@ -389,7 +389,7 @@ System.out.println("sd");
 		return SUCCESS;
 	}
 
-	// ����
+	// 锟斤拷锟斤拷
 	public String find() throws Exception {
 		TnewsDAO news = new TnewsDAO();
 		 
@@ -469,11 +469,11 @@ System.out.println("sd");
 	public String moreFind() throws Exception {
 		TnewsDAO news = new TnewsDAO();
 		List<Tnews> cv;
-		cv = news.findById(id);// ͨ��ID���в�ѯ
+		cv = news.findById(id);// 通锟斤拷ID锟斤拷锟叫诧拷询
 		setPost(cv);
 		System.out.println(post);
-		// JSONObject json = JSONObject.fromObject(post);//��map����ת����json�������
-		// result = json.toString();//��result��ֵ�����ݸ�ҳ��
+		// JSONObject json = JSONObject.fromObject(post);//锟斤拷map锟斤拷锟斤拷转锟斤拷锟斤拷json锟斤拷锟斤拷锟斤拷锟�
+		// result = json.toString();//锟斤拷result锟斤拷值锟斤拷锟斤拷锟捷革拷页锟斤拷
 		return "result";
 
 	}
@@ -482,12 +482,12 @@ System.out.println("sd");
 		TnewsDAO news = new TnewsDAO();
 		List<Tnews> cv;
 		int i;
-		cv = news.findById(id);// ͨ��ID���в�ѯ
+		cv = news.findById(id);// 通锟斤拷ID锟斤拷锟叫诧拷询
 
 		setPost(cv);
 		 
-		// JSONObject json = JSONObject.fromObject(post);//��map����ת����json�������
-		// result = json.toString();//��result��ֵ�����ݸ�ҳ��
+		// JSONObject json = JSONObject.fromObject(post);//锟斤拷map锟斤拷锟斤拷转锟斤拷锟斤拷json锟斤拷锟斤拷锟斤拷锟�
+		// result = json.toString();//锟斤拷result锟斤拷值锟斤拷锟斤拷锟捷革拷页锟斤拷
 		return SUCCESS;
 
 	}
@@ -496,7 +496,7 @@ System.out.println("sd");
 		PeiXunDAO news = new PeiXunDAO();
 		List<PeiXun> cv;
 		int i;
-		cv = news.findById(id);// ͨ��ID���в�ѯ
+		cv = news.findById(id);// 通锟斤拷ID锟斤拷锟叫诧拷询
 		if (cv.get(0).getImage() != null) {
 			i = 0;
 			application.setAttribute("image3", i);
@@ -507,8 +507,8 @@ System.out.println("sd");
 
 		setPost3(cv);
 		System.out.println("wangkeiani1993");
-		// JSONObject json = JSONObject.fromObject(post);//��map����ת����json�������
-		// result = json.toString();//��result��ֵ�����ݸ�ҳ��
+		// JSONObject json = JSONObject.fromObject(post);//锟斤拷map锟斤拷锟斤拷转锟斤拷锟斤拷json锟斤拷锟斤拷锟斤拷锟�
+		// result = json.toString();//锟斤拷result锟斤拷值锟斤拷锟斤拷锟捷革拷页锟斤拷
 		return SUCCESS;
 
 	}
@@ -581,5 +581,6 @@ System.out.println("sd");
 		// }
 		return SUCCESS;
 	}
+
 
 }

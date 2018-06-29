@@ -173,18 +173,11 @@ body{background:#fff;}
 
 .xq_div_div2 ul li a{text-align:center; display:block; font-size:16px; color:#666666; line-height:40px;}
 .xq_left_div2{ width:355px;  margin:0 auto; padding-top:55px;}
-/* .xq_div1_div2{width:355px; float:left; margin-top:20px;}
+.xq_div1_div2{width:355px; float:left; margin-top:20px;}
 .xq_div1_div2 ul li{ height:40px; line-height:40px; width:355px; }
 .xq_div1_div2 ul li .img{ margin-top:20px; float:left; margin-right:5px;}
 .xq_div1_div2 ul li .wen{ font-size:14px; color:#555555;}
-.xq_div1_div2 ul li .wen a:hover{ font-size:14px; color:#2787bd;} */
-
-.xq_div1_div2 .xqframe{width:355px; float:left; margin-top:20px;}
-.xq_div1_div2 .xqframe ul li{ height:40px; line-height:40px; width:355px; }
-.xq_div1_div2 .xqframe ul li .img{ margin-top:20px; float:left; margin-right:5px;}
-.xq_div1_div2 .xqframe ul li .wen{ font-size:14px; color:#555555;}
-.xq_div1_div2 .xqframe ul li .wen a:hover{ font-size:14px; color:#2787bd;}
-
+.xq_div1_div2 ul li .wen a:hover{ font-size:14px; color:#2787bd;}
 .xq_left_div3{ width:355px;margin:0 auto;}
 .xq_left_div3 ul li{margin-top:30px; width:353px; height:97px;}
 .xq_right{width:760px; float:left; margin-left:16px;}

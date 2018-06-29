@@ -71,7 +71,7 @@ html {
 					style="width:285px;height:30px;" editable="false"
 					panelHeight="auto">
 						<option   <s:if test='tt.teacher_sex=="男"'> selected="selected"</s:if> value="male">男</option>
-						<option <s:if test='tt.teacher_sex=="女"'>selected="selected"</s:if> value="female">女</option>
+						<option <s:if test='tt.teacher_sex=="女"'> selected="selected"</s:if> value="female">女</option>
 				</select></td>
 			</tr>
 			

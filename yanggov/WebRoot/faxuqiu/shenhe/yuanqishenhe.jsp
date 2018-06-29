@@ -82,7 +82,7 @@ p {
 <script type="text/javascript">  
     $(function() {  
         $('#dg').datagrid({  
-            title : '审核信息—园企审核',  
+            title : '园企管理—园企列表',  
             iconCls : 'icon-ok',  
             pageSize : 25,//默认选择的分页是每页5行数据  
             pageList : [  15, 20,25 ],//可以选择的分页集合  
@@ -113,9 +113,9 @@ p {
     });  
       function formatshenhe(value, row, index) {
 		if(row.shenhe==0){
-			return "未审核";
+			return "未发布";
 		}else{
-				return "已审核"
+				return "已发布"
 			}
 		} 
 </script>   
@@ -129,7 +129,7 @@ p {
 		<thead>
 			<tr>
 				<th field="name" width="50">园企名称</th>
-				<th width="50" data-options="field:'shenhe',formatter:formatshenhe">审核状态</th>
+				<th width="50" data-options="field:'shenhe',formatter:formatshenhe">发布状态</th>
 				<th width="50" data-options="field:'_operate',formatter:formatOper">操作</th>
 			</tr>
 		</thead>
@@ -168,7 +168,7 @@ p {
 			<label>联系地址：</label> <span id="address"></span>
 		</div>
 		<div class="fitem">
-			<label>企业简介：</label> <div style="margin:1px;border: 1px solid #ccc;border-radius: 4px;font-size: 14px;font-family: 微软雅黑;" id="intro"></div>
+			<label>园企简介：</label> <div style="margin:1px;border: 1px solid #ccc;border-radius: 4px;font-size: 14px;font-family: 微软雅黑;" id="intro"></div>
 		</div>
 	
 	</div>

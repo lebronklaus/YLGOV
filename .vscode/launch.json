@@ -1,0 +1,124 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Test<FTMS_bak>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.ftms.test.Test",
+            "projectName": "FTMS_bak",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-MD5Util",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "MD5Util",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-TestPdfToSwf<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "cn.nwsuaf.gov.teacherManage.TestPdfToSwf",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-StatementCacheBenchmark<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.mchange.v2.c3p0.stmt.StatementCacheBenchmark",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-SimplePropertyBeanGenerator<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.mchange.v2.codegen.bean.SimplePropertyBeanGenerator",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-RecreatePackage<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "com.mchange.v2.sql.filter.RecreatePackage",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-CommandLine<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "freemarker.core.CommandLine",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-Transform<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "freemarker.ext.dom.Transform",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-NodeListModel<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "freemarker.ext.jdom.NodeListModel",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Launch)-ToCanonical<yanggov>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "freemarker.template.utility.ToCanonical",
+            "projectName": "yanggov",
+            "args": ""
+        },
+        {
+            "type": "java",
+            "name": "Debug (Attach)",
+            "request": "attach",
+            "hostName": "localhost",
+            "port": 0
+        }
+    ]
+}

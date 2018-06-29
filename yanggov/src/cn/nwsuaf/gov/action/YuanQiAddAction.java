@@ -24,7 +24,7 @@ public class YuanQiAddAction {
 		xx.setPath1(yq_path1);
 		xx.setPath2(yq_path2);
 		xx.setMark(Integer.parseInt(mark));
-		xx.setShenhe("0");
+		xx.setShenhe("1");
 		Xinxidao xxd = new Xinxidao();
 		xxd.add(xx);
 		return "success";

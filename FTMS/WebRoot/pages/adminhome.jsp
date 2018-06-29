@@ -96,6 +96,10 @@ function xgmm(){
 var name=$('#name').text();
 $('#show').attr("src","resetpassword.action?supername=&adminname="+name);
 }
+//by xiuhao.yan
+function cxmm(){
+$('#show').attr("src","queryPassword.jsp");
+}
 /**
 **by wangke
 **/
@@ -165,18 +169,27 @@ function addRes(){
 **by xiuhao.yan on 06/06/2018
 **/
 function corpList(){
-	alert("施工中~");
+    $('#show').attr("src","../../yanggov/faxuqiu/shenhe/yuanqishenhe.jsp");
 }
 function addCorp(){
-	alert("施工中~");
 	$('#show').attr("src","../../yanggov/faxuqiu/yuanqi/yuanqiadd.jsp");
 	resizeres();
 }
 function demandList(){
-	alert("施工中~");
+    /* $('#show').attr("src","../../yanggov/faxuqiu/shenhe/demandlist.jsp"); */
+    $('#show').attr("src","../../yanggov/faxuqiu/shenhe/peixunshenhe.jsp");
 }
-function addDemand(){
-	alert("施工中~");
+function addTrainDemand(){
+    $('#show').attr("src","../../yanggov/faxuqiu/peixunxuqiu.jsp");
+    resizeres();
+}
+function addMasterDemand(){
+    $('#show').attr("src","../../yanggov/faxuqiu/rencaixuqiu.jsp");
+    resizeres();
+}
+function addTechDemand(){
+    $('#show').attr("src","../../yanggov/faxuqiu/jishuxuqiu.jsp");
+    resizeres();
 }
 /**
 **by czt for shenhe——manage_back(annotated on 06/06/2018 by xiuhao.yan)
@@ -246,6 +259,9 @@ function guanggao(){
                         <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="userManagement()">用户管理</a>
                        	<div style="margin:10px 0;"></div>
                        	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="xgmm()">修改密码</a>
+                       	<!-- by xiuhao.yan -->
+                       	<div style="margin:10px 0;"></div>
+                       	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="cxmm()">查询密码</a>
                     </div>
                     <!-- czt -->
                     <div title="通知公告" style="padding:10px;">
@@ -274,9 +290,9 @@ function guanggao(){
                     	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addTea()">发布师资信息</a>
                     </div>
                     <div title="基地管理" style="padding:10px;">
-                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="baseList()">基地列表</a>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="baseList()">培训分中心列表</a>
                         <div style="margin:10px 0;"></div>
-                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addBase()">发布基地信息</a>
+                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addBase()">发布培训分中心信息</a>
                     </div>
                     <div title="资源管理" style="padding:10px;">
                         <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="resList()">资源列表</a>
@@ -287,12 +303,16 @@ function guanggao(){
 					<div title="园企管理" style="padding:10px;">
 						<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="corpList()">园企列表</a>
 						<div style="margin:10px 0;"></div>
-						<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addCorp()">发布园企信息</a>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addCorp()">发布园企信息</a>
 					</div>
 					<div title="需求管理" style="padding:10px;">
-                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="demandList()">需求类别</a>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="demandList()">需求列表</a>
                         <div style="margin:10px 0;"></div>
-                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addDemand()">发布需求信息</a>
+                    	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addTrainDemand()">发布培训需求</a>
+                        <div style="margin:10px 0;"></div>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addMasterDemand()">发布人才需求</a>
+                        <div style="margin:10px 0;"></div>
+                        <a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="addTechDemand()">发布技术需求</a>
 					</div>
 					<!-- 根据修改意见注释掉审核信息 annotated on 06/06/2018 by xiuhao.yan-->
 					<!--

@@ -37,10 +37,12 @@
      	        window.editor = K.create('#inputNote');
      	 });
 	</script>
+	<!-- annotated by xiuhao.yan on 10/0/2018 -->
+	<!-- 
 	<script type="text/javascript">
 		$(document).ready(function(){
 				var a = $("#mark",window.parent.document).val();
-				$("#mark").attr("value",a);
+				$("#mark").attr("value",a);				
 				if(a==0 || a==1){
 					$("#tr0").hide();
 					$("#tr1").hide();
@@ -51,6 +53,36 @@
 					$("#tr6").hide();
 				}
 		});
+	</script>
+	 -->
+	
+	<script>
+	// add by xiuao.yan on 06/10/2018
+		 $(document).ready(function(){
+		 	$("#type").combobox({
+        	onChange: function (n,o) {
+            var a=$('#type').combobox('getValue');
+            document.getElementById("mark").value=a;
+            if(a==0){
+            		$("#companyname").textbox('setValue','农民需求');
+					$("#tr1").hide();
+					$("#tr2").hide();
+					$("#tr3").hide();
+					$("#tr4").hide();
+					$("#tr5").hide();
+					$("#tr6").hide();
+				}else{
+					$("#tr1").show();
+					$("#tr2").show();
+					$("#tr3").show();
+					$("#tr4").show();
+					$("#tr5").show();
+					$("#tr6").show();
+				}
+        }
+    })
+		 })
+		 
 	</script>
 <style>
 body {
@@ -82,6 +114,15 @@ html {
 			<%-- <tr >
 				<td style="height: 50px;font-weight: bold;" align="center" colspan="4"><span > 发布培训需求</span></td>
 			</tr> --%>
+			<tr>
+				<td height="38"><span> 需求对象：</span></td>
+				<td><select id="type" class="easyui-combobox" required data-options="missingMessage:'必填'"
+					style="width:285px;height:30px;" editable="false"
+					panelHeight="auto">
+    					<option value="0">农民</option>
+    					<option value="2" selected="selected">园区</option>
+					</select>
+			</tr>
 			
 			<tr id="tr1">
 				<td width="84" height="38"><span>单位名称：</span></td>
@@ -109,7 +150,7 @@ html {
 			
 			<tr id="tr3"> 
 				<td height="38"><span> 培训时间：</span></td>
-				<td><input name="tt.teacher_professional"  id="time" class="easyui-textbox"
+				<td><input name="tt.teacher_professional"  id="time" class="easyui-datebox"
 					style="width:285px;height:30px;" required
 					data-options="missingMessage:'必填'"></td>
 						
@@ -149,7 +190,8 @@ html {
 					onclick="uploadUser()"><span style="font-size:16px">保存</span></a>
 			</div>
 			</fieldset>
-		<input  id="mark" style="display:none; " value="<s:property value='#session.mark'/>">
+			 <input  id="mark" style="display:none; " value='2' >
+		<!--  <input  id="mark" style="display:none; " value="<s:property value='#session.mark'/>">-->
 	</div>
 	<!--main -->
 	

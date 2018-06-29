@@ -9,6 +9,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.AnnotationConfiguration;
 
+import cn.nwsuaf.gov.bean.JiShuPeiXun;
+import cn.nwsuaf.gov.bean.PeiXunXuQiu;
+import cn.nwsuaf.gov.bean.RenCaiXuQiu;
 import cn.nwsuaf.gov.service.HibernateSessionFactory;
 
 import com.lee.action.TZnews;
@@ -40,6 +43,69 @@ public class TnewsDAO {
 		session.getTransaction().commit();
 		session.close();
 		return list;
+	}
+	//Follow 3 by xiuhao.yan,to query demand from DB
+	public List<RenCaiXuQiu> findByPageRC(int pageSize,int pageNow) throws Exception{
+		List rcxqList = new ArrayList();
+		try{
+			Session session = HibernateSessionFactory.createFactory().openSession();
+			session.beginTransaction();
+			
+			Query q = session.createQuery("from RenCaiXuQiu rcxq where rcxq.shenhe=1 order by rcxq.id desc");
+			q.setFirstResult(pageSize*(pageNow-1));
+			q.setMaxResults(pageSize);
+			rcxqList=q.list();
+			
+			session.getTransaction().commit();
+			session.close();
+		}catch(HibernateException e){
+			e.printStackTrace();
+		}
+		
+		return rcxqList;
+		
+	}
+	
+	public List<JiShuPeiXun> findByPageJS(int pageSize,int pageNow) throws Exception{
+		List jspxList = new ArrayList();
+		try{
+			Session session = HibernateSessionFactory.createFactory().openSession();
+			session.beginTransaction();
+			
+			Query q = session.createQuery("from JiShuPeiXun jspx where jspx.shenhe=1 order by jspx.id desc");
+			q.setFirstResult(pageSize*(pageNow-1));
+			q.setMaxResults(pageSize);
+			jspxList=q.list();
+			
+			session.getTransaction().commit();
+			session.close();
+		}catch(HibernateException e){
+			e.printStackTrace();
+		}
+		
+		return jspxList;
+		
+	}
+	
+	public List<PeiXunXuQiu> findByPagePX(int pageSize,int pageNow) throws Exception{
+		List pxxqList = new ArrayList();
+		try{
+			Session session = HibernateSessionFactory.createFactory().openSession();
+			session.beginTransaction();
+			
+			Query q = session.createQuery("from PeiXunXuQiu pxxq where pxxq.shenhe=1 order by pxxq.id desc");
+			q.setFirstResult(pageSize*(pageNow-1));
+			q.setMaxResults(pageSize);
+			pxxqList=q.list();
+			
+			session.getTransaction().commit();
+			session.close();
+		}catch(HibernateException e){
+			e.printStackTrace();
+		}
+		
+		return pxxqList;
+		
 	}
 
 	public List<Tnews> findByPage(int pageSize, int pageNow) throws Exception {

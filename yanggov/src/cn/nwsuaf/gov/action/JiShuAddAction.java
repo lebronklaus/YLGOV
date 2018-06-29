@@ -34,7 +34,7 @@ public class JiShuAddAction {
 		jspx.setLianxiadd(lianxiadd);
 		jspx.setYoubian(youbian);
 		jspx.setEmail(email);
-		jspx.setShenhe("0");
+		jspx.setShenhe("1");
 		jspx.setMark(Integer.parseInt(mark));
 		JiShudao jsd = new JiShudao();
 		jsd.add(jspx);

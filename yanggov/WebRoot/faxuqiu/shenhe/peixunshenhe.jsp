@@ -11,7 +11,7 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>peixun</title>
+<title>peixunshenhe</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
@@ -97,7 +97,7 @@ pre {
 <script type="text/javascript">  
     $(function() {  
         $('#dg').datagrid({  
-            title : '审核信息—培训审核',  
+            title : '培训需求—需求列表',  
             iconCls : 'icon-ok',  
             pageSize : 25,//默认选择的分页是每页5行数据  
             pageList : [  15, 20,25 ],//可以选择的分页集合  
@@ -128,28 +128,66 @@ pre {
     });  
     function formatshenhe(value, row, index) {
 		if(row.shenhe==0){
-			return "未审核";
+			return "未发布";
 		}else{
-				return "已审核"
+				return "已发布"
 			}
 	} 
+</script>   
+<script>	
+	// add by xiuao.yan on 06/12/2018
+	function tech(){
+		$("#show", parent.document).attr("src","../../yanggov/faxuqiu/shenhe/jishushenhe.jsp");
+
+	}
+	function master(){
+		$("#show", parent.document).attr("src","../../yanggov/faxuqiu/shenhe/rencaishenhe.jsp");
+
+	}
+	function train(){
+
+	}	
+
+		 $(document).ready(function(){
+		 	train();
+		 	$("#type").combobox({
+        	onChange: function (n,o) {
+            var a=$('#type').combobox('getValue');
+           	if(a==0 ){
+					train();
+				}else if(a==1){
+					master();
+				}else{
+					tech();
+				}
+        	}
+    	})
+	})
+		 
 </script>   
 </head>
 
 <body>
-	<table id="dg" title="培训审核" class="easyui-datagrid"
+	<table id="dg" title="培训列表" class="easyui-datagrid"
 		style="width:auto;height:100%" toolbar="#toolbar" rownumbers="true"
 		fitColumns="true" singleSelect="false" selectOnCheck="true"
 		checkOnSelect="true" pagination="true">
 		<thead>
 			<tr>
 				<th field="companyname" width="50">单位名称</th>
-				<th width="50" data-options="field:'shenhe',formatter:formatshenhe">审核状态</th>
+				<th width="50" data-options="field:'shenhe',formatter:formatshenhe">发布状态</th>
 				<th width="50" data-options="field:'_operate',formatter:formatOper">操作</th>
 			</tr>
 		</thead>
 	</table>
 	<div id="toolbar">
+	选择需求分类：<select id="type" class="easyui-combobox" required data-options="missingMessage:'必填'"
+							style="width:150px;height:30px;" editable="false"
+							panelHeight="auto">
+								<option value="0" selected="selected">培训需求列表</option>
+								<option value="1">人才需求列表</option>
+								<option value="2">技术需求列表</option>
+						</select>
 		<input class="easyui-textbox" id="name" name="name"
 			data-options="prompt:'请输入单位名称'" style="width:15%"> 
 		 <a href="javascript:void(0)" class="easyui-linkbutton"

@@ -13,7 +13,18 @@ private String username;
 private int id;
 private String rows;
 private String page;
-public String getRows() {
+
+private JSONArray psdJson;
+
+	public JSONArray getPsdJson() {
+		return psdJson;
+	}
+
+	public void setPsdJson(JSONArray psdJson) {
+		this.psdJson = psdJson;
+	}
+
+	public String getRows() {
 	return rows;
 }
 public void setRows(String rows) {
@@ -66,4 +77,22 @@ public String deleteUser(){
 	userService.deleteUser(id);
 	return "delete";
 }
+//follow 3 by xiuhao.yan
+public String queryPsd(){
+	psdJson = new JSONArray();
+	String psd = userService.queryPsd(username);
+	psdJson.add(0,psd);
+	return "queryPsd";
+}
+public String resetPsd(){
+	psdJson = new JSONArray();
+	psdJson.add(0,userService.resetPsd(username));
+	return "resetPsd";
+}
+public String resetAllPsd(){
+	psdJson = new JSONArray();
+	psdJson.add(0,userService.resetAllPsd());
+	return "resetAllPsd";
+}
+
 }

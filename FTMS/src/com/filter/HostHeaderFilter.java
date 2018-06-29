@@ -39,9 +39,8 @@ public class HostHeaderFilter implements Filter {
 		String adminname=request.getParameter("adminname");
 		String username=request.getParameter("username");			
 		String myhost=request.getHeader("host");
-		//BufferedReader bReader=new BufferedReader(new FileReader("D:\\Documents\\Desktop\\yang\\FTMS\\db.xml"));
+		BufferedReader bReader=new BufferedReader(new FileReader("D://Documents//Desktop//git//YLGOV//db.xml"));
 		//db.xml文件要放在tomacat以外的相对路径下，方便管理人员管理IP地址，这样就不用修改代码了
-		BufferedReader bReader=new BufferedReader(new FileReader("fuxxxxxxxxxxxxxxxk"));
 		String lineString=null;
 		while((lineString=bReader.readLine())!=null){
 			if(!myhost.equals(lineString)&&(adminname!=null)){//如果host不是,管理员登录则退回到管理员界面，用户登录则退回到用户界面

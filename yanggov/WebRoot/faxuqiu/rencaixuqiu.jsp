@@ -47,6 +47,18 @@
 				$("#mark").attr("value",a);
 		});
 	</script>
+		<script>
+	// add by xiuao.yan on 06/11/2018
+		 $(document).ready(function(){
+		 	$("#type").combobox({
+        	onChange: function (n,o) {
+            var a=$('#type').combobox('getValue');
+            document.getElementById("mark").value=a;
+        	}
+    	})
+	})
+		 
+	</script>
 <style>
 body {
 	padding: 0;
@@ -78,6 +90,15 @@ html {
 				<td style="height: 50px;font-weight: bold;" align="center" colspan="4"><span > 发布人才需求</span></td>
 			</tr> --%>
 			<tr>
+				<td width="84px" height="38"><span> 需求对象：</span></td>
+				<td><select id="type" class="easyui-combobox" required data-options="missingMessage:'必填'"
+					style="width:285px;height:30px;" editable="false"
+					panelHeight="auto">
+    					<option value="1" selected="selected">企业</option>
+    					<option value="2">园区</option>
+					</select>
+			</tr>
+			<tr>
 				<td width="84" height="38"><span>岗位名称：</span></td>
 				<td width="287"><input name="tt.teacher_name" id="gangwei" class="easyui-textbox"
 					style="width:285px;height:30px;" required
@@ -105,12 +126,13 @@ html {
 				<td valign="top" height="38"><span>岗位描述：</span></td>
 				<td colspan="3"><textarea style="width: 100%;height:330px;" class="form-control" id="inputNote1" rows="5" name="tt.teacher_profile"></textarea>
 			</tr>
+			
 			<tr >
 				<td style="height: 50px;" align="center" colspan="4"><span > 任职资格</span></td>
 			</tr>
 			<tr>
 				<td height="38"><span> 所属领域：</span></td>
-				<td><input  name="tt.teacher_phonenum" id="agerank" class="easyui-textbox"
+				<td><input  name="tt.teacher_phonenum" id="region" class="easyui-textbox"
 					style="width:285px;height:30px;" required
 					data-options="missingMessage:'必填'"></td>
 						
@@ -149,7 +171,7 @@ html {
 					onclick="uploadUser()"><span style="font-size:16px">保存</span></a>
 			</div>
 			</fieldset>
-		<input  id="mark" style=" display:none;" value="<s:property value='#session.mark'/>">
+		<input  id="mark" style=" display:none;" value="1">
 	</div>
 	<!--main -->
 	

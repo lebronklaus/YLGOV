@@ -7,6 +7,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 import com.ftms.dao.UserDAO;
+import com.ftms.entity.Admin;
 import com.ftms.entity.User;
 import com.ftms.service.UserService;
 
@@ -96,7 +97,10 @@ public class UserServiceImpl implements UserService {
 			userDAO.merge(u);
 		}
 		
+		
 	}
+	
+	
 
 	@Override
 	public JSONArray searchUser(String name) {
@@ -136,5 +140,60 @@ public class UserServiceImpl implements UserService {
 		User u =userDAO.findById(id);
 		userDAO.delete(u);
 	}
+	
+	
+	//follow 3 by xiuhao.yan
+		@Override
+		public String queryPsd(String username){
+			String psd;
+			try{
+				return ((User) userDAO.findByUsername(username).get(0)).getPassword();
+			}catch (Exception e){
+				e.printStackTrace();
+				return "false";
+			}
+		}
+		@Override
+		public boolean resetPsd(String username){
+			String IDNum;
+			String psd;
+			try{
+				User user = (User) userDAO.findByUsername(username).get(0);
+				IDNum = user.getUsername();
+				if(IDNum.length()>6){
+					psd = IDNum.substring(IDNum.length()-6, IDNum.length());
+				}else{
+					psd = "123456";
+				}
+				user.setPassword(psd);
+				userDAO.merge(user);
+				return true;
+			}catch(Exception e){
+				e.printStackTrace();
+				
+			}
+			return false;
+		}
+		@Override
+		public boolean resetAllPsd(){
+			try{
+				List<User> users = userDAO.findAll();
+				for (User user: users) {
+					String IDNum=user.getIdnumber();
+					String psd;
+					if(IDNum.length()>6){
+						psd = IDNum.substring(IDNum.length()-6, IDNum.length());
+					}else{
+						psd = "123456";
+					}
+					user.setPassword(psd);
+					userDAO.merge(user);
+				}
+				return true;
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+			return false;
+		}
 
 }
