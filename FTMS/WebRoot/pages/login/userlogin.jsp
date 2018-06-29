@@ -13,7 +13,8 @@
 	<script type="text/javascript" src="<%=path%>/libs/js/jquery.js"></script>
 	<script type="text/javascript" src="<%=path%>/libs/js/login.js"></script>
 	<script type="text/javascript" src="<%=path%>/js/jquery.easyui.min.js"></script>
-	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript" src="<%=path%>/js/md5.js"></script>
+	<script type="text/javascript" src="<%=path%>/js/jquery.base64.js"></script>
 	<!--  <script type="text/javascript" src="<%=path%>/libs/js/method/center-plugin.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -115,13 +116,16 @@ window.onload = function (){
 			$(".login_info").show();
 			$(".login_info").html("&nbsp;&nbsp;正在登录中...");
 			//MD5对密码加密
+			var b = new Base64();
+			var password_base64;
+			password_base64=b.encode(password.value);
 			var password_md5;
 			password_md5=hex_md5(hex_md5(loginName.value)+hex_md5(password.value));
 			//登录处理
 				  $.ajax({
 				  type:'post',
 				  url:"<%=path%>/pages/loginUser.action",
-				  data:{"username":loginName.value,"password":password_md5},
+				  data:{"username":loginName.value,"password":password_base64},
 				  cache:false,
 				  dataType:"json",
 				  async:false,
@@ -135,7 +139,7 @@ window.onload = function (){
 					  	  $(".login_info").html("&nbsp;&nbsp;登录成功，正在转到主页...");
 						  window.location.href = '<%=path%>/pages/userlogin.action?username='
 							+ loginName.value + '&password='
-							+ password_md5;
+							+ password_base64;
 					  }
 					  else{
 					  	 $(".login_info").html("&nbsp;&nbsp;登陆失败！账号密码错误");

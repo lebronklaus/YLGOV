@@ -12,6 +12,10 @@
 	<script type="text/javascript" src="<%=path%>/libs/js/jquery.js"></script>
 	<script type="text/javascript" src="<%=path%>/libs/js/login.js"></script>
 	<script type="text/javascript" src="<%=path%>/libs/js/method/center-plugin.js"></script>
+	
+	<script type="text/javascript" src="<%=path%>/js/jquery.base64.js"></script>
+	
+	
 	<script type="text/javascript" src="md5.js"></script>
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -107,11 +111,15 @@ window.onload = function (){
 			var password_md5;
 			password_md5=hex_md5(hex_md5(loginName.value)+hex_md5(password.value));
 			
+			var b = new Base64();
+			var password_base64;
+			password_base64=b.encode(password.value);
+			
 
 	$.ajax({
 	   type:'post',
 	   url:"<%=path%>/pages/loginAdmin.action",
-	   data:{"adminname":loginName.value,"password":password_md5},
+	   data:{"adminname":loginName.value,"password":password_base64},
 	   cache:false,
 	   dataType:"json",
 	   async:false, 
@@ -125,7 +133,7 @@ window.onload = function (){
 						  	  $(".login_info").html("&nbsp;&nbsp;登录成功，正在转到主页...");
 							  window.location.href = '<%=path%>/pages/adminlogin.action?adminname='
 								+ loginName.value + '&password='
-								+ password_md5;
+								+ password_base64;
 						  }
 						  else{
 						  	 $(".login_info").html("&nbsp;&nbsp;登陆失败！账号密码错误");

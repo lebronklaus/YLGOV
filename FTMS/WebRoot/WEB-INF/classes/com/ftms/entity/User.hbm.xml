@@ -10,27 +10,27 @@
             <column name="id" />
             <generator class="increment"></generator>
         </id>
-        <many-to-one name="prof2" class="com.ftms.entity.Prof2" fetch="select" cascade="all" lazy="false">
+        <many-to-one name="prof2" class="com.ftms.entity.Prof2" fetch="select" cascade="all" lazy="false" not-found="ignore">
             <column name="prof">
                 <comment>专业1</comment>
             </column>
         </many-to-one>
-        <many-to-one name="JPositionCounty" class="com.ftms.entity.JPositionCounty" fetch="select" cascade="all" lazy="false">
+        <many-to-one name="JPositionCounty" class="com.ftms.entity.JPositionCounty" fetch="select" cascade="all" lazy="false" not-found="ignore">
             <column name="country">
                 <comment>县/区</comment>
             </column>
         </many-to-one>
-        <many-to-one name="JPositionCity" class="com.ftms.entity.JPositionCity" fetch="select" cascade="all" lazy="false">
+        <many-to-one name="JPositionCity" class="com.ftms.entity.JPositionCity" fetch="select" cascade="all" lazy="false" not-found="ignore">
             <column name="city">
                 <comment>市</comment>
             </column>
         </many-to-one>
-        <many-to-one name="JPositionProvice" class="com.ftms.entity.JPositionProvice" fetch="select" cascade="all" lazy="false">
+        <many-to-one name="JPositionProvice" class="com.ftms.entity.JPositionProvice" fetch="select" cascade="all" lazy="false" not-found="ignore">
             <column name="province">
                 <comment>省</comment>
             </column>
         </many-to-one>
-        <many-to-one name="JPositionTown" class="com.ftms.entity.JPositionTown" fetch="select" cascade="all" lazy="false">
+        <many-to-one name="JPositionTown" class="com.ftms.entity.JPositionTown" fetch="select" cascade="all" lazy="false" not-found="ignore">
             <column name="town">
                 <comment>住址</comment>
             </column>

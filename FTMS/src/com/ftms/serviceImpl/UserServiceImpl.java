@@ -11,6 +11,8 @@ import com.ftms.entity.Admin;
 import com.ftms.entity.User;
 import com.ftms.service.UserService;
 
+import com.util.Base64Tool;
+
 public class UserServiceImpl implements UserService {
 	private UserDAO userDAO;
 	public UserDAO getUserDAO() {
@@ -147,7 +149,8 @@ public class UserServiceImpl implements UserService {
 		public String queryPsd(String username){
 			String psd;
 			try{
-				return ((User) userDAO.findByUsername(username).get(0)).getPassword();
+				psd = ((User) userDAO.findByUsername(username).get(0)).getPassword();
+				return Base64Tool.base64decode(psd);
 			}catch (Exception e){
 				e.printStackTrace();
 				return "false";
@@ -165,7 +168,7 @@ public class UserServiceImpl implements UserService {
 				}else{
 					psd = "123456";
 				}
-				user.setPassword(psd);
+				user.setPassword(Base64Tool.base64encode(psd));
 				userDAO.merge(user);
 				return true;
 			}catch(Exception e){
@@ -186,7 +189,8 @@ public class UserServiceImpl implements UserService {
 					}else{
 						psd = "123456";
 					}
-					user.setPassword(psd);
+					
+					user.setPassword(Base64Tool.base64encode(psd));
 					userDAO.merge(user);
 				}
 				return true;
