@@ -257,7 +257,9 @@ function addTechDemand(){
     $('#show').attr("src","../../yanggov/faxuqiu/jishuxuqiu.jsp");
     resizeres();
 }
-
+function cxmm(){
+$('#show').attr("src","queryPassword.jsp");
+}
 /**
 **by czt for advice_add
 **/
@@ -285,7 +287,7 @@ function guanggao(){
 		</div>
         <div style="height:3%; background:#fff;">
         <!-- <div style="margin:0.5%;"></div> -->
-        <span>超级管理员：</span><span id="name" style="font-size:16px; "><s:property value='adminname' /></span><span>,欢迎你！</span>
+        <span>超级管理员：</span><span id="name" style="font-size:16px; "><s:property value='adname' /></span><span>,欢迎你！</span>
         <a href="login/adminlogin.jsp" class="easyui-linkbutton"  style="float:right; font-size:16px;width:9%;height:33px">退出</a>
         </div>
         <div style = "clear:both;"></div>
@@ -319,6 +321,9 @@ function guanggao(){
                        	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="adminManagement()">管理员授权</a>
                        	<div style="margin:10px 0;"></div>
                        	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="xgmm()">修改密码</a>
+  						<!-- by xiuhao.yan -->
+                       	<div style="margin:10px 0;"></div>
+                       	<a href="javascript:void(0);" class="easyui-linkbutton" style="width:100%;height:32px" onClick="cxmm()">查询密码</a>                  
                     </div>
                     <!-- czt -->
                     <div title="通知公告" style="padding:10px;">

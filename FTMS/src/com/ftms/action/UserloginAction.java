@@ -1,5 +1,7 @@
 package com.ftms.action;
 
+import java.util.logging.Logger;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -18,6 +20,10 @@ public class UserloginAction extends ActionSupport {
 	private UserService userService;
 	private YuanQiUserServiceImpl yuanqiuserService;
 	private String username;
+	
+	private String uname;
+	private String upass;
+	
 	private String password;
 	private JSONArray loginJSON;
 	public JSONArray getLoginJSON() {
@@ -61,21 +67,43 @@ public class UserloginAction extends ActionSupport {
 		this.username = username;
 	}
 	
+	public String getUname() {
+		return uname;
+	}
+
+	public void setUname(String uname) {
+		this.uname = uname;
+	}
+	
+	public String getUpass() {
+		return upass;
+	}
+
+	public void setUpass(String upass) {
+		this.upass = upass;
+	}
+
 	public String login(){
-		if(username.isEmpty()||password.isEmpty())
+		HttpSession session = ServletActionContext.getRequest().getSession();
+		this.uname = username;
+		this.upass = password;
+		if(username==null||password==null)
 			return "error";
+
 		if(userService.userLogin(username, password)){
-			HttpSession session = ServletActionContext.getRequest().getSession();
+
+			username = null;
+			password = null;
 			session.setAttribute("mark", 0);
 			System.out.println(password);
 			return "login";
 		}else if(yuanqiuserService.YuanQiUserlogin(username, password)){
 					if(yuanqiuserService.getYuanQiUserInfo(username).getRemark().equals("1")){
-						HttpSession session = ServletActionContext.getRequest().getSession();
+
 						session.setAttribute("mark", 1);
 						return "login";
 					}else if(yuanqiuserService.getYuanQiUserInfo(username).getRemark().equals("2")){
-						HttpSession session = ServletActionContext.getRequest().getSession();
+
 						session.setAttribute("mark", 2);
 						return "login";
 					}
@@ -103,4 +131,25 @@ public class UserloginAction extends ActionSupport {
 		/*yuanqiuserService.passwordReset(username);*/
 		return "success";
 	}
+//	public String loginUser(){
+//		loginJSON=new JSONArray();
+//		if(uname.isEmpty()||upass.isEmpty())
+//			loginJSON.add("empty");
+//		else if(userService.userLogin(uname, upass))
+//			loginJSON.add("ok");
+//		else if(yuanqiuserService.YuanQiUserlogin(uname, upass)){
+//			loginJSON.add("ok");
+//		}else
+//			loginJSON.add("error");
+//		return "loginUser";
+//	}
+//	public String userhome(){
+//		return "login";
+//	}
+//	public String passwordReset(){
+//		System.out.println(uname);
+//		userService.passwordReset(uname);
+//		/*yuanqiuserService.passwordReset(username);*/
+//		return "success";
+//	}
 }

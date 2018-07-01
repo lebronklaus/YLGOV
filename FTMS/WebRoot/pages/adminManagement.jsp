@@ -28,6 +28,9 @@
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../js/pages/adminManagement.js"></script>
+
+	<script type="text/javascript" src="../js/jquery.base64.js"></script>
+
 <style>
 body {
 	padding: 0;
@@ -131,7 +134,7 @@ $(document).ready(function() {
 					required data-options="missingMessage:'必填'">
 			</div>
 			<div class="fitem">
-				<label>密码:</label> <input id="adminpassword" class="easyui-textbox"
+				<label>密码:</label> <input id="adminpassword" type="password" class="easyui-textbox"
 					required data-options="missingMessage:'必填'">
 			</div>
 		</form>

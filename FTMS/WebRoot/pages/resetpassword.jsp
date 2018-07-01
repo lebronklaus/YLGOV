@@ -25,9 +25,13 @@
 <link rel="stylesheet" type="text/css" href="../css/color.css">
 <link rel="stylesheet" type="text/css" href="../css/demo.css">
 <link rel="stylesheet" type="text/css" href="../css/icon.css">
+<script type="text/javascript" src="../js/pages/resetpassword.js"></script>
+
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
-<script type="text/javascript" src="../js/pages/resetpassword.js"></script>
+
+<script type="text/javascript" src="../js/jquery.base64.js"></script>
+
 <style>
 body {
 	padding: 0;

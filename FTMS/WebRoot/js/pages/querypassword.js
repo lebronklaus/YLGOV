@@ -7,7 +7,10 @@ function queryPsd(){
 			username : userName,
 		}, function(result) {
 			if(result != "false"){
-				$.messager.alert('查询结果', '用户密码为： '+result,'info');
+				var b = new Base64();
+                var password_base64;
+                password_base64 = b.decode(result.toString());
+				$.messager.alert('查询结果', '用户密码为： '+password_base64,'info');
 				
 			}else{
 				$.messager.alert('查询结果', '找不到该用户，请检查用户名是否正确！','warning');

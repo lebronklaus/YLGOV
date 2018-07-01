@@ -240,8 +240,9 @@ function guanggao(){
 
         <div style="height:3%; background:#fff;">
         <!-- <div style="margin:0.5%;"></div> -->
-        <span>管理员：</span><span id="name" style="font-size:16px; "><s:property value='adminname' /></span><span>,欢迎你！</span>
-        <a href="login/adminlogin.jsp" class="easyui-linkbutton"  style="float:right; font-size:16px;width:9%;height:33px">退出</a>
+        <span>管理员：</span><span id="name" style="font-size:16px; "><s:property value='adname' /></span><span>,欢迎你！</span>
+        <a href="logout.action?ref=admin" class="easyui-linkbutton"  style="float:right; font-size:16px;width:9%;height:33px">退出</a>
+        
         </div>
         <div style = "clear:both;"></div>
         <div class="easyui-layout" style="height:80%; ">

@@ -29,6 +29,8 @@
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../js/pages/querypassword.js"></script>
+<script type="text/javascript" src="../js/jquery.base64.js"></script>
+
 <style>
 body {
 	padding: 0;

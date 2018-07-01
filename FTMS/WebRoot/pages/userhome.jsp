@@ -26,6 +26,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../js/jquery.base64.js"></script>
 <style>
 body{ padding:0;margin:0; height:100%;width:auto}
 html{ height:100%;width:auto} 
@@ -102,6 +103,11 @@ function yuanqi(){
 function reload(){
 	window.location.reload();
 }
+//by xiuhao.yan
+function logout(){
+	
+}
+
 </script>
 </head>
 
@@ -121,8 +127,9 @@ function reload(){
 		</div>
         <div style="height:3%; background:#fff;">
         <!-- <div style="margin:0.5%;"></div> -->
-        <span style="font-size:16px;" id="username"><s:property value='username' /></span><span>,欢迎你！</span>
-        <a href="login/userlogin.jsp" class="easyui-linkbutton"  style="float:right; font-size:16px;width:9%;height:33px">退出</a>
+        <span style="font-size:16px;" id="username"><s:property value="uname" /></span><span>,欢迎你！</span><s:property value="username"/>
+        <a href="logout.action?ref=user" class="easyui-linkbutton"  style="float:right; font-size:16px;width:9%;height:33px">退出</a>
+                
         </div>
         <div style = "clear:both;"></div>
         <div class="easyui-layout" style="height:80%;">

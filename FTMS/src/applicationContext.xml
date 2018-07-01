@@ -60,6 +60,8 @@
 	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 	<!-- Action -->
+	<bean id="LogoutAction" class="com.ftms.action.LogoutAction"></bean>
+	
 	<bean id="PanJuanAction" class="com.ftms.action.PanJuanAction">
 		<property name="panJuanService" ref="PanJuanService"></property>
 	</bean>
@@ -100,7 +102,7 @@
 		<property name="locationService" ref="LocationService"/>
 		<property name="profService" ref="ProfService"/>
 	</bean>
-	<bean id="UploadAction" class="com.ftms.action.UploadAction">
+	<bean id="UpAction" class="com.ftms.action.UploadAction">
 	</bean>
 	<bean id="BmxxAction" class="com.ftms.action.BmxxAction">
 		<property name="userService" ref="UserService"/>
@@ -221,6 +223,13 @@
 	<bean id="YuanQiUserService" class="com.ftms.serviceImpl.YuanQiUserServiceImpl">
 		<property name="yuanqiuserdao" ref="YuanQiUserDAO"/>
 	</bean>
+	
+	
+	<!-- util -->
+	
+	
+	
+	
 	
 	<!-- DAO -->
 	<bean id="JPositionProviceDAO" class="com.ftms.dao.JPositionProviceDAO">

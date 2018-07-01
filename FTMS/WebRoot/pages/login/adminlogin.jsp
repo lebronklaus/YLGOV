@@ -16,7 +16,7 @@
 	<script type="text/javascript" src="<%=path%>/js/jquery.base64.js"></script>
 	
 	
-	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript" src="<%=path%>/md5.js"></script>
 	<!-- <meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Lambent Login Form Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
@@ -109,7 +109,7 @@ window.onload = function (){
 			//登录处理
             //MD5对密码加密
 			var password_md5;
-			password_md5=hex_md5(hex_md5(loginName.value)+hex_md5(password.value));
+			//password_md5=hex_md5(hex_md5(loginName.value)+hex_md5(password.value));
 			
 			var b = new Base64();
 			var password_base64;

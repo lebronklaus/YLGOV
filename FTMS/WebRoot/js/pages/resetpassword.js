@@ -1,5 +1,10 @@
 function uploadUser() {
 	var name;
+	var password = $('#password').textbox('getValue');
+	var b = new Base64();
+	var password_base64;
+	password_base64 = b.encode(password);
+
 	if($('#password').textbox('getValue')!=$('#password2').textbox('getValue')){
 		alert("两次密码不一致！");
 	}else{
@@ -7,7 +12,7 @@ function uploadUser() {
 			name = $('#supername').text();
 			$.post("superReset.action", {
 				supername : name,
-				superpassword : $('#password').textbox('getValue'),
+				superpassword : password_base64,
 			}, function() {
 				$.messager.show({
 					title : '提示',
@@ -20,7 +25,7 @@ function uploadUser() {
 			name = $('#adminname').text();
 			$.post("adminReset.action", {
 				adminname : name,
-				adminpassword : $('#password').textbox('getValue'),
+				adminpassword : password_base64,
 			}, function() {
 				$.messager.show({
 					title : '提示',

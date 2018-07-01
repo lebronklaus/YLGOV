@@ -25,6 +25,10 @@
 <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
 <script type="text/javascript" src="../js/pages/Register.js"></script>
 <script type="text/javascript" src="../js/pages/md5.js"></script>
+
+<script type="text/javascript" src="../js/jquery.base64.js"></script>
+
+
 <link rel="stylesheet" type="text/css" href="../css/color.css">
 <link rel="stylesheet" type="text/css" href="../css/demo.css">
 <link rel="stylesheet" type="text/css" href="../css/easyui.css">

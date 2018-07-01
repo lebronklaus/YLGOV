@@ -23,6 +23,8 @@
 	-->
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript" src="../js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.base64.js"></script>
+
 <script type="text/javascript" src="../js/pages/xxwh.js"></script>
 <script type="text/javascript" src="../js/pages/md5.js"></script>
 <link rel="stylesheet" type="text/css" href="../css/color.css">

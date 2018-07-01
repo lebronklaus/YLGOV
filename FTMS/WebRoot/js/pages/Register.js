@@ -31,9 +31,15 @@ function uploadUser() {
 				//农民注册时，对密码进行加密
 				var password_md5;
 			     password_md5=hex_md5(hex_md5(username)+hex_md5(password));
+			     
+			     var b = new Base64();
+				var password_base64;
+				password_base64=b.encode(password);
+
   				  $.post("registerUser.action", {
 						username : $('#username').textbox('getValue'),
-						password : password_md5,
+						//password : password_md5,
+						password: password_base64,
 						name : $('#name').textbox('getValue'),
 						year : $('#birthday').datebox('getValue'),
 						gender : $('#gender').combobox('getValue'),

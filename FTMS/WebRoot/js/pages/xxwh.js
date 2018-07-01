@@ -139,11 +139,15 @@ function uploadUser() {
 				|| cityid.length < 1 || countyid.length < 1|| townid.length < 1|| profid.length < 1|| addr.length < 1) {
 			$.messager.alert('提示', '请填写完整！');
 		} else {
+			var b = new Base64();
+			var password_base64;
+			password_base64 = b.encode(password);
+			
 			var password_md5;
 			     password_md5=hex_md5(hex_md5(username)+hex_md5(password));
 			$.post("uploadUser.action", {
 				username : $('#username').text(),
-				password : password_md5,
+				password : password_base64,
 				name : $('#name').textbox('getValue'),
 				year : $('#birthday').datebox('getValue'),
 				gender : $('#gender').combobox('getValue'),

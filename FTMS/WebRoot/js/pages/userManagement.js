@@ -252,6 +252,11 @@ function updateUser() {
 	var profid = $('#grprof2').combobox('getValue');
 	var addr = $('#address').textbox('getValue');
 	
+	 var b = new Base64();
+	var password_base64;
+	password_base64=b.encode(password.value);
+	alert(password_base64);
+	
 	if(provinceid.length!=3||cityid.length!=12||countyid.length!=12||townid.length!=12||profid.length>2){
 		$.messager.alert('提示', '填写信息有误！');
 		return;
@@ -265,7 +270,7 @@ function updateUser() {
 	} else {
 		$.post("uploadUserManage.action", {
 			username : rowid.username,
-			password : rowid.password,
+			password : password_base64,
 			name : $('#grname').textbox('getValue'),
 			year : $('#grbirthday').datebox('getValue'),
 			gender : $('#grgender').combobox('getValue'),

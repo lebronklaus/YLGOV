@@ -150,7 +150,8 @@ public class UserServiceImpl implements UserService {
 			String psd;
 			try{
 				psd = ((User) userDAO.findByUsername(username).get(0)).getPassword();
-				return Base64Tool.base64decode(psd);
+				return psd;
+				//return Base64Tool.base64decode(psd);
 			}catch (Exception e){
 				e.printStackTrace();
 				return "false";

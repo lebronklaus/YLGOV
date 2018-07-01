@@ -45,8 +45,8 @@
 		<a href="javascript:void(0);" style="padding:5px 0px;width:10px;font-size:16px;" onclick="reset()">重置密码</a> --%>
 		
 		<!-- <form id="loginForm"  method="post"> -->
-			<input type="text" name="name"  placeholder="用户名" required="" id="username"></input>
-			<input type="password"  class="password" placeholder="密码" required="" id="password"></input>
+			<input type="text" name="name"  placeholder="用户名"  id="username"></input>
+			<input type="password"  class="password" placeholder="密码" id="password"></input>
 			<div>
 			<input type = "text"  style="width:230px;height:16px;" value="" placeholder="验证码"  id = "input"></input>
 			<input type = "button" style="width:100px;height:46px;" id="code" onclick="createCode()"/>
