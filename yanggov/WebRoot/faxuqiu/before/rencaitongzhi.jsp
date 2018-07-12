@@ -38,7 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="wen">
 									<a target="_parent"
 											href="showrencai.action?id=<s:property value='id'></s:property>"><s:property
-												value="gangwei" ></s:property>---<s:property value="inputdate" ></s:property>
+												value="gangwei" ></s:property>
 										</a>
 								</div>
 							</li>

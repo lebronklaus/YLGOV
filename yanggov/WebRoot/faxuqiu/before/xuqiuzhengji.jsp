@@ -17,7 +17,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript" src="shizi/shizijs/jquery1.42.min.js"></script>
 <script type="text/javascript" src="shizi/shizijs/jquery.SuperSlide.2.1.1.source.js"></script>
-<script language="javascript" type="text/javascript"> 
+<%-- <script language="javascript" type="text/javascript"> 
 	$(document).ready(function(){ 
 	
 	$("#rightFrm").load(function(){ 
@@ -26,19 +26,51 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	$(this).height( height < 921 ? 921 : height );
 	}); 
 	
- 
-	var from = getQueryString("from");
+	changebg(peixun); 
+	//by hx
+	function getQueryString(key){
+        var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
+        var result = window.location.search.substr(1).match(reg);
+        return result?decodeURIComponent(result[2]):null;
+      }
+	var flags = window.location.search;
+	if(flags!=null || flags!= ""){
+		var temp = getQueryString('a');
+		if(temp == "技术需求"){
+			tea();
+		}
+		if(temp == "人才需求"){
+			base();
+		}
+	}
+}); 
+/* function changebg(var1){
+	if(var1==peixun){
+		$("#peixun").css("background","#f0f0f0");
+		$("#rencai").css("background","#fff");
+		$("#jishu").css("background","#fff");
+	}else if(var1 == rencai  ){
+		$("#peixun").css("background","#fff");
+		$("#rencai").css("background","#f0f0f0");
+		$("#jishu").css("background","#fff");
+	}else if(var1== jishu){
+		$("#peixun").css("background","#fff");
+		$("#rencai").css("background","#fff");
+		$("#jishu").css("background","#f0f0f0");
+		}
+}  */
+	/* var from = getQueryString("from");
  	if(from==null){
  		changebg("peixun");
  	}else{
  		changebg(from); 
- 	}
+ 	} */
 	
 	
 /* 	$("#peixunlist").show();
 	$("#rencailist").hide();
 	$("#jishulist").hide(); */
-}); 
+/* }); */ 
 function changebg(var1){
 	if(var1=="peixun"){
 		$("#peixun").css("background","#f0f0f0");
@@ -81,10 +113,99 @@ function tech(){
 
 }
 
-function getQueryString(name) {
+/* function getQueryString(name) {
 	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
 	var r = window.location.search.substr(1).match(reg);
 	if (r != null) return unescape(r[2]); return null;
+} */
+</script>
+<script type="text/javascript">
+	function gotosearch(){
+		var val = $('#val').val();
+		$('#search').attr("method","post");
+		$('#search').attr("action","/teacher/gotosearch.action?name="+val);
+	}
+</script> --%>
+<script language="javascript" type="text/javascript"> 
+	$(document).ready(function(){ 
+	
+	$("#rightFrm").load(function(){ 
+	$(this).height(0); //用于每次刷新时控制IFRAME高度初始化 
+	var height = $(this).contents().height() ; 
+	$(this).height( height < 921 ? 921 : height );
+	}); 
+	changebg(peixun); 
+	//by hx
+	function getQueryString(key){
+        var reg = new RegExp("(^|&)"+key+"=([^&]*)(&|$)");
+        var result = window.location.search.substr(1).match(reg);
+        return result?decodeURIComponent(result[2]):null;
+      }
+	var flags = window.location.search;
+	if(flags!=null || flags!= ""){
+		var temp = getQueryString('a');
+		if(temp == "技术需求"){
+			tea();
+		}
+		if(temp == "人才需求"){
+			base();
+		}
+	}
+}); 
+function changebg(var1){
+	if(var1==peixun){
+		$("#peixun").css("background","#f0f0f0");
+		$("#rencai").css("background","#fff");
+		$("#jishu").css("background","#fff");
+	}else if(var1 == rencai  ){
+		$("#peixun").css("background","#fff");
+		$("#rencai").css("background","#f0f0f0");
+		$("#jishu").css("background","#fff");
+	}else if(var1== jishu){
+		$("#peixun").css("background","#fff");
+		$("#rencai").css("background","#fff");
+		$("#jishu").css("background","#f0f0f0");
+		}
+}
+function res(){
+	changebg(peixun);
+	$('#rightFrm').attr("src","peixunsearch.action");
+	$('#xuqiu').html("培训需求");
+	
+}
+function base(){
+	changebg(rencai);
+	$('#rightFrm').attr("src","rencaisearch.action");
+	$('#xuqiu').html("人才需求");
+}
+function tea(){
+	changebg(jishu);
+	$('#rightFrm').attr("src","jishusearch.action");
+	$('#xuqiu').html("技术需求");
+}
+
+function train(){
+	changebg(peixun);
+	$('#rightFrm').attr("src","peixunsearch.action");
+	$('#xuqiu').html("培训需求");
+	$('#listframe').attr("src","goPeiXun.action");
+
+	
+}
+function master(){
+	changebg(rencai);
+	$('#rightFrm').attr("src","rencaisearch.action");
+	$('#xuqiu').html("人才需求");
+	$('#listframe').attr("src","goRenCai.action");
+
+	
+}
+function tech(){
+	changebg(jishu);
+	$('#rightFrm').attr("src","jishusearch.action");
+	$('#xuqiu').html("技术需求");
+	$('#listframe').attr("src","goJiShu.action");
+
 }
 </script>
 <script type="text/javascript">

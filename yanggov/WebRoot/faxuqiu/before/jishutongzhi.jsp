@@ -37,8 +37,7 @@
 						<div class="wen">
 							<a
 								href="showjishu.action?id=<s:property value='id'></s:property>"
-								target="_parent"><s:property value="mingcheng"></s:property>---<s:property
-									value="time"></s:property> </a>
+								target="_parent"><s:property value="mingcheng"></s:property></a>
 						</div>
 					</li>
 				</s:iterator>

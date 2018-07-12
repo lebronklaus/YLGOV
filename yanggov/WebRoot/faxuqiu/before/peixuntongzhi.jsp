@@ -33,7 +33,7 @@
 						<div class="wen">
 							<a target="_parent"
 								href="showpeixun.action?id=<s:property value='id'></s:property>"><s:property
-									value="companyname"></s:property>---<s:property value="time"></s:property>
+									value="companyname"></s:property>
 							</a>
 						</div>
 					</li>
