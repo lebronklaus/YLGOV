@@ -23,6 +23,15 @@ public class PeiXunAction {
 	private int id ;
 	private String searchname;
 	
+	private PeiXunXuQiu pxxq;
+	
+	
+	public PeiXunXuQiu getPxxq() {
+		return pxxq;
+	}
+	public void setPxxq(PeiXunXuQiu pxxq) {
+		this.pxxq = pxxq;
+	}
 	public String shenHe(){
 		ps =  new PeixunService();
 		ps.update(id);
@@ -93,6 +102,13 @@ public class PeiXunAction {
 		this.searchname = searchname;
 	}
 	
+	
+	//by xiuhao.yan
+	public String getPeiXun(){
+		ps = new PeixunService();
+		setPxxq(ps.getPeiXun(id));
+		return "success";
+	}
 
 
 }

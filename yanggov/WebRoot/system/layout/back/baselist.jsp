@@ -83,7 +83,7 @@ p {
 <script type="text/javascript">  
     $(function() {  
         $('#dg').datagrid({  
-            title : '基地管理—基地列表',  
+            title : '基地管理—分中心列表',  
             iconCls : 'icon-ok',  
             pageSize : 25,//默认选择的分页是每页5行数据  
             pageList : [  15, 20,25 ],//可以选择的分页集合  
@@ -116,20 +116,20 @@ p {
 </head>
 
 <body>
-	<table id="dg" title="基地列表" class="easyui-datagrid"
+	<table id="dg" title="分中心列表" class="easyui-datagrid"
 		style="width:auto;height:100%" toolbar="#toolbar" rownumbers="true"
 		fitColumns="true" singleSelect="false" selectOnCheck="true"
 		checkOnSelect="true" pagination="true">
 		<thead>
 			<tr>
-				<th field="base_name" width="50">基地名称</th>
+				<th field="base_name" width="50">分中心名称</th>
 				<th width="50" data-options="field:'_operate',formatter:formatOper">操作</th>
 			</tr>
 		</thead>
 	</table>
 	<div id="toolbar">
 		<input class="easyui-textbox" id="name" name="name"
-			data-options="prompt:'请输入基地名称'" style="width:15%"> 
+			data-options="prompt:'请输入分中心名称'" style="width:15%"> 
 		 <a href="javascript:void(0)" class="easyui-linkbutton"
 			style="width:5%" onclick="Search()">查询</a> <a
 			href="javascript:void(0)" class="easyui-linkbutton"
@@ -139,7 +139,7 @@ p {
 	<div id="dlg" class="easyui-dialog"
 		style="width:700px;height:500px;padding:10px 20px" closed="true"
 		buttons="#dlg-buttons">
-		<div class="ftitle">基地信息</div>
+		<div class="ftitle">分中心信息</div>
 		<div class="fitem" style="float:left">
 			<img id="baseimg1" height="160" width="300" style="border:1px solid;">
 		</div>
@@ -148,13 +148,13 @@ p {
 		</div>
 		<div style = "clear:both;"></div>
 		<div class="fitem">
-			<label>基地名称：</label> <span id="base_name"></span>
+			<label>分中心名称：</label> <span id="base_name"></span>
 		</div>
 		<div class="fitem">
 			<label>联系人&nbsp;&nbsp;&nbsp;：</label> <span id="base_contact"></span>
 		</div>
 		<div class="fitem">
-			<label>基地简介：</label> <div style="margin:10px;border: 1px solid #ccc;border-radius: 4px;font-size: 14px;font-family: 微软雅黑;" id="base_profile"></div>
+			<label>分中心简介：</label> <div style="margin:10px;border: 1px solid #ccc;border-radius: 4px;font-size: 14px;font-family: 微软雅黑;" id="base_profile"></div>
 		</div>
 
 	</div>
@@ -162,7 +162,7 @@ p {
 		 <a
 			href="javascript:void(0)" class="easyui-linkbutton"
 			iconCls="icon-ok" onclick="javascript:$('#dlg').dialog('close')"
-			style="width:90px">ok</a>
+			style="width:90px">确定</a>
 	</div>
 </body>
 </html>

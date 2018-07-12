@@ -95,7 +95,7 @@ function gotosearch(){
 	<div class="dao_hang">
 		<div class="dao_left">
 							<ul>
-						<li class="bian">
+						<li >
 							<a href="<%=path %>/getAllList.action">首页</a>
 						</li>
 						<li>
@@ -107,7 +107,7 @@ function gotosearch(){
 						<li>
 							<a href="<%=path %>/system/layout/morenews.action">通知公告</a>
 						</li>
-						<li>
+						<li class="bian">
 							<a href="<%=path %>/system/layout/morenewszc.action">政策信息</a>
 						</li>
 						<li>

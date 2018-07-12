@@ -18,8 +18,41 @@ public class JiShuAddAction {
 	private String email; 
 	private String mark;
 	
+	private int id;
 	
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String addJiShu() throws Exception{
+
+		JiShuPeiXun jspx = new JiShuPeiXun();
+		jspx.setId(id);
+		jspx.setMingcheng(mingcheng);
+		jspx.setLingyu(lingyu);
+		jspx.setShuoming(inputNote);
+		jspx.setCompany(company);
+		jspx.setAddress(address);
+		jspx.setCompanytype(companytype);
+		jspx.setHangye(hangye);
+		jspx.setLianxiren(lianxiren);
+		jspx.setTel(tel);
+		jspx.setLianxiadd(lianxiadd);
+		jspx.setYoubian(youbian);
+		jspx.setEmail(email);
+		jspx.setMark(Integer.parseInt(mark));
+		JiShudao jsd = new JiShudao();
+		jsd.add(jspx);
+		return "success";
+	}
+	
+	public String editJiShu() throws Exception{
 
 		JiShuPeiXun jspx = new JiShuPeiXun();
 		jspx.setMingcheng(mingcheng);
@@ -34,12 +67,13 @@ public class JiShuAddAction {
 		jspx.setLianxiadd(lianxiadd);
 		jspx.setYoubian(youbian);
 		jspx.setEmail(email);
-		jspx.setShenhe("1");
 		jspx.setMark(Integer.parseInt(mark));
+		jspx.setId(id);
 		JiShudao jsd = new JiShudao();
-		jsd.add(jspx);
+		jsd.update(jspx);
 		return "success";
 	}
+	
 	public String getMingcheng() {
 		return mingcheng;
 	}

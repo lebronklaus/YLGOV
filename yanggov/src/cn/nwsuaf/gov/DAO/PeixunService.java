@@ -125,6 +125,27 @@ public class PeixunService {
 			return ttlist;
 
 		}
+		
+		//获得培训  by xiuhao.yan
+		public PeiXunXuQiu getPeiXun(int id){
+			Session session = null;
+			try {
+				session = HibernateSessionFactory.createFactory().openSession();
+				Transaction tx = session.beginTransaction();
+				PeiXunXuQiu px = (PeiXunXuQiu) session.get(PeiXunXuQiu.class,id);
+				if (px != null) {
+					return px;				
+				}
+				tx.commit();
+			} catch (HibernateException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return null;
+		}
 	
 
 }

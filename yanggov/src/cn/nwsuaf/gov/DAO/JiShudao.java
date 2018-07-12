@@ -166,14 +166,28 @@ public class JiShudao {
 	}
 
 	// 更新插入
-	public void update(int id) {
+	public void update(JiShuPeiXun jspx) {
 		SessionFactory sf = new AnnotationConfiguration().configure()
 				.buildSessionFactory();
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
 		Query q = session
-				.createQuery("update JiShuPeiXun t set t.shenhe = 1 where id = ?");
-		q.setInteger(0, id);
+				.createQuery("update JiShuPeiXun t set t.mingcheng = ?,t.lingyu = ?,t.shuoming = ?,t.company = ?,t.address = ?,t.companytype = ?,t.hangye = ?,t.lianxiren = ?,"
+						+ "t.tel = ?,t.lianxiadd = ?,t.youbian = ?,t.email = ?,t.mark = ? where id = ?");
+		q.setString(0, jspx.getMingcheng());
+		q.setString(1, jspx.getLingyu());
+		q.setString(2, jspx.getShuoming());
+		q.setString(3, jspx.getCompany());
+		q.setString(4, jspx.getAddress());
+		q.setString(5, jspx.getCompanytype());
+		q.setString(6, jspx.getHangye());
+		q.setString(7, jspx.getLianxiren());
+		q.setString(8, jspx.getTel());
+		q.setString(9, jspx.getLianxiadd());
+		q.setString(10, jspx.getYoubian());
+		q.setString(11, jspx.getEmail());
+		q.setInteger(12, jspx.getMark());
+		q.setInteger(13, jspx.getId());
 		q.executeUpdate();
 		session.getTransaction().commit();
 	}

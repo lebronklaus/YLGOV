@@ -143,11 +143,11 @@ public class SearchXQ extends ActionSupport {
 		this.list5 = list5;
 	}
 
-	public void shenyes() {
-		PeiXundao pei = new PeiXundao();
-		pei.update(id);
-
-	}
+//	public void shenyes() {
+//		PeiXundao pei = new PeiXundao();
+//		pei.update(id);
+//
+//	}
 
 	// 浜烘墠瀹℃牳鎸塱d鏌ユ壘
 	public String findByIdRc() {
@@ -159,10 +159,10 @@ public class SearchXQ extends ActionSupport {
 	}
 
 	// 浜烘墠瀹℃牳鏇存柊
-	public void shenrcyes() {
-		RenCaidao rcdao = new RenCaidao();
-		rcdao.update(id);
-	}
+//	public void shenrcyes() {
+//		RenCaidao rcdao = new RenCaidao();
+//		rcdao.update(id);
+//	}
 
 	// 鎶�鏈鏍告寜id鏌ユ壘
 	public String findByIdJs() {
@@ -174,10 +174,10 @@ public class SearchXQ extends ActionSupport {
 	}
 
 	// 鎶�鏈鏍告洿鏂�
-	public void shenjsyes() {
-		JiShudao jsdao = new JiShudao();
-		jsdao.update(id);
-	}
+//	public void shenjsyes() {
+//		JiShudao jsdao = new JiShudao();
+//		jsdao.update(id);
+//	}
 	//follow 3 by xiuhao.yan
 	public String getPeiXun(){
 		return SUCCESS;

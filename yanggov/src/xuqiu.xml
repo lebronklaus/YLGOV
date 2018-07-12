@@ -70,6 +70,10 @@
 		<action name="shenhe" class="cn.nwsuaf.gov.action.PeiXunAction" method="shenHe" >
 			<result name="success">/faxuqiu/shenhe/peixunshenhe.jsp</result>
 		</action>
+		
+		<action name="editpeixun" class="cn.nwsuaf.gov.action.PeiXunAction" method="getPeiXun">
+			<result name="success">/faxuqiu/editpx.jsp</result>
+		</action>
 		<!-- 以上三个为培训审核 -->
 		<action name="rencai" class="cn.nwsuaf.gov.action.RenCaiAction" method="getAllRen" >
 			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
@@ -82,6 +86,10 @@
 		</action>
 		<action name="rcshenhe" class="cn.nwsuaf.gov.action.RenCaiAction" method="shenHe" >
 			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
+		</action>
+		
+		<action name="editrencai" class="cn.nwsuaf.gov.action.RenCaiAction" method="getRenCai">
+			<result name="success">/faxuqiu/editrc.jsp</result>
 		</action>
 		<!-- 以上三个为人才审核 -->
 		<action name="jishu" class="cn.nwsuaf.gov.action.JiShuAction" method="getAllJi" >
@@ -96,6 +104,10 @@
 		<action name="jsshenhe" class="cn.nwsuaf.gov.action.JiShuAction" method="shenHe" >
 			<result name="success">/faxuqiu/shenhe/jishushenhe.jsp</result>
 		</action>
+		
+		<action name="editjishu" class="cn.nwsuaf.gov.action.JiShuAction" method="getJiShu">
+			<result name="success">/faxuqiu/editjs.jsp</result>
+		</action>
 		<!-- 以上三个为技术审核 -->
 		<action name="yuanqi" class="cn.nwsuaf.gov.action.YuanQiAction" method="getAllYuqi" >
 			<result name="success">/faxuqiu/shenhe/yuanqishenhe.jsp</result>
@@ -108,6 +120,10 @@
 		</action>
 		<action name="yqshenhe" class="cn.nwsuaf.gov.action.YuanQiAction" method="shenHe" >
 			<result name="success">/faxuqiu/shenhe/yuanqishenhe.jsp</result>
+		</action>
+		
+		<action name="edityuanqi" class="cn.nwsuaf.gov.action.YuanQiAction" method="getYuanQi">
+			<result name="success">/faxuqiu/yuanqi/edityq.jsp</result>
 		</action>
 		<!-- 以上三个为园企审核 ++++++++++++++++++++++++++++++++++++by czt+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 		
@@ -129,6 +145,25 @@
 		<action name="yuanqixuqiuadd" class="cn.nwsuaf.gov.action.YuanQiAddAction" method="addYuanQi" >
 			<result name="success">/faxuqiu/yuanqi/yuanquadd.jsp</result>
 		</action>
+		
+		<!-- follow by xiuhao.yan -->
+		<action name="yuanqiedit" class="cn.nwsuaf.gov.action.YuanQiAddAction" method="editYuanQi" >
+			<result name="success">/faxuqiu/yuanqi/qiyelist.jsp</result>
+		</action>
+		
+		<action name="jishuedit" class="cn.nwsuaf.gov.action.JiShuAddAction" method="editJiShu" >
+			<result name="success">/faxuqiu/shenhe/jishushenhe.jsp</result>
+		</action>
+		
+		<action name="peixunedit" class="cn.nwsuaf.gov.action.PeiXunAddAction" method="editPeiXun" >
+			<result name="success">/faxuqiu/shenhe/peixunshenhe.jsp</result>
+		</action>
+		
+		<action name="rencaiedit" class="cn.nwsuaf.gov.action.RenCaiAddAction" method="editRenCai" >
+			<result name="success">/faxuqiu/shenhe/rencaishenhe.jsp</result>
+		</action>
+		
+		<!-- end of xiuhao.yan -->
 			<action name="upload1" class="cn.nwsuaf.gov.teacherManage.UploadAction" method="upload"  >
 			<result name="success">/faxuqiu/yuanqi/yqimage1.jsp</result>
 			<param name="imageDir">/upload/media/yuanqiimage</param>

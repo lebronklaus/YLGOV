@@ -39,10 +39,10 @@ public class PeiXunXQ extends ActionSupport {
 
 	}
 
-	public void shenyes() {
-		PeiXundao news = new PeiXundao();
-		System.out.println("fdfgdgdwkwkw" + id);
-		news.update(id);
-	}
+//	public void shenyes() {
+//		PeiXundao news = new PeiXundao();
+//		System.out.println("fdfgdgdwkwkw" + id);
+//		news.update(id);
+//	}
 
 }

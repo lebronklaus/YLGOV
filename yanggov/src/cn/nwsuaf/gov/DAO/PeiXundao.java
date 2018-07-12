@@ -167,14 +167,26 @@ public class PeiXundao {
 		return sftlist;
 	}
 
-	public void update(int id) {
+	public void update(PeiXunXuQiu px) {
 		SessionFactory sf = new AnnotationConfiguration().configure()
 				.buildSessionFactory();
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
 		Query q = session
-				.createQuery("update PeiXunXuQiu t set t.shenhe = 1 where id = ?");
-		q.setInteger(0, id);
+				.createQuery("update PeiXunXuQiu t set t.companyname = ?,t.lianxiren = ?,t.tel = ?,t.chuanzhen = ?,t.email = ?,t.content = ?,t.time = ?,t.peixunadd = ?,"
+						+ "t.guimo = ?,t.peiheshixiang = ?,t.mark = ? where id =?");
+		q.setString(0, px.getCompanyname());
+		q.setString(1, px.getLianxiren());
+		q.setString(2, px.getTel());
+		q.setString(3, px.getChuanzhen());
+		q.setString(4, px.getEmail());
+		q.setString(5, px.getContent());
+		q.setString(6, px.getTime());
+		q.setString(7, px.getPeixunadd());
+		q.setString(8, px.getGuimo());
+		q.setString(9, px.getPeiheshixiang());
+		q.setInteger(10, px.getMark());
+		q.setInteger(11, px.getId());
 		q.executeUpdate();
 		session.getTransaction().commit();
 	}

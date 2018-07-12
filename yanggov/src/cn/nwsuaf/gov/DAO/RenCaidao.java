@@ -141,14 +141,27 @@ public class RenCaidao {
 	}
 
 	// 更新插入
-	public void update(int id) {
+	public void update(RenCaiXuQiu rc) {
 		SessionFactory sf = new AnnotationConfiguration().configure()
 				.buildSessionFactory();
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
 		Query q = session
-				.createQuery("update RenCaiXuQiu t set t.shenhe = 1 where id = ?");
-		q.setInteger(0, id);
+				.createQuery("update RenCaiXuQiu t set t.gangwei = ?,t.renshu = ?,t.daogangtime = ?,t.discrip = ?,t.sex = ?,t.agerank = ?,t.xueli = ?,t.major = ?,"
+						+ "t.experience = ?,t.shuoming = ?,t.salary = ?, t.mark = ? where id = ?");
+		q.setString(0, rc.getGangwei());
+		q.setString(1, rc.getRenshu());
+		q.setString(2, rc.getDaogangtime());
+		q.setString(3, rc.getDiscrip());
+		q.setString(4, rc.getSex());
+		q.setString(5, rc.getAgerank());
+		q.setString(6, rc.getXueli());
+		q.setString(7, rc.getMajor());
+		q.setString(8, rc.getExperience());
+		q.setString(9, rc.getShuoming());
+		q.setString(10, rc.getSalary());
+		q.setInteger(11, rc.getMark());
+		q.setInteger(12, rc.getId());
 		q.executeUpdate();
 		session.getTransaction().commit();
 	}

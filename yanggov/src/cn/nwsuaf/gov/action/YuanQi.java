@@ -218,9 +218,9 @@ public class YuanQi extends ActionSupport {
 	}
 
 	// 审核函数
-	public void ShenHe() {
-		Xinxidao xx = new Xinxidao();
-		xx.update(base_id);
-	}
+//	public void ShenHe() {
+//		Xinxidao xx = new Xinxidao();
+//		xx.update(base_id);
+//	}
 
 }

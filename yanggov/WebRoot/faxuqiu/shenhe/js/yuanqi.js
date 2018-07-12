@@ -5,8 +5,8 @@ $.extend($.messager.defaults,{
 	var rowid;
 		function formatOper(val, row, index) {
 			return '<a href="javascript:void(0)" onclick="showBase(' + index
-					+ ')">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="shenhe(' + index
-					+ ')">发布</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="dele()">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+					+ ')">查看</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="editYQ(' + index
+					+ ')">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)" onclick="dele()">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
 		}
 		
 		//查看基地信息
@@ -37,32 +37,16 @@ $.extend($.messager.defaults,{
 				
 			}
 		}
-		//审核
-		function shenhe(index){
-			var rows = $('#dg').datagrid('getSelections');
-			if (rows.length > 0) {
-				$.messager.confirm('发布', '选中的园企是否发布?', function(r) {
-					if (r) {
-						for (var i = 0; i < rows.length; i++) {
-							var row = rows[i];
-							if(row.shenhe=='1'){
-								alert("已经发布，请不要重复发布！");
-								break;
-							}else{
-								$.ajax({
-									type : 'POST',
-									url : 'yqshenhe.action',
-									async : false,
-									data : {
-										id : row.id
-									},dataType : 'json',
-								});
-							}
-						}
-						location.reload();
-					}
-				});
+		//修改
+		function editYQ(index){
+			$('#dg').datagrid('selectRow',index);
+			var row = $('#dg').datagrid('getSelected');
+			rowid = row;
+			if(row){
+				/*$('#rightFrame',window.parent.document).attr("src","./res/xxwh.action?id="+row.resources_id);*/ //original
+				$('#show',window.parent.document).attr("src","../../yanggov/edityuanqi.action?id="+row.id+"&type="+row.mark); //add to szl
 			}
+			
 		}
        //删除基地信息
 		function dele() {

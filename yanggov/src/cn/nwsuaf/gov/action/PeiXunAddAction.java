@@ -16,6 +16,17 @@ public class PeiXunAddAction {
 	private String time;
 	private String inputNote;
 	
+	private int id;
+	
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String addPeiXun() throws Exception{
 		PeiXunXuQiu px = new PeiXunXuQiu();
 		px.setCompanyname(companyname);
@@ -32,6 +43,25 @@ public class PeiXunAddAction {
 		px.setTime(time);
 		PeiXundao pxd = new PeiXundao();
 		pxd.add(px);
+		return "success";
+	}
+	
+	public String editPeiXun() throws Exception{
+		PeiXunXuQiu px = new PeiXunXuQiu();
+		px.setCompanyname(companyname);
+		px.setLianxiren(lianxiren);
+		px.setTel(tel);
+		px.setChuanzhen(chuanzhen);
+		px.setPeixunadd(peixunadd);
+		px.setGuimo(guimo);
+		px.setPeiheshixiang(peiheshixiang);
+		px.setEmail(email);
+		px.setMark(Integer.parseInt(mark));
+		px.setContent(inputNote);
+		px.setId(id);
+		px.setTime(time);
+		PeiXundao pxd = new PeiXundao();
+		pxd.update(px);
 		return "success";
 	}
 	

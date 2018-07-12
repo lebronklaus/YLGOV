@@ -56,24 +56,24 @@ html {
 </head>
 <body>
 	
-	<div id="main" align="center" style="padding:10px;" class="easyui-panel"  title="基地管理—修改基地信息">
+	<div id="main" align="center" style="padding:10px;" class="easyui-panel"  title="基地管理—修改分中心信息">
 	<fieldset style="width:757px;">
-			<legend style="font-size:20px;font-family: 微软雅黑;font-weight:bold;">修改基地信息</legend>
+			<legend style="font-size:20px;font-family: 微软雅黑;font-weight:bold;">修改分中心信息</legend>
 			<div style="height:20px"></div>
 		<table>
 			<tr>
-				<td width="84" height="38"><span> 基地名称：</span></td>
+				<td width="84" height="38"><span> 分中心名称：</span></td>
 				<td width="287"><input name="tb.base_name" id="basename" class="easyui-textbox"
 					style="width:271px;height:30px;" value="<s:property value="tb.base_name"/>"></td>
 						
-				<td height="38"><span> 基地联系人：</span></td>
+				<td height="38"><span> 分中心联系人：</span></td>
 				<td><input name="tb.base_contact"  id="contact"  class="easyui-textbox"
 					style="width:271px;height:30px;"
 					value="<s:property value="tb.base_contact"/>"></td>
 			</tr>
 			<tr> <td><div style="height:3px;"></div></td></tr>
 			<tr>
-				<td height="38" valign="top"><span> 基地简介：</span></td>
+				<td height="38" valign="top"><span> 分中心简介：</span></td>
 				<td colspan="3"><textarea style="width: 100%;height:410px;" class="form-control" id="inputNote" rows="5" name="tb.base_profile"><s:property value="tb.base_profile" escape="false" /></textarea>
 			</tr>
 			

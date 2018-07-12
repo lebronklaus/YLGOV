@@ -25,23 +25,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	var height = $(this).contents().height() ; 
 	$(this).height( height < 921 ? 921 : height );
 	}); 
-	changebg(peixun); 
+	
+ 
+	var from = getQueryString("from");
+ 	if(from==null){
+ 		changebg("peixun");
+ 	}else{
+ 		changebg(from); 
+ 	}
+	
+	
 /* 	$("#peixunlist").show();
 	$("#rencailist").hide();
 	$("#jishulist").hide(); */
 }); 
 function changebg(var1){
-	if(var1==peixun){
+	if(var1=="peixun"){
 		$("#peixun").css("background","#f0f0f0");
 		$("#rencai").css("background","#fff");
 		$("#jishu").css("background","#fff");
 
-	}else if(var1 == rencai  ){
+	}else if(var1 == "rencai"  ){
 		$("#peixun").css("background","#fff");
 		$("#rencai").css("background","#f0f0f0");
 		$("#jishu").css("background","#fff");
 		
-	}else if(var1== jishu){
+	}else if(var1== "jishu"){
 		$("#peixun").css("background","#fff");
 		$("#rencai").css("background","#fff");
 		$("#jishu").css("background","#f0f0f0");
@@ -70,6 +79,12 @@ function tech(){
 	$('#xuqiu').html("技术需求");
 	$('#listframe').attr("src","goJiShu.action");
 
+}
+
+function getQueryString(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+	var r = window.location.search.substr(1).match(reg);
+	if (r != null) return unescape(r[2]); return null;
 }
 </script>
 <script type="text/javascript">
@@ -101,7 +116,7 @@ function tech(){
 	<div class="dao_hang">
 		<div class="dao_left">
 			<ul>
-						<li class="bian">
+						<li>
 							<a href="<%=path %>/getAllList.action">首页</a>
 						</li>
 						<li>
@@ -122,7 +137,7 @@ function tech(){
 						<li>
 							<a href="<%=path %>/system/layout/morenewskx.action">三农快讯</a>
 						</li>
-						<li>
+						<li class="bian">
 							<a href="<%=path %>/teacher/xuqiu.action">需求征集</a>
 						</li>
 						<li>

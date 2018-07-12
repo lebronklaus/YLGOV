@@ -9,7 +9,7 @@ public class RenCaiAddAction {
 	private String daogangtime ;
 	private String salary ;
 	private String discrip ;
-	private String sex ;//field 'sex' isn't  suitable, region inside by xiuhao.yan
+	private String sex ;//field 'sex' isn't  suitable, region inside.mark by xiuhao.yan
 	private String agerank ;
 	private String xueli ;
 	private String major;
@@ -17,6 +17,17 @@ public class RenCaiAddAction {
 	private String shuoming ;
 	private String mark ;
 	
+	private int id;
+	
+	
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public String addRenCai() throws Exception{
 		RenCaiXuQiu rc = new RenCaiXuQiu();
 		rc.setGangwei(gangwei);
@@ -36,6 +47,27 @@ public class RenCaiAddAction {
 		rcd.add(rc);
 		return "success";
 	}
+	
+	public String editRenCai() throws Exception{
+		RenCaiXuQiu rc = new RenCaiXuQiu();
+		rc.setGangwei(gangwei);
+		rc.setRenshu(renshu);
+		rc.setDaogangtime(daogangtime);
+		rc.setSalary(salary);
+		rc.setDiscrip(discrip);
+		rc.setSex(sex);
+		rc.setAgerank(agerank);
+		rc.setXueli(xueli);
+		rc.setMajor(major);
+		rc.setExperience(experience);
+		rc.setShuoming(shuoming);
+		rc.setId(id);
+		rc.setMark(Integer.parseInt(mark));
+		RenCaidao rcd = new RenCaidao();
+		rcd.update(rc);
+		return "success";
+	}
+	
 	public String getGangwei() {
 		return gangwei;
 	}

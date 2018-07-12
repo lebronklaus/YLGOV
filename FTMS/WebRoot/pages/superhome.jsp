@@ -237,6 +237,7 @@ function reload(){
 **/
 function corpList(){
     $('#show').attr("src","../../yanggov/faxuqiu/shenhe/yuanqishenhe.jsp");
+	resizeres();
 }
 function addCorp(){
 	$('#show').attr("src","../../yanggov/faxuqiu/yuanqi/yuanqiadd.jsp");
@@ -244,6 +245,7 @@ function addCorp(){
 }
 function demandList(){
     $('#show').attr("src","../../yanggov/faxuqiu/shenhe/peixunshenhe.jsp");
+	resizeres();
 }
 function addTrainDemand(){
     $('#show').attr("src","../../yanggov/faxuqiu/peixunxuqiu.jsp");

@@ -48,6 +48,8 @@ ServletContextAware {
 	private int pageCount;// 鎬婚〉鏁�
 	private ServletContext application;
 	private HttpServletRequest request;
+	
+
 	/**
 	 * @author Zhitao.Chen
 	 * 浠ヤ笅涓変釜鍑芥暟鐢ㄦ潵瀹炵幇涓婚〉鍒板煿璁祫婧愶紝鍥紒淇℃伅锛岄渶姹傚緛闆嗛〉闈㈣烦杞�
@@ -86,7 +88,7 @@ ServletContextAware {
 	 public String getGongGao() throws Exception{
 		 TnewsDAO news = new TnewsDAO();
 		 setPageCount(news.getRows(pageSize));
-		 
+		 		 
 		 List<RenCaiXuQiu> rc;
 		 //setPageCount(news.getRows(pageSize));
 		 rc = news.findByPageRC(pageSize, pageNow);

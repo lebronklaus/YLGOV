@@ -23,6 +23,15 @@ public class YuanQiAction {
 	private int id ;
 	private String searchname;
 	
+	private Xinxi yqxx;
+	
+	
+	public Xinxi getYqxx() {
+		return yqxx;
+	}
+	public void setYqxx(Xinxi yqxx) {
+		this.yqxx = yqxx;
+	}
 	public String shenHe() throws HibernateException, Exception{
 		yqs =  new YuanqiService();
 		yqs.update(id);
@@ -92,6 +101,12 @@ public class YuanQiAction {
 
 	public void setSearchname(String searchname) {
 		this.searchname = searchname;
+	}
+	
+	public String getYuanQi(){
+		yqs = new YuanqiService();
+		setYqxx(yqs.getYuanQi(id));
+		return "success";
 	}
 	
 }

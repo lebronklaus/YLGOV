@@ -229,14 +229,22 @@ public class Xinxidao {
 	}
 
 	// 更新信息
-	public void update(int id) {
+	public void update(Xinxi xx) {
 		SessionFactory sf = new AnnotationConfiguration().configure()
 				.buildSessionFactory();
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
 		Query q = session
-				.createQuery("update Xinxi t set t.shenhe = 1 where id = ?");
-		q.setInteger(0, id);
+				.createQuery("update Xinxi t set t.name = ?,t.intro=?,t.fuzeren=?,t.tel=?,t.address=?, t.mark=?,t.path1=?,t.path2=? where id = ?");
+		q.setString(0,xx.getName());
+		q.setString(1, xx.getIntro());
+		q.setString(2, xx.getFuzeren());
+		q.setString(3, xx.getTel());
+		q.setString(4, xx.getAddress());
+		q.setInteger(5,xx.getMark());
+		q.setString(6, xx.getPath1());
+		q.setString(7, xx.getPath2());
+		q.setInteger(8,	xx.getId());
 		q.executeUpdate();
 		session.getTransaction().commit();
 	}
@@ -286,6 +294,19 @@ public class Xinxidao {
 		}
 		session.close();
 		return pageCount;
+	}
+	
+	//get yuanqi info by xiuhao.yan
+	public Xinxi getYuanQi(int no) throws Exception {
+		Session session = HibernateSessionFactory.createFactory().openSession();
+		Transaction tx = session.beginTransaction();
+		Xinxi tt = (Xinxi) session.get(Xinxi.class, no);
+		if (tt != null) {
+			return tt;
+		}
+		tx.commit();
+		session.close();
+		return null;
 	}
 
 }

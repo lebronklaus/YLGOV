@@ -38,12 +38,12 @@ public class JishuService {
 			Session session = null;
 			try {
 				session = HibernateSessionFactory.createFactory().openSession();
-				Transaction tx = session.beginTransaction();
+//				Transaction tx = session.beginTransaction();
 				JiShuPeiXun js = (JiShuPeiXun) session.get(JiShuPeiXun.class,id);
 				if (js != null) {
 					session.delete(js);
 				}
-				tx.commit();
+//				tx.commit();
 			} catch (HibernateException e) {
 				e.printStackTrace();
 			} catch (Exception e) {
@@ -121,5 +121,27 @@ public class JishuService {
 		return ttlist;
 
 	}
+	
+	//获得技术  by xiuhao.yan
+	public JiShuPeiXun getJiShu(int id){
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.createFactory().openSession();
+//			Transaction tx = session.beginTransaction();
+			JiShuPeiXun js = (JiShuPeiXun) session.get(JiShuPeiXun.class,id);
+			if (js != null) {
+				return js;				
+			}
+//			tx.commit();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return null;
+	}
+
 
 }

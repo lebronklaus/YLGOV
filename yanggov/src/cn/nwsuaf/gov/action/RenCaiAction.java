@@ -23,6 +23,16 @@ public class RenCaiAction {
 	private int id ;
 	private String searchname;
 	
+	private RenCaiXuQiu rcxq;
+	
+	
+	
+	public RenCaiXuQiu getRcxq() {
+		return rcxq;
+	}
+	public void setRcxq(RenCaiXuQiu rcxq) {
+		this.rcxq = rcxq;
+	}
 	public String shenHe(){
 		ps =  new RencaiService();
 		ps.update(id);
@@ -93,6 +103,12 @@ public class RenCaiAction {
 		this.searchname = searchname;
 	}
 	
+	//by xiuhao.yan
+	public String getRenCai(){
+		ps = new RencaiService();
+		setRcxq(ps.getRenCai(id));
+		return "success";
+	}
 
 
 }

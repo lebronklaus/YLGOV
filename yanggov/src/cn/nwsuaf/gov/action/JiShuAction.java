@@ -23,6 +23,20 @@ public class JiShuAction {
 	private int id ;
 	private String searchname;
 	
+	private JiShuPeiXun jsxq;
+	
+	
+	
+	public JiShuPeiXun getJsxq() {
+		return jsxq;
+	}
+
+
+	public void setJsxq(JiShuPeiXun jsxq) {
+		this.jsxq = jsxq;
+	}
+
+
 	public String shenHe(){
 		js =  new JishuService();
 		js.update(id);
@@ -96,6 +110,13 @@ public class JiShuAction {
 	}
 	public void setSearchname(String searchname) {
 		this.searchname = searchname;
+	}
+	
+	// by xiuhao.yan
+	public String getJiShu(){
+		js = new JishuService();
+		setJsxq(js.getJiShu(id));
+		return "success";
 	}
 	
 }

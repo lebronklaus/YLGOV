@@ -122,5 +122,24 @@ public class RencaiService {
 		return ttlist;
 
 	}
+	
+	//by xiuhao.yan
+	public RenCaiXuQiu getRenCai(int id){
+		Session session = null;
+		try {
+			session = HibernateSessionFactory.createFactory().openSession();
+			RenCaiXuQiu rc = (RenCaiXuQiu) session.get(RenCaiXuQiu.class,id);
+			if (rc != null) {
+				return rc;
+			}
+		} catch (HibernateException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally{
+			session.close();
+		}
+		return null;
+	}
 
 }

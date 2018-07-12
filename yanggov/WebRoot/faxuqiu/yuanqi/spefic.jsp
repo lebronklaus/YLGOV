@@ -97,7 +97,7 @@ p {
 	<div class="dao_hang">
 		<div class="dao_left">
 			<ul>
-						<li class="bian">
+						<li >
 							<a href="<%=path %>/getAllList.action">首页</a>
 						</li>
 						<li>
@@ -121,7 +121,7 @@ p {
 						<li>
 							<a href="<%=path %>/teacher/xuqiu.action">需求征集</a>
 						</li>
-						<li>
+						<li class="bian">
 							<a href="<%=path %>/teacher/yuanqi.action">园企信息</a>
 						</li>
 					</ul>	

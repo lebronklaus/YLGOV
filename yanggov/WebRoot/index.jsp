@@ -56,7 +56,7 @@
 				<div class="ding_top">
 					<div class="ding_aa">
 						 <a href="../FTMS/pages/Register.jsp" ">农民注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-						 <!-- <a href="../FTMS/pages/YuanQiRegister.jsp">园企注册</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
+						 <a href="../FTMS/pages/login/userlogin.jsp">用户登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 						 <a href="./connectus.jsp">联系我们</a>
 					</div>
 				</div>
@@ -323,7 +323,7 @@
 							</li>
 
 							<li class="li">
-								<a href="../FTMS/pages/login/userlogin.jsp">
+								<a href="<%=path %>/teacher/xuqiu.action?from=peixun">
 									<div class="li_left">
 										<span>培训需求</span>
 									</div>
@@ -334,7 +334,7 @@
 
 
 							<li class="li">
-								<a href="../FTMS/pages/login/userlogin.jsp">
+								<a href="<%=path %>/teacher/xuqiu.action?from=jishu">
 									<div class="li_left">
 										<span>技术需求</span>
 									</div>
@@ -345,7 +345,7 @@
 
 
 							<li class="li">
-								<a href="../FTMS/pages/login/userlogin.jsp">
+								<a href="<%=path %>/teacher/xuqiu.action?from=rencai">
 									<div class="li_left">
 										<span>人才需求</span>
 									</div>

@@ -142,4 +142,20 @@ public class YuanqiService {
 			}
 			return ttlist;
 		}
+		//get yuanqi info by xiuhao.yan
+		public Xinxi getYuanQi(int id){
+			Session session = null;
+			try{
+				session = HibernateSessionFactory.createFactory().openSession();
+				Xinxi tt = (Xinxi) session.get(Xinxi.class, id);
+				if (tt != null) {
+					return tt;
+				}
+			}catch (Exception e){
+				e.printStackTrace();
+			}finally{
+				session.close();
+			}
+			return null;
+		}
 }

@@ -42,7 +42,7 @@
 			<div class="ding_aa">
 					<a href="../FTMS/pages/Register.jsp"">农民注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;
 					<!-- <a href="../FTMS/pages/YuanQiRegister.jsp">园企注册</a>&nbsp;&nbsp;|&nbsp;&nbsp; -->
-					<a href="./connectus.jsp">联系我们</a>
+					<a href="/yanggov/connectus.jsp">联系我们</a>
 			</div>
 		</div>
 	</div>	
@@ -55,10 +55,10 @@
 	<div class="dao_hang">
 		<div class="dao_left">
 			<ul>
-										<li class="bian">
+										<li >
 							<a href="<%=path %>/getAllList.action">首页</a>
 						</li>
-						<li>
+						<li class="bian">
 							<a href="<%=path %>/system/layout/before/jianjie/jianjie.jsp">中心简介</a>
 						</li>
 						<li>

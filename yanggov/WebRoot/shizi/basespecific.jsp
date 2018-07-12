@@ -86,7 +86,7 @@ p {
 		<div class="dao_left">
 			
 					<ul>
-						<li class="bian">
+						<li >
 							<a href="<%=path %>/getAllList.action">首页</a>
 						</li>
 						<li>
@@ -101,7 +101,7 @@ p {
 						<li>
 							<a href="<%=path %>/system/layout/morenewszc.action">政策信息</a>
 						</li>
-						<li>
+						<li class="bian">
 							<a href="<%=path %>/teacher/peixun.action">培训资源</a>
 						</li>
 						<li>
@@ -133,7 +133,7 @@ p {
 						<img src="images/xq_wu.png" />
 					</div>
 					<div class="xq_top_wen_3">
-						<span>您当前位置： 培训资源> <a id ="peixun">培训基地</a></span>					
+						<span>您当前位置： 培训资源> <a id ="peixun">培训分中心</a></span>					
 					</div>				
 				</div>
 		</div>
@@ -147,7 +147,7 @@ p {
 		</table>
 
 		<div style="  width:100%;height: 20px; line-height: 20px;  margin-top: 10px;   font-size: 12px;  color: #6d6d6d; text-align: center;">
-			<span>基地联系人：</span>
+			<span>分中心联系人：</span>
 				<s:property value="tzhi.base_contact"/>
 		</div>
 		<!--分割线-->
@@ -209,7 +209,7 @@ p {
   		</div>
 	    <!--简介-->
 	    <div id="info">
-	    	<div class="title">基地简介</div>
+	    	<div class="title">分中心简介</div>
 	       <!--  <pre style="line-height: 20px;padding-left: 10px; border: dashed 1px #cacaca; white-space: pre-wrap; white-space: -moz-pre-wrap; white-space: -pre-wrap; white-space: -o-pre-wrap; word-spacing: break-word;"> -->
 	       <div style="display: block;line-height: 20px;    padding: 9.5px;padding-left: 10px; border: dashed 1px #cacaca;border-radius: 4px;font-size: 14px;font-family: 微软雅黑;" >
 		     <s:property value="tzhi.base_profile" escape="false" />

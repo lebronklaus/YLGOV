@@ -30,6 +30,22 @@ public class YuanQiAddAction {
 		return "success";
 	}
 	
+	public String editYuanQi()throws Exception{
+		Xinxi xx = new Xinxi();
+		xx.setName(name);
+		xx.setFuzeren(fuzeren);
+		xx.setTel(tel);
+		xx.setAddress(address);
+		xx.setIntro(inputNote);
+		xx.setPath1(yq_path1);
+		xx.setPath2(yq_path2);
+		xx.setMark(Integer.parseInt(mark));
+		xx.setShenhe("1");
+		Xinxidao xxd = new Xinxidao();
+		xxd.update(xx);
+		return "success";
+	}
+	
 	public String getName() {
 		return name;
 	}
